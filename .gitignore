@@ -1,5 +1,7 @@
 *.gem
 *.rbc
+log
+.rake_tests~
 /.config
 /coverage/
 /InstalledFiles
