@@ -6,8 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #=begin
-Category.delete_all
+
 Document.delete_all
+Category.delete_all
+User.delete_all
+
+if User.count == 0
+  User.new({:email =>'sysadmin@minio.io', :password => 'Doctor!23', :password_confirmation => 'Doctor!23', :admin => true }).save
+  
+end
 
 c1 = Category.create!(title:'Minio Server',
 desc: %{Holds all Minio Server related docs},

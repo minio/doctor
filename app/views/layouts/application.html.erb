@@ -24,9 +24,13 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/prism/1.2.0/themes/prism.css">
-  <link href="https://cdn.jsdelivr.net/prism/1.2.0/themes/prism-coy.css" rel="stylesheet" />ß
+  <link href="https://cdn.jsdelivr.net/prism/1.2.0/themes/prism-coy.css" rel="stylesheet" />
+  
   <script src="https://cdn.jsdelivr.net/prism/1.2.0/prism.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
   <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -44,6 +48,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav pull-right">
+					
+				  <% if current_user %>	
+				 	 
                     <li>
                         <a href="#">Home</a>
                     </li>
@@ -53,6 +60,42 @@
                     <li>
                         <a href="#">Contact</a>
                     </li>
+				 
+					 
+			 		 
+	 			  	<li class="dropdown" >
+  
+						<a href="#" data-toggle="dropdown" class="dropdown-toggle" ><%= current_user.email %><span class="caret" ></span></a>   
+	   
+	                    <ul class="dropdown-menu" >
+					   	 	 		 <% if current_user.admin? %>	
+					   	 	 		 		<li><a href="Profile"><%= link_to "DashBoard", hub_path %></a></li>
+					   	 	 		 <% else %>
+										 
+									 <% end %>	
+					   	 			<li><a href="Log Out"> <%= link_to "Logout", logout_path %></a></li>
+						 </ul>
+		  		 	</li>
+				
+				 		
+						
+ 				     <% else %> 
+	                     <li>
+	                         <a href="#">Home</a>
+	                     </li>
+	                     <li>
+	                         <a href="#">GitHub</a>
+	                     </li>
+	                     <li>
+	                         <a href="#">Contact</a>
+	                     </li>
+				   	 	 
+						  <li> <%= link_to "Log In", login_path %> </li>
+					</ul>	
+	
+				     <% end %>
+					
+                   
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -61,64 +104,33 @@
     </nav>
 	<div id="wrapper">
 
-	        <!-- Sidebar 
-	        <div id="sidebar-wrapper">
-	            <ul class="sidebar-nav">
-	                <li class="sidebar-brand">
-	                    <a href="#">
-	                        Start Bootstrap
-	                    </a>
-	                </li>
-	                <li>
-	                    <a href="#">Minio Server</a>
-						<ul>
-							<li><a href="#" style=" color: grey;"> Minio QuickStart Guide </a></li>
-						</ul>
-	                </li>
-	                <li>
-	                    <a href="#">Minio Client Utility</a>
-	                </li>
-	                <li>
-	                    <a href="#">Minio Client SDK</a>
-	                </li>
-	                <li>
-	                    <a href="#">Full Examples</a>
-	                </li>
-	                <li>
-	                    <a href="#">Recipes</a>
-	                </li>
-	                <li>
-	                    <a href="#">Related Projects</a>
-	                </li>
-	                <li>
-	                    <a href="#">Miscellaneous</a>
-	                </li>
-	            </ul>
-	        </div>  -->
-	        <div id="sidebar-wrapper">
-	            <ul class="sidebar-nav">
-					  
-  	                <li class="sidebar-brand">
-  	                    <a href="#">
-  	                       Minio Docs
-  	                    </a>
-  	                </li>
-					  <% @categories.each do |category| %>
-					  
-					  	 
-					  		<li><a href="#"><%= category.title %></a><li>
-							
-								<% if category.documents.any? %>
-									<% category.documents.each do |doc| %>
-									 <ul>
-									 	<li><%= link_to doc.name, document_path(doc.id) %><li>
-									 </ul>
-									<% end %>
- 								<% end %> 
-			 		  	 
-					<% end %>
-				</ul>
-			</div>	
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+				  
+                <li class="sidebar-brand">
+                    <a href="#">
+                       Minio Docs
+                    </a>
+                </li>
+				  <% @categories.each do |category| %>
+				  
+				  	 
+				  		<li><a href="#"><%= category.title %></a><li>
+						
+							<% if category.documents.any? %>
+								<% category.documents.each do |doc| %>
+								 <ul>
+								 	<li><%= link_to doc.name, document_path(doc.id) %><li>
+								 </ul>
+								<% end %>
+							<% end %> 
+		 		  	 
+				<% end %>
+			</ul>
+		</div>	
+		
+	         
+	        
 						
 						
 		   		
