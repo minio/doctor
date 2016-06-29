@@ -31,4 +31,10 @@ class HubController < ApplicationController
        format.html { render :inline => @contents.html_safe , :layout=>'application'  }
     end   
   end
+  
+  def dashboard
+     @categories = Category.all
+     @documents = Document.all
+     @users = User.all
+  end
 end
