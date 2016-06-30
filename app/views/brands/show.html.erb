@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @brand.title %>
+</p>
+
+<p>
+  <strong>Logo url:</strong>
+  <%= @brand.logo_url %>
+</p>
+
+<p>
+  <strong>Tagline:</strong>
+  <%= @brand.tagline %>
+</p>
+
+<p>
+  <strong>Home link:</strong>
+  <%= @brand.home_link %>
+</p>
+
+<p>
+  <strong>Github link:</strong>
+  <%= @brand.github_link %>
+</p>
+
+<p>
+  <strong>Gitter link:</strong>
+  <%= @brand.gitter_link %>
+</p>
+
+<p>
+  <strong>Footer text:</strong>
+  <%= @brand.footer_text %>
+</p>
+
+<p>
+  <strong>Footer img:</strong>
+  <%= @brand.footer_img %>
+</p>
+
+<p>
+  <strong>Footer chatlink:</strong>
+  <%= @brand.footer_chatlink %>
+</p>
+
+<%= link_to 'Edit', edit_brand_path(@brand) %> |
+<%= link_to 'Back', brands_path %>

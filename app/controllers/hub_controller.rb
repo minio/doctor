@@ -36,5 +36,6 @@ class HubController < ApplicationController
      @categories = Category.all
      @documents = Document.all
      @users = User.all
+     @brands = Brand.all
   end
 end

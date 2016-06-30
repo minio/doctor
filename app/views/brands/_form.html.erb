@@ -1,0 +1,53 @@
+<%= form_for(@brand) do |f| %>
+  <% if @brand.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@brand.errors.count, "error") %> prohibited this brand from being saved:</h2>
+
+      <ul>
+      <% @brand.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :logo_url %><br>
+    <%= f.text_field :logo_url %>
+  </div>
+  <div class="field">
+    <%= f.label :tagline %><br>
+    <%= f.text_field :tagline %>
+  </div>
+  <div class="field">
+    <%= f.label :home_link %><br>
+    <%= f.text_field :home_link %>
+  </div>
+  <div class="field">
+    <%= f.label :github_link %><br>
+    <%= f.text_field :github_link %>
+  </div>
+  <div class="field">
+    <%= f.label :gitter_link %><br>
+    <%= f.text_field :gitter_link %>
+  </div>
+  <div class="field">
+    <%= f.label :footer_text %><br>
+    <%= f.text_field :footer_text %>
+  </div>
+  <div class="field">
+    <%= f.label :footer_img %><br>
+    <%= f.text_field :footer_img %>
+  </div>
+  <div class="field">
+    <%= f.label :footer_chatlink %><br>
+    <%= f.text_field :footer_chatlink %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
