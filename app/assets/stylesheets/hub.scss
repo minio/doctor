@@ -105,3 +105,20 @@
   }
 }
 
+
+/*---------------------------
+    Footer
+----------------------------*/
+#footer {
+  text-align: center;
+  padding: 30px;
+  border-top: 1px solid #f3f3f3;
+
+  &, a {
+    color: #9F9F9F;
+  }
+
+  a:hover {
+    color: #737373;
+  }
+}

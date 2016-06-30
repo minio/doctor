@@ -25,8 +25,7 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/prism/1.2.0/themes/prism.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/prism/1.2.0/themes/prism-coy.css">
+    <link rel="stylesheet" href="css/prism.css">
     <script src="https://cdn.jsdelivr.net/prism/1.2.0/prism.js"></script>
   </head>
 
@@ -43,7 +42,7 @@
 
       <nav class="header__menu">
         <ul>
-          
+
             <li><%= link_to "Home", @mybrand.home_link %></li>
             <li><%= link_to "Github", @mybrand.github_link %></li>
             <li><%= link_to "Gitter", @mybrand.gitter_link %></li>
@@ -87,13 +86,11 @@
         </ul>
       </div>
 
-      <div class="wrapper__page">
+      <section class="wrapper__page">
         <%= yield %>
-      </div>
+      </section>
 
+      <%= render 'layouts/footer' %>
     </div>
-
-    <%= render 'layouts/footer' %>
-
   </body>
 </html>
