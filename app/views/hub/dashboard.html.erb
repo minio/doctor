@@ -1,3 +1,19 @@
+<!--
+  Doctor, (C) 2016 Minio, Inc.
+ 
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+ 
+      http://www.apache.org/licenses/LICENSE-2.0
+ 
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+ -->
+
 <div class="container">
 
 	<center><h1 style="margin-top:25px; padding:30px; font-size:3.00em; color:#000000 !important;" class="">  Admin Panel </h1></center>
@@ -6,6 +22,45 @@
 <p id="notice"><%= notice %></p>
 
 
+<h1>Listing Brands</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Logo url</th>
+      <th>Tagline</th>
+      <th>Home link</th>
+      <th>Github link</th>
+      <th>Gitter link</th>
+      <th>Footer text</th>
+      <th>Footer img</th>
+      <th>Footer chatlink</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @brands.each do |brand| %>
+      <tr>
+        <td><%= brand.title %></td>
+        <td><%= brand.logo_url %></td>
+        <td><%= brand.tagline %></td>
+        <td><%= brand.home_link %></td>
+        <td><%= brand.github_link %></td>
+        <td><%= brand.gitter_link %></td>
+        <td><%= brand.footer_text %></td>
+        <td><%= brand.footer_img %></td>
+        <td><%= brand.footer_chatlink %></td>
+        <td><%= link_to 'Show', brand %></td>
+        <td><%= link_to 'Edit', edit_brand_path(brand) %></td>
+        <td><%= link_to 'Destroy', brand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
 
 
 <div class="col-md-6 well">

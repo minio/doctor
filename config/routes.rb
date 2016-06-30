@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :brands
   get 'sessions/new'
 
   get 'sessions/create'

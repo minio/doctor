@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160627232809) do
+ActiveRecord::Schema.define(version: 20160630031617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "brands", force: :cascade do |t|
+    t.string   "title"
+    t.string   "logo_url"
+    t.string   "tagline"
+    t.string   "home_link"
+    t.string   "github_link"
+    t.string   "gitter_link"
+    t.string   "footer_text"
+    t.string   "footer_img"
+    t.string   "footer_chatlink"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string   "title"
