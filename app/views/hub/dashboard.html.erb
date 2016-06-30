@@ -1,0 +1,114 @@
+<div class="container">
+
+	<center><h1 style="margin-top:25px; padding:30px; font-size:3.00em; color:#000000 !important;" class="">  Admin Panel </h1></center>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+
+
+
+<div class="col-md-6 well">
+	<div class="container">
+		<h1 class="pull-left">Categories</h1> <%= link_to 'Add New', new_category_path, :class=> "btn btn-default pull-center", :style=>"margin: 30px;" %>
+	</div>	
+	<br>
+	<table class="table-bordered table-striped table-responsive">
+	  <thead>
+	    <tr>
+	      <th>Title</th>
+	      <th>Desc</th>
+	      <th colspan="3"></th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	    <% @categories.each do |category| %>
+	      <tr>
+	        <td><%= category.title %></td>
+	        <td><%= category.desc %></td>
+	        <td><%= link_to 'Show', category %></td>
+	        <td><%= link_to 'Edit', edit_category_path(category) %></td>
+	        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+ 
+<br>
+ 
+</div>
+ 
+<div class="col-xs-1">
+</div>
+
+<div class="col-md-5 well">
+	<div class="container">
+		<h1 class="pull-left">Users</h1>
+	</div>	
+
+	<table  class="table-bordered table-striped table-responsive">
+	  <thead>
+	    <tr>
+	      <th>Email</th>
+	      <th colspan="3"></th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	    <% @users.each do |user| %>
+	      <tr>
+	        <td><%= user.email %></td>
+	        <td><%= link_to 'Show', user %></td>
+	        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+	        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+
+	<br>
+
+	<!--<%= link_to 'New User', new_user_path , :class=> "btn btn-default", :style=>"disabled"%>-->
+
+	</div>
+ 
+
+<div class="col-md-12 well">
+<div class="container">	
+<h1 class="pull-left">Documents</h1>
+
+<%= link_to 'Add New Document', new_document_path, :class=> "btn btn-default pull-center", :style=>"margin:30px;" %>
+</div>
+
+<table  class="table-bordered table-striped table-responsive">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Link</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @documents.each do |document| %>
+      <tr>
+        <td><%= document.name %></td>
+        <td><%= document.description %></td>
+        <td><%= document.link %></td>
+        <td><%= document.category %></td>
+        <td><%= link_to 'Show', document %></td>
+        <td><%= link_to 'Edit', edit_document_path(document) %></td>
+        <td><%= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+</div>
