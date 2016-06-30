@@ -43,7 +43,7 @@
 
       <nav class="header__menu">
         <ul>
-          
+
             <li><%= link_to "Home", @mybrand.home_link %></li>
             <li><%= link_to "Github", @mybrand.github_link %></li>
             <li><%= link_to "Gitter", @mybrand.gitter_link %></li>
@@ -87,13 +87,11 @@
         </ul>
       </div>
 
-      <div class="wrapper__page">
+      <section class="wrapper__page">
         <%= yield %>
-      </div>
+      </section>
 
+      <%= render 'layouts/footer' %>
     </div>
-
-    <%= render 'layouts/footer' %>
-
   </body>
 </html>
