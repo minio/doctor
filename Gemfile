@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'redcarpet'
-
+gem 'rails_12factor'
 gem 'nokogiri'
 gem 'albino'
 gem 'github-markup' 
