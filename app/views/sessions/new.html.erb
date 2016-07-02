@@ -1,23 +1,21 @@
+<%= form_tag sessions_path do %>
 
- <main>
- <h2> </h2>
+<div class="form-wrapper form-wrapper--login">
+      <div class="form-group">
+            <%= label_tag :email %>
+            <%= text_field_tag :email, params[:email], :class => "form-group__field" %>
+      </div>
 
- <%= form_tag sessions_path do %>
+      <div class="form-group">
+            <%= label_tag :password %>
+            <%= password_field_tag :password, "", :class => "form-group__field" %>
+      </div>
 
- <div class="container">
-  	<div class="row">
- 	 <div class="col-lg-offset-3 col-md-offset-3 col-lg-6 col-md-6">
- 			  <div class="field">
- 			    <%= label_tag :email %><br />
- 			    <%= text_field_tag :email, params[:email] %>
- 			  </div>
- 			  <div class="field">
- 			    <%= label_tag :password %><br />
- 			    <%= password_field_tag :password %>
- 			  </div>
- 			  <div class="actions"><%= submit_tag "Log In" , :class=>"btn btn-primary"%></div>
- 			<% end %>
- 		</div>
- 	</div>
- </div>
- </main>
+      <div class="clearfix"></div>
+
+      <div class="form-wrapper__footer">
+            <%= submit_tag "Login", :class => "button button--blue" %>
+      </div>
+</div>
+
+<% end %>
