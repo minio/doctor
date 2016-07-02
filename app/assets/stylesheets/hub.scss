@@ -1,3 +1,18 @@
+/* temp vars + mixins */
+$text-color: #5c6267;
+$line-color: #efefef;
+
+@mixin button-types($bg-color, $color, $border-color) {
+  background-color: $bg-color;
+  color: $color;
+  border-color: $border-color;
+
+  &:hover,
+  &:focus {
+    background-color: darken($bg-color, 5%);
+  }
+}
+
 /*---------------------------
     Header
 ----------------------------*/
@@ -121,4 +136,79 @@
   a:hover {
     color: #737373;
   }
+}
+
+
+/*---------------------------
+    Button
+----------------------------*/
+.button {
+  padding: 6px 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px;
+
+  &:not([class*="button--"]) {
+    border-color: #efefef;
+    background-color: #fff;
+    @include button-types(#fff, $text-color, #efefef);
+
+  }
+}
+
+.button--blue {
+  @include button-types(#42A5F5, #fff, #42A5F5);
+}
+
+.button--green {
+  @include button-types(#4CAF50, #fff, #4CAF50);
+}
+
+.button--red {
+  @include button-types(#EF5350, #fff, #EF5350);
+}
+
+
+/*---------------------------
+    Form
+----------------------------*/
+.form-wrapper {
+  background-color: #fff;
+  padding: 35px;
+  border: 1px solid #efefef;
+  border-radius: 2px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+
+  & > label {
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+
+.form-group__field {
+  height: 35px;
+  width: 100%;
+  border: 1px solid #eee;
+  padding: 0 15px;
+}
+
+.form-wrapper__footer {
+  margin: 15px -35px -35px;
+  padding: 25px;
+  border-top: 1px solid lighten($line-color, 2%);
+  text-align: center;
+}
+
+
+
+/*---------------------------
+    Login
+----------------------------*/
+.form-wrapper--login {
+  margin: 0 auto;
+  max-width: 400px;
 }
