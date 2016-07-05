@@ -33,49 +33,31 @@
   <body>
     <header id="header" class="clearfix">
       <div class="header__logo">
-		<% if @mybrand %>  
-			<%= link_to  @mybrand.title, hub_path %>
-		<% else %>
-        	  Your Company  
-		<% end %>	
+        <% if @mybrand %>
+            <%= link_to @mybrand.title, hub_path %>
+        <% else %>
+            Your Company
+        <% end %>
       </div>
 
       <nav class="header__menu">
         <ul>
-			<% if @mybrand %>  
-				<li><%= link_to "Home", @mybrand.home_link %></li>
-				<li><%= link_to "Github", @mybrand.github_link %></li>
-				<li><%= link_to "Gitter", @mybrand.gitter_link %></li>
-			<% else %>
-				<li><a href="#">Home </a> </li>
-				<li><a href="#">Github </a> </li>
-				<li><a href="#">Gitter </a> </li>
-			<% end %>	
-			<% if current_user %>
-			
-            <li class="dropdown">
-              <a href="#" data-toggle="dropdown" class="dropdown-toggle"><%= current_user.email %><span class="caret"></span></a>
-
-              <ul class="dropdown-menu">
-                <% if current_user.admin? %>
-                    <li><a href="Profile"><%= link_to "DashBoard", dashboard_path %></a></li>
-                <% else %>
-
-                <% end %>
-                <li><a href="Log Out"> <%= link_to "Logout", logout_path %></a></li>
-              </ul>
-            </li>
-
+          <% if @mybrand %>
+              <li><%= link_to "Home", @mybrand.home_link %></li>
+              <li><%= link_to "Github", @mybrand.github_link %></li>
+              <li><%= link_to "Gitter", @mybrand.gitter_link %></li>
           <% else %>
-            
-            <li> <%= link_to "Log In", login_path %> </li>
+              <li><a href="#">Home </a></li>
+              <li><a href="#">Github </a></li>
+              <li><a href="#">Gitter </a></li>
           <% end %>
+
         </ul>
       </nav>
     </header>
 
-    <div id="wrapper">
-      <div class="wrapper__sidebar">
+    <div id="main">
+      <div class="main__sidebar">
         <ul class="sidebar">
           <% @categories.each do |category| %>
               <li>
@@ -91,7 +73,7 @@
         </ul>
       </div>
 
-      <section class="wrapper__page">
+      <section class="main__page">
         <%= yield %>
       </section>
 

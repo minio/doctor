@@ -32,52 +32,33 @@
 
 
   <body>
-    <header id="header" class="clearfix">
-      <div class="header__logo">
-		<% if @mybrand %>  
-			<%= link_to  @mybrand.title, hub_path %>
-		<% else %>
-        	  Your Company  
-		<% end %>	
-      </div>
+		<header id="header" class="clearfix">
+			<div class="header__logo">
+				<% if @mybrand %>
+						<%= link_to @mybrand.title, hub_path %>
+				<% else %>
+						Your Company
+				<% end %>
+			</div>
 
-      <nav class="header__menu">
-        <ul>
-			<% if @mybrand %>  
-				<li><%= link_to "Home", @mybrand.home_link %></li>
-				<li><%= link_to "Github", @mybrand.github_link %></li>
-				<li><%= link_to "Gitter", @mybrand.gitter_link %></li>
-			<% else %>
-				<li><a href="#">Home </a> </li>
-				<li><a href="#">Github </a> </li>
-				<li><a href="#">Gitter </a> </li>
-			<% end %>
-			<% if current_user %>
-			
-            <li class="dropdown">
-              <a href="#" data-toggle="dropdown" class="dropdown-toggle"><%= current_user.email %><span class="caret"></span></a>
+			<nav class="header__menu">
+				<ul>
+					<% if @mybrand %>
+							<li><%= link_to "Home", @mybrand.home_link %></li>
+							<li><%= link_to "Github", @mybrand.github_link %></li>
+							<li><%= link_to "Gitter", @mybrand.gitter_link %></li>
+					<% else %>
+							<li><a href="#">Home </a></li>
+							<li><a href="#">Github </a></li>
+							<li><a href="#">Gitter </a></li>
+					<% end %>
+				</ul>
+			</nav>
+		</header>
 
-              <ul class="dropdown-menu">
-                <% if current_user.admin? %>
-                    <li><a href="Profile"><%= link_to "DashBoard", dashboard_path %></a></li>
-                <% else %>
+    <div id="main" class="main--alt">
 
-                <% end %>
-                <li><a href="Log Out"> <%= link_to "Logout", logout_path %></a></li>
-              </ul>
-            </li>
-
-          <% else %>
-            
-            <li> <%= link_to "Log In", login_path %> </li>
-          <% end %>
-        </ul>
-      </nav>
-    </header>
-
-    <div id="wrapper">
-     
-      <div class="wrapper__page">
+      <div class="main__page">
         <%= yield %>
       </div>
 
