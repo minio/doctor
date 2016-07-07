@@ -21,6 +21,11 @@
         <% end %>
     <% end %>
   </div>
-
-  Doctor is licensed under Creative Commons Attribution 4.0 International License.
+	<% if @mybrand %>
+			<%=  @mybrand.footer_text %>
+			 
+	<% else %>
+		 	Doctor is licensed under Apache 2.0 License.
+	<% end %>
+  
 </footer>

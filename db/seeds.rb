@@ -10,10 +10,15 @@
 Document.delete_all
 Category.delete_all
 User.delete_all
+Brand.delete_all
 
 if User.count == 0
   User.new({:email =>'sysadmin@minio.io', :password => 'Doctor!23', :password_confirmation => 'Doctor!23', :admin => true }).save
   
+end
+
+if Brand.count == 0
+  Brand.new({:title => 'Doctor', :footer_text => 'Doctor Project is licensed under Apache 2.0 License.'}).save
 end
 
 c1 = Category.create!(title:'Minio Server',
