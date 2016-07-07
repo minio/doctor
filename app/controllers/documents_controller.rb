@@ -28,7 +28,7 @@ class DocumentsController < ApplicationController
   # GET /documents/1
   # GET /documents/1.json
   def show
-    @document = Document.find(params[:id])
+    @document = Document.friendly.find(params[:id])
     file = open(@document.link).read 
     @contents = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new, :tables=>true,:fenced_code_blocks => true,
           :no_intra_emphasis => true,
@@ -93,7 +93,7 @@ class DocumentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_document
-      @document = Document.find(params[:id])
+      @document = Document.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -35,6 +35,7 @@ gem 'coderay'
 gem 'bcrypt-ruby'
 gem 'toastr-rails'
 gem 'puma'
+gem 'friendly_id'
 
 
 # Use ActiveModel has_secure_password
