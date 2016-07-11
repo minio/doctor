@@ -16,8 +16,8 @@
     Titles
 ----------------------------*/
 .content-title {
-  text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  position: relative;
 
   h2 {
     margin: 0;
@@ -28,4 +28,68 @@
     color: $text-muted;
     margin-top: 10px;
   }
+}
+
+.content-title--box {
+  padding: 0 30px;
+}
+
+.content-title__action {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  color: $text-muted;
+  border: 1px solid $line-color;
+  line-height: 100%;
+  padding: 5px 10px;
+  border-radius: 2px;
+
+  &:hover {
+    background-color: #fff;
+  }
+}
+
+
+/*---------------------------
+    Dashboard Stats
+----------------------------*/
+.dashboard-stats {
+  margin-bottom: 30px;
+}
+
+.dashboard-stats__item {
+  border-radius: 2px;
+  padding: 20px 30px;
+  color: #fff;
+  margin-bottom: 30px;
+
+  h2 {
+    color: #fff;
+    margin: 0;
+    line-height: 100%;
+    font-size: 25px;
+    font-weight: 500;
+  }
+
+  small {
+    display: block;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+}
+
+.dashboard-stats__item--orange {
+  background-color: #FFA726;
+}
+
+.dashboard-stats__item--amber {
+  background-color: #FFC107;
+}
+
+.dashboard-stats__item--red {
+  background-color: #EF5350;
+}
+
+.dashboard-stats__item--deep-orange {
+  background-color: #FF7043;
 }

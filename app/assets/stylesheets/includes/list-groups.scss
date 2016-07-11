@@ -57,15 +57,14 @@ a.list-group__item,
 }
 
 .list-group__title {
-  font-weight: bold;
-  font-size: 14px;
+  font-weight: 500;
   color: $text-strong;
 }
 
 .list-group__text {
   color: $text-muted;
   margin-top: 8px;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .list-group__actions {

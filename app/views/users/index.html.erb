@@ -1,27 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class="action-header clearfix">
+  <div class="action-header__item action-header__search">
+    <input type="text" placeholder="Search users...">
+  </div>
 
-<h1>Listing Users</h1>
+  <div class="action-header__item action-header__right action-header__add">
+    <%= link_to 'New User', new_user_path, :class => 'button button--red' %>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Email</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container">
+  <div class="list-group-summary">Total 5 Users</div> <!-- need real data -->
 
-  <tbody>
+  <div class="list-group list-group--action">
     <% @users.each do |user| %>
-      <tr>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <div class="list-group__wrap">
+          <a class="list-group__item" href="<%= edit_user_path(user) %>">
+            <div class="list-group__title"><%= user.email %></div>
+          </a>
+
+          <div class="list-group__actions dropdown">
+            <i class="icon icon--more dropdown__toggle"></i>
+            <ul class="dropdown__menu dropdown__menu--right">
+              <li><%= link_to 'Edit', edit_user_path(user) %></li>
+              <li><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            </ul>
+          </div>
+        </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New User', new_user_path %>
+  </div>
+</div>

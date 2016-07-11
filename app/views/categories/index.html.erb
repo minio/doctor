@@ -1,4 +1,4 @@
-/*
+<!--/*
  * Doctor, (C) 2016 Minio, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,34 +12,39 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
- 
-<p id="notice"><%= notice %></p>
+ */-->
 
-<h1>Listing Categories</h1>
+<div class="action-header clearfix">
+  <div class="action-header__item action-header__search">
+    <input type="text" placeholder="Search categories...">
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Desc</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="action-header__item action-header__right action-header__add">
+    <%= link_to 'New Category', new_category_path, :class => 'button button--red' %>
+  </div>
+</div>
 
-  <tbody>
+<div class="container">
+  <div class="list-group-summary">Total 15 Categories</div>
+
+  <div class="list-group list-group--action">
     <% @categories.each do |category| %>
-      <tr>
-        <td><%= category.title %></td>
-        <td><%= category.desc %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <div class="list-group__wrap">
+          <a class="list-group__item" href="<%= edit_category_path(category) %>">
+            <div class="list-group__title"><%= category.title %></div>
+            <div class="list-group__text"><%= category.desc %></div>
+          </a>
+
+          <div class="list-group__actions dropdown">
+            <i class="icon icon--more dropdown__toggle"></i>
+            <ul class="dropdown__menu dropdown__menu--right">
+              <li><%= link_to 'Edit', edit_category_path(category) %></li>
+              <li><%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            </ul>
+          </div>
+        </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
 
-<br>
 
-<%= link_to 'New Category', new_category_path %>
