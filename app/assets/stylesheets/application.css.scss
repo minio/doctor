@@ -10,6 +10,22 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ *= #require_tree
  *= require_self
  */
+
+@import "includes/variables";
+@import "includes/mixins";
+@import "includes/base";
+@import "includes/layout";
+@import "includes/buttons";
+@import "includes/icons";
+@import "includes/form";
+@import "includes/dropdown";
+@import "includes/misc";
+@import "includes/header";
+@import "includes/sidebar";
+@import "includes/footer";
+@import "includes/action_header";
+@import "includes/list-groups";
+

@@ -1,0 +1,32 @@
+#main {
+  &:not(.main--alt) {
+    padding: 80px 0 0 300px;
+  }
+
+  &.main--alt {
+    padding: 80px 0 0;
+  }
+}
+
+.main__sidebar {
+  width: 300px;
+  z-index: 9;
+  position: fixed;
+  left: 0;
+  height: calc(100% - 80px);
+  overflow: hidden;
+  padding: 40px;
+  border-right: 1px solid $line-color;
+  background-color: #fff;
+
+  &:hover {
+    overflow-y: auto;
+  }
+}
+
+.main__page {
+  padding: 50px 50px 100px;
+  position: relative;
+}
+
+

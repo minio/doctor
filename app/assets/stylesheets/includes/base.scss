@@ -31,6 +31,18 @@ a, a:hover {
   text-decoration: none;
 }
 
+.container {
+  margin: 0 auto;
+
+  &:not(.container--small) {
+    max-width: 700px;
+  }
+}
+
+.container--small {
+  max-width: 400px;
+}
+
 #notice {
   color: green;
 }
@@ -70,5 +82,13 @@ a, a:hover {
   }
   &:after {
     clear: both;
+  }
+}
+
+input,
+textarea {
+  &:focus {
+    box-shadow: none;
+    outline-width: 0;
   }
 }
