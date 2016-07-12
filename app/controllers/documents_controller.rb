@@ -17,7 +17,7 @@
 class DocumentsController < ApplicationController
   require 'open-uri'
   before_action :set_document, only: [:show, :edit, :update, :destroy]
-  layout "application"
+  layout :resolve_layout
 
   # GET /documents
   # GET /documents.json
@@ -91,6 +91,16 @@ class DocumentsController < ApplicationController
   end
 
   private
+  
+    def resolve_layout
+     case action_name
+     when "index"
+       "adminlayout"
+     else
+       "application"
+     end
+    end
+  
     # Use callbacks to share common setup or constraints between actions.
     def set_document
       @document = Document.friendly.find(params[:id])

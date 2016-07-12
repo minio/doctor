@@ -15,7 +15,7 @@
  #
  
 class HubController < ApplicationController
-  layout 'application'
+  layout :resolve_layout
   
   require 'open-uri'
   def index
@@ -37,4 +37,18 @@ class HubController < ApplicationController
      @users = User.all
      @brands = Brand.all
   end
+  
+  private
+
+   def resolve_layout
+     case action_name
+     when "dashboard"
+       "adminlayout"
+     when "index"
+       "application"
+     else
+       "application"
+     end
+   end
+   
 end

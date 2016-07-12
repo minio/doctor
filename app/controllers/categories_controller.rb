@@ -16,7 +16,8 @@
 
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
-
+  layout :resolve_layout
+  
   # GET /categories
   # GET /categories.json
   def index
@@ -78,6 +79,16 @@ class CategoriesController < ApplicationController
   end
 
   private
+  
+    def resolve_layout
+     case action_name
+     when "index"
+       "adminlayout"
+     else
+       "application"
+     end
+    end
+   
     # Use callbacks to share common setup or constraints between actions.
     def set_category
       @category = Category.find(params[:id])
