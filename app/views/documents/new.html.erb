@@ -1,5 +1,13 @@
-<h1>New Document</h1>
+<div class="action-header clearfix">
+  <div class="action-header__item action-header__back">
+    <a href="<%= documents_path %>"></a>
+  </div>
+  <div class="action-header__item action-header__title">
+    Add new document
+  </div>
+</div>
 
-<%= render 'form' %>
+<div class="container">
+  <%= render 'form' %>
+</div>
 
-<%= link_to 'Back', documents_path %>

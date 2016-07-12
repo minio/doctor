@@ -1,5 +1,13 @@
-<h1 class="demo">New Category</h1>
+<div class="action-header clearfix">
+  <div class="action-header__item action-header__back">
+    <a href="<%= categories_path%>"></a>
+  </div>
+  <div class="action-header__item action-header__title">
+    Create new category  </div>
+</div>
 
-<%= render 'form' %>
 
-<%= link_to 'Back', categories_path %>
+<div class="container container--small">
+  <%= render 'form' %>
+</div>
+

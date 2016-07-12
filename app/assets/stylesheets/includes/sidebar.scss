@@ -1,0 +1,31 @@
+.sidebar {
+  &, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  & > li {
+    & > a {
+      color: #a2a2a2;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    & > ul {
+      margin: 10px 0 40px;
+      & > li {
+        & > a {
+          padding: 8px 40px;
+          color: #5c6267;
+          display: block;
+          margin: 0 -40px 0;
+
+          &:hover {
+            background-color: #e8e8e8;
+          }
+        }
+      }
+    }
+  }
+}

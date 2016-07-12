@@ -1,33 +1,34 @@
-<p id="notice"><%= notice %></p>
+<div class="action-header clearfix">
+  <div class="action-header__item action-header__search">
+    <input type="text" placeholder="Search documents...">
+  </div>
 
-<h1>Listing Documents</h1>
+  <div class="action-header__item action-header__right action-header__add">
+    <%= link_to 'New Document', new_document_path, :class => 'button button--red' %>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Link</th>
-      <th>Category</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
+<div class="container">
+  <div class="list-group-summary">Total 150 Documents</div> <!-- need real data -->
+
+  <div class="list-group list-group--action">
     <% @documents.each do |document| %>
-      <tr>
-        <td><%= document.name %></td>
-        <td><%= document.description %></td>
-        <td><%= document.link %></td>
-        <td><%= document.category %></td>
-        <td><%= link_to 'Show', document %></td>
-        <td><%= link_to 'Edit', edit_document_path(document) %></td>
-        <td><%= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <div class="list-group__wrap">
+          <a class="list-group__item" href="<%= edit_document_path(document) %>">
+            <div class="list-group__title"><%= document.name %></div>
+            <div class="list-group__text"><%= document.description %></div>
+          </a>
+
+          <div class="list-group__actions dropdown">
+            <i class="icon icon--more dropdown__toggle"></i>
+            <ul class="dropdown__menu dropdown__menu--right">
+              <li><%= link_to 'Edit', edit_document_path(document) %></li>
+              <li><%= link_to 'Github Link', document.link, :target => '_blank' %></li>
+              <li><%= link_to 'Delete', document, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            </ul>
+          </div>
+        </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Document', new_document_path %>
+  </div>
+</div>

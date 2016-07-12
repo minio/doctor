@@ -1,6 +1,12 @@
-<h1>Editing Document</h1>
+<div class="action-header clearfix">
+  <div class="action-header__item action-header__back">
+    <a href="<%= documents_path %>"></a>
+  </div>
+  <div class="action-header__item action-header__title">
+    Edit document
+  </div>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @document %> |
-<%= link_to 'Back', documents_path %>
+<div class="container">
+  <%= render 'form' %>
+</div>

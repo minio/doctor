@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 # Dropdown Menu
-$(document).ready ->
+$(document).on 'page:change', ->
   $('body').on 'click', '.dropdown__toggle', (e) ->
     e.preventDefault()
     $('body').append '<div class="backdrop backdrop--dropdown" />'

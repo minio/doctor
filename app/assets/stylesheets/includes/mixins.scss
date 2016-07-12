@@ -1,0 +1,78 @@
+@mixin button-types($bg-color, $color, $border-color) {
+  background-color: $bg-color;
+  color: $color;
+  border-color: $border-color;
+
+  &:hover,
+  &:focus {
+    background-color: darken($bg-color, 4%);
+  }
+}
+
+
+/*--------------------
+  Background Image
+--------------------*/
+@mixin image-retina($file-1x, $file-2x, $width, $height) {
+  background-image: url($file-1x);
+
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background-image: url($file-2x);
+    background-size: $width $height;
+  }
+}
+
+
+/*--------------------
+  Transition
+--------------------*/
+@mixin transition($transition, $transition-duratiob) {
+  -webkit-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+  -webkit-transition-duration: $transition-duratiob;
+  transition-duration: $transition-duratiob;
+}
+
+
+/*--------------------
+  Transform - Rotate
+--------------------*/
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+  -ms-transform: rotate($degrees);
+  -o-transform: rotate($degrees);
+  transform: rotate($degrees);
+}
+
+
+/*--------------------
+  Opacity
+--------------------*/
+@mixin opacity($value){
+  $IEValue: $value*100;
+  opacity: $value;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+  filter: alpha(opacity=$IEValue);
+}
+
+
+/*--------------------
+  Clearfix
+--------------------*/
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}

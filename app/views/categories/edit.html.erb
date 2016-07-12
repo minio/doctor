@@ -13,10 +13,17 @@
   See the License for the specific language governing permissions and
   limitations under the License.
   -->
- 
-<h1>Editing Category</h1>
 
-<%= render 'form' %>
+<div class="action-header clearfix">
+  <div class="action-header__item action-header__back">
+    <a href="<%= categories_path%>"></a>
+  </div>
+  <div class="action-header__item action-header__title">
+    Edit category information
+  </div>
+</div>
 
-<%= link_to 'Show', @category %> |
-<%= link_to 'Back', categories_path %>
+
+<div class="container container--small">
+  <%= render 'form' %>
+</div>
