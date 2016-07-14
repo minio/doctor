@@ -32,15 +32,16 @@
 
 
   <body>
+ 
 		<header id="header" class="clearfix">
 			<div class="header__logo">
 				<% if @mybrand %>
 						<%= link_to @mybrand.title, hub_path %>
 				<% else %>
-						Your Company
+						Your Project
 				<% end %>
 			</div>
-
+ 
 			<nav class="header__menu">
 				<ul>
 					<% if @mybrand %>
