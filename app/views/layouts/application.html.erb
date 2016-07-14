@@ -44,10 +44,12 @@
 
       <nav class="header__menu">
         <ul>
+ 
           <% if @mybrand %>
               <li><%= link_to "Home", @mybrand.home_link %></li>
               <li><%= link_to "Github", @mybrand.github_link %></li>
               <li><%= link_to "Gitter", @mybrand.gitter_link %></li>
+ 
           <% else %>
               <li><a href="#">Home </a></li>
               <li><a href="#">Github </a></li>
