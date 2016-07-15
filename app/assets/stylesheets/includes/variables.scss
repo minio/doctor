@@ -2,14 +2,17 @@
   Font
 --------------------*/
 $font-family: 'Roboto', sans-serif;
-$font-family-headings: 'Roboto', sans-serif;
-$font-size: 14px;
-$line-height: 20/15;
+$font-family-headings: 'Roboto Slab', serif;
+$font-size: 15px;
+$line-height: 25/15;
+$line-height-heading: 22/15;
 
 
 /*--------------------
   Text Colors
 --------------------*/
+$heading-color: #333;
+$link-color: #4FA2E4;
 $text-color: #5c6267;
 $text-muted: #9a9a9a;
 $text-strong: #4e4e4e;
