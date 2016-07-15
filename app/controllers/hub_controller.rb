@@ -33,8 +33,14 @@ class HubController < ApplicationController
   
   def dashboard
      @categories = Category.all
+     @cat_count = Category.count
+     
      @documents = Document.all
+     @doc_count = Document.count
+     
      @users = User.all
+     @user_count = User.count
+     
      @brands = Brand.all
   end
   
