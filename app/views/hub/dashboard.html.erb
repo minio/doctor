@@ -19,14 +19,14 @@
 <div class="row dashboard-stats">
 	<div class="col-sm-6 col-md-3">
 		<div class="dashboard-stats__item dashboard-stats__item--deep-orange">
-			<h2>52</h2>
-			<small>Total Documensts</small>
+			<h2><%= @doc_count %></h2>
+			<small>Total Documents</small>
 		</div>
 	</div>
 
 	<div class="col-sm-6 col-md-3">
 		<div class="dashboard-stats__item dashboard-stats__item--orange">
-			<h2>12</h2>
+			<h2><%= @cat_count %></h2>
 			<small>Total Categories</small>
 		</div>
 	</div>
@@ -34,7 +34,7 @@
 
 	<div class="col-sm-6 col-md-3">
 		<div class="dashboard-stats__item dashboard-stats__item--amber">
-			<h2>05</h2>
+			<h2><%= @user_count %></h2>
 			<small>Total Users</small>
 		</div>
 	</div>
