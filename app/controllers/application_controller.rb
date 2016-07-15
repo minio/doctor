@@ -49,7 +49,8 @@ class ApplicationController < ActionController::Base
   end  
 
   def load_sidebar
-    @categories = Category.order(:id)
+    
+    @categories = Category.includes(:documents).order("documents.id asc")
     @documents = Document.where(:category_id => params[:id])
     @mybrand = Brand.first 
   end

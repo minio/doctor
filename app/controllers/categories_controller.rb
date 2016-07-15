@@ -82,7 +82,7 @@ class CategoriesController < ApplicationController
   
     def resolve_layout
      case action_name
-     when "index"
+     when "index","edit"
        "adminlayout"
      else
        "application"
