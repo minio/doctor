@@ -1,3 +1,6 @@
+/*--------------------
+  Buttons
+--------------------*/
 @mixin button-types($bg-color, $color, $border-color) {
   background-color: $bg-color;
   color: $color;
@@ -6,6 +9,7 @@
   &:hover,
   &:focus {
     background-color: darken($bg-color, 4%);
+    color: $color;
   }
 }
 

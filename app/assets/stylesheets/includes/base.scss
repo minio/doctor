@@ -6,68 +6,50 @@
 }
 
 body {
-  background-color: #fafafa;
-  color: #5c6267;
+  background-color: $body-bg;
+  color: $text-color;
   font-family: $font-family;
   font-size: $font-size;
+  line-height: $line-height;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-headings;
+  font-weight: $headings-font-weight;
+  color: $heading-color;
+  line-height: $line-height-heading;
 }
 
-pre {
-  background-color: #f1f1f1;
-  padding: 20px 30px;
-  color: #373d42;
+h1 {
+  & > a {
+    & > img {
+      width: 100px;
+      vertical-align: middle;
+      margin-left: 20px;
+    }
+  }
+}
+
+p {
+  margin: 0 0 15px;
+}
+
+a {
+  color: $link-color;
+  
+  &:hover {
+    color: darken($link-color, 10%);
+  }
+  
+  &, &:hover {
+    text-decoration: none;
+  }
+}
+
+img {
   border-radius: 2px;
-  overflow-x: auto;
-}
-
-a, a:hover {
-  text-decoration: none;
-}
-
-.container {
-  margin: 0 auto;
-
-  &:not(.container--small) {
-    max-width: 700px;
-  }
-}
-
-.container--small {
-  max-width: 400px;
-}
-
-#notice {
-  color: green;
-}
-
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
-
-#error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-
-  h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px;
-    margin-bottom: 0px;
-    background-color: #c00;
-    color: #fff;
-  }
+  max-width: 800px;
+  width: 100%;
 }
 
 .clearfix {

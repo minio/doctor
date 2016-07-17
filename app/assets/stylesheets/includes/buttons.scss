@@ -6,6 +6,7 @@
   border-style: solid;
   border-width: 1px;
   display: inline-block;
+  font-size: $font-size - 1;
 
   &:not([class*="button--"]) {
     @include button-types(#fff, $text-color, #efefef);

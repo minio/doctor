@@ -1,6 +1,6 @@
 .action-header {
   border-bottom: 1px solid $line-color;
-  margin: -50px -50px 70px;
+  margin: -45px -50px 70px;
   height: 63px;
 }
 
@@ -13,9 +13,10 @@
     padding-left: 30px;
     background-position: left center;
     background-repeat: no-repeat;
-    height: 63px;
+    height: 61px;
     @include image-retina('search.png', 'search@2x.png', 18px, 19px);
     color: darken($text-muted, 30%);
+    line-height: 63px;
   }
 }
 

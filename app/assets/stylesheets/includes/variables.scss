@@ -1,8 +1,11 @@
+$body-bg: #fafafa;
+
 /*--------------------
   Font
 --------------------*/
 $font-family: 'Roboto', sans-serif;
 $font-family-headings: 'Roboto Slab', serif;
+$font-family-mono: 'Roboto Mono', monospace;
 $font-size: 15px;
 $line-height: 25/15;
 $line-height-heading: 22/15;
@@ -18,8 +21,17 @@ $text-muted: #9a9a9a;
 $text-strong: #4e4e4e;
 
 
+$headings-font-weight: 400;
+
+
 /*--------------------
   Border Colors
 --------------------*/
 $line-color: #efefef;
 $input-border: #f4f4f4;
+
+
+/*--------------------
+  Sidebar
+--------------------*/
+$sidebar-bg: #f1f1f1;

@@ -1,0 +1,30 @@
+pre {
+  font-family: $font-family-mono;
+  background-color: #f1f1f1;
+  padding: 20px 30px;
+  color: darken($text-color, 10%);
+  border-radius: 2px;
+  overflow-x: auto;
+  margin-bottom: 30px;
+
+  code {
+    padding: 0;
+    white-space: normal;
+    background-color: transparent;
+    color: darken($text-color, 10%);
+  }
+}
+
+code {
+  background: #F1F1F1;
+  padding: 3px 10px;
+  white-space: pre;
+  position: relative;
+  top: -1px;
+  border-radius: 2px;
+  font-size: $font-size - 1;
+  
+  &, &:hover {
+    color: $text-color;
+  }
+}

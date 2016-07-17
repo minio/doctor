@@ -35,8 +35,9 @@
   & > li {
     & > a {
       display: block;
-      padding: 10px 20px;
+      padding: 8px 20px;
       color: $text-color;
+      font-size: $font-size - 1;
 
       &:hover {
         background-color: #f9f9f9;

@@ -14,6 +14,7 @@
  *= require_self
  */
 
+@import "normalize";
 @import "includes/variables";
 @import "includes/mixins";
 @import "includes/grid";
@@ -29,4 +30,6 @@
 @import "includes/footer";
 @import "includes/action-header";
 @import "includes/list-groups";
+@import "includes/table";
+@import "includes/code";
 
