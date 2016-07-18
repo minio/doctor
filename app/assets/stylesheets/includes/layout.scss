@@ -16,8 +16,7 @@
   height: calc(100% - 80px);
   overflow: hidden;
   padding: 40px;
-  border-right: 1px solid $line-color;
-  background-color: #fff;
+  background-color: $sidebar-bg;
 
   &:hover {
     overflow-y: auto;
@@ -27,6 +26,20 @@
 .main__page {
   padding: 50px 50px 100px;
   position: relative;
+
+  & > h1:first-child {
+    margin-top: 0;
+  }
 }
 
+.container {
+  margin: 0 auto;
 
+  &:not(.container--small) {
+    max-width: 700px;
+  }
+}
+
+.container--small {
+  max-width: 400px;
+}

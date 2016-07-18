@@ -23,12 +23,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 
-    <!-- Latest compiled and minified CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
-    <link rel="stylesheet" href="css/prism.css">
-
-    <script src="https://cdn.jsdelivr.net/prism/1.2.0/prism.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab|Roboto+Mono" rel="stylesheet">
   </head>
 
 
@@ -61,14 +56,17 @@
     <div id="main">
       <div class="main__sidebar">
         <ul class="sidebar">
-          <li><%= link_to "Categories", categories_path %></li>
-		  <li><%= link_to "Documents", documents_path %></li>
-		  <li><%= link_to "Brand", brands_path %></li>
-		  <li><%= link_to "Admin", users_path %></li>
-                       
+          <li>
+            <a href="">Welcome Admin!</a>
+
+            <ul>
+              <li><%= link_to "Categories", categories_path %></li>
+              <li><%= link_to "Documents", documents_path %></li>
+              <li><%= link_to "Brand", brands_path %></li>
+              <li><%= link_to "Admin", users_path %></li>
+            </ul>
+          </li>
          </ul>
-                
-        </ul>
       </div>
 
       <section class="main__page">
@@ -77,5 +75,7 @@
 
       <%= render 'layouts/footer' %>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/prism/1.2.0/prism.js"></script>
   </body>
 </html>

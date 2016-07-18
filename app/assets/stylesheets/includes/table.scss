@@ -1,0 +1,22 @@
+table {
+  background-color: #fff;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 30px;
+  overflow-x: auto;
+}
+
+table, th, td {
+  border: 1px solid $line-color;
+  font-size: $font-size - 1;
+}
+
+th {
+  text-align: left;
+  font-weight: normal;
+  background-color: lighten($line-color, 3%);
+}
+
+th, td {
+  padding: 10px 15px;
+}

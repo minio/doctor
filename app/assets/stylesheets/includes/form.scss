@@ -30,6 +30,7 @@
   border: 1px solid $input-border;
   padding: 10px;
   color: $text-muted;
+  font-size: $font-size - 1;
   @include transition(all, 300ms);
 
   &:focus {
