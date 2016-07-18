@@ -36,9 +36,13 @@ class DocumentsController < ApplicationController
           :strikethrough => true,
           :lax_html_blocks => true,
           :superscript => true).render(file)
-    respond_to do |format|
-       format.html { render :inline => @contents.html_safe , :layout=>'application'  }
-    end  
+          
+          
+    # prepare the suggested edit URL from the document.link      
+    @gitlink = @document.link.dup
+    @gitlink = @gitlink.gsub("raw.githubusercontent","github")
+    @gitlink = @gitlink.sub('master', 'blob/master') 
+     
   end
 
   # GET /documents/new
