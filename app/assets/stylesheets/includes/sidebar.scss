@@ -1,4 +1,4 @@
-.sidebar {
+.main__menu {
   &, ul {
     list-style: none;
     margin: 0;
@@ -10,6 +10,7 @@
       color: #a2a2a2;
       font-size: 12px;
       text-transform: uppercase;
+      display: block;
     }
 
     & > ul {
@@ -25,6 +26,20 @@
             background-color: #e8e8e8;
           }
         }
+      }
+    }
+  }
+}
+
+.main__menu__icons {
+  & > li {
+    & > a {
+      position: relative;
+
+      & > i {
+        height: 100%;
+        width: 25px;
+        font-size: 14px;
       }
     }
   }
