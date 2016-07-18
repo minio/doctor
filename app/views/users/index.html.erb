@@ -9,7 +9,7 @@
 </div>
 
 <div class="container">
-  <div class="list-group-summary">Total 5 Users</div> <!-- need real data -->
+  <div class="list-group-summary">Total <%= @users.count %> Users</div> <!-- need real data -->
 
   <div class="list-group list-group--action">
     <% @users.each do |user| %>
