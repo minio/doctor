@@ -55,15 +55,15 @@
 
     <div id="main">
       <div class="main__sidebar">
-        <ul class="sidebar">
+        <ul class="main__menu">
           <li>
             <a href="">Welcome Admin!</a>
 
-            <ul>
-              <li><%= link_to "Categories", categories_path %></li>
-              <li><%= link_to "Documents", documents_path %></li>
-              <li><%= link_to "Brand", brands_path %></li>
-              <li><%= link_to "Admin", users_path %></li>
+            <ul class="main__menu__icons">
+              <li><%= link_to (icon("th-large")+ "Categories"), categories_path %></li>
+              <li><%= link_to (icon("file-text")+ "Documents"), documents_path %></li>
+              <li><%= link_to (icon("adjust")+ "Brand"), brands_path %></li>
+              <li><%= link_to (icon("user")+ "Users"), users_path %></li>
             </ul>
           </li>
          </ul>
