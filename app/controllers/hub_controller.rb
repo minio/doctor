@@ -29,6 +29,12 @@ class HubController < ApplicationController
           :strikethrough => true,
           :lax_html_blocks => true,
           :superscript => true).render(file)
+    
+    # prepare the suggested edit URL from the document.link          
+    @gitlink = @document.link.dup
+    @gitlink = @gitlink.sub('raw.githubusercontent','github')
+    @gitlink = @gitlink.sub('master', 'blob/master') 
+            
   end
   
   def dashboard

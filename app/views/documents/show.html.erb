@@ -1,24 +1,8 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @document.name %>
-</p>
+ <!-- Needs to be Styled. Please put styling params in :class-->
 
-<p>
-  <strong>Description:</strong>
-  <%= @document.description %>
-</p>
-
-<p>
-  <strong>Link:</strong>
-  <%= @document.link %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @document.category %>
-</p>
-
-<%= link_to 'Edit', edit_document_path(@document) %> |
-<%= link_to 'Back', documents_path %>
+ <%= link_to 'suggest edits', @gitlink, :class=> "btn btn-primary" %>
+	 	 
+ <%= @contents.html_safe %>
+	 
+ 
