@@ -58,6 +58,8 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.7.0)
+    font-awesome-sass (4.6.2)
+      sass (>= 3.2)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
     github-markup (1.4.0)
@@ -179,6 +181,7 @@ DEPENDENCIES
   byebug
   coderay
   coffee-rails (~> 4.1.0)
+  font-awesome-sass (~> 4.6.2)
   friendly_id
   github-markup
   jbuilder (~> 2.0)
