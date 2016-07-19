@@ -29,6 +29,10 @@
 
   <body>
     <header id="header" class="clearfix">
+      <div class="header__trigger">
+        <%= icon('bars') %>
+      </div>
+
       <div class="header__logo">
         <% if @mybrand %>
             <%= link_to @mybrand.title, hub_path %>

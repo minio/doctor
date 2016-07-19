@@ -23,17 +23,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/prism/1.2.0/themes/prism.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/prism/1.2.0/themes/prism-coy.css">
-    <script src="https://cdn.jsdelivr.net/prism/1.2.0/prism.js"></script>
   </head>
-
 
   <body>
  
-		<header id="header" class="clearfix">
+		<header id="header" class="header--alt clearfix">
 			<div class="header__logo">
 				<% if @mybrand %>
 						<%= link_to @mybrand.title, hub_path %>
@@ -66,6 +61,5 @@
     </div>
 
     <%= render 'layouts/footer' %>
-
   </body>
 </html>

@@ -1,7 +1,11 @@
 .action-header {
   border-bottom: 1px solid $line-color;
-  margin: -45px -50px 70px;
-  height: 63px;
+  margin: -48px -50px 50px;
+  height: 62px;
+
+  @media (max-width: $screen-sm-max) {
+    margin: -10px -25px 50px;
+  }
 }
 
 .action-header__search {
@@ -29,7 +33,7 @@
 }
 
 .action-header__add {
-  padding: 15px 25px;
+  padding: 14px 25px;
 }
 
 .action-header__right {
@@ -39,7 +43,7 @@
 .action-header__back {
   & > a {
     width: 70px;
-    height: 63px;
+    height: 62px;
     display: inline-block;
     margin-top: -1px;
     top: 2px;

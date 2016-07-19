@@ -36,7 +36,7 @@
 
 .content-title__action {
   position: absolute;
-  top: 0;
+  top: 5px;
   right: 25px;
   color: $text-muted;
   border: 1px solid $line-color;
@@ -96,29 +96,44 @@
   background-color: #FF7043;
 }
 
+.dashboard-recent {
+  .col-lg-6 {
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+}
 
 /*---------------------------
     Suggest Edit
 ----------------------------*/
-.suggest-edit {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+@media(min-width: $screen-md-min) {
+  .suggest-edit {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 
-  .dropdown__toggle {
-    background: #fff;
-    font-size: 12px;
-    padding: 5px 10px;
-    display: inline-block;
-    line-height: 100%;
-    border-radius: 2px;
-    border: 1px solid $line-color;
+    .dropdown__toggle {
+      background: #fff;
+      font-size: 12px;
+      padding: 5px 10px;
+      display: inline-block;
+      line-height: 100%;
+      border-radius: 2px;
+      border: 1px solid $line-color;
 
-    &,
-    &:hover,
-    &:focus {
-      color: $text-color;
+      &,
+      &:hover,
+      &:focus {
+        color: $text-color;
+      }
     }
+  }
+}
+
+@media(max-width: $screen-sm-max) {
+  .suggest-edit {
+    display: none;
   }
 }
 
@@ -180,5 +195,30 @@
   }
   100% {
     @include rotate(360deg);
+  }
+}
+
+
+/*---------------------------
+    Prevent Scroll
+----------------------------*/
+.prevent-scroll {
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+/*---------------------------
+    Clearfix
+----------------------------*/
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
   }
 }

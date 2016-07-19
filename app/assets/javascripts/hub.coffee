@@ -4,19 +4,25 @@
 
 
 $(document).on 'page:change', ->
+  $this = $(this)
+  $body = $('body')
+
+
   #-----------------------
   # Dropdown Menu
   #-----------------------
 
   # Open
-  $('body').on 'click', '.dropdown__toggle', (e) ->
+  $body.on 'click', '.dropdown__toggle', (e) ->
     e.preventDefault()
-    $('body').append '<div class="backdrop backdrop--dropdown" />'
-    $(this).closest('.dropdown').addClass 'dropdown--open'
+    $body.append '<div class="backdrop backdrop--dropdown" />'
+    $(this)
+      .closest('.dropdown')
+      .addClass 'dropdown--open'
     return
 
   # Close
-  $('body').on 'click', '.backdrop--dropdown', (e) ->
+  $body.on 'click', '.backdrop--dropdown', (e) ->
     e.preventDefault()
     $(this).remove()
     $('.dropdown--open').removeClass 'dropdown--open'
@@ -31,25 +37,24 @@ $(document).on 'page:change', ->
   closeImgPreview = ->
     $closeTarget = $('.img-preview')
     $closeTarget.fadeOut 200
-    setTimeout (->
-      $closeTarget.remove()
-      return
-    ), 250
+
+    callBack = -> $closeTarget.remove()
+    setTimeout callBack, 250
     return
 
   # Open
-  $('body').on 'click', '*:not("a") > img:not(".img-preview__img")', ->
+  $body.on 'click', '*:not("a") > img:not(".img-preview__img")', ->
     $imgSrc = $(this).attr('src')
     $imgWrap =  '<div class="img-preview">' +
                   '<div class="img-preview__close img-preview__close--back"></div>' +
                   '<i class="img-preview__close img-preview__close--icon fa fa-close"></i>' +
                   '<img class="img-preview__img" src=' + $imgSrc + ' alt="">' +
                 '</div>'
-    $('body').append $imgWrap
+    $body.append $imgWrap
     return
 
   # Close on icon/back click
-  $('body').on 'click', '.img-preview__close', ->
+  $body.on 'click', '.img-preview__close', ->
     closeImgPreview()
     return
 
@@ -68,7 +73,30 @@ $(document).on 'page:change', ->
   $(document).one 'page:fetch', ->
     $loader = '<div class="page-loader"><i /></div>'
 
-    $('.main__page').prepend $loader;
+    $('.main__page').prepend $loader
+    return
+
+
+
+  #-----------------------------
+  # Mobile Sidebar
+  #-----------------------------
+
+  #Open
+  $body.on 'click', '.header__trigger', ->
+    $sidebarBckdrop =   '<div class="backdrop backdrop--sidebar" />'
+
+    $body
+      .addClass('prevent-scroll')
+      .append $sidebarBckdrop
+    $('.main__sidebar').addClass 'toggled'
+    return
+
+  #Close
+  $body.on 'click', '.backdrop--sidebar', ->
+    $body.removeClass 'prevent-scroll'
+    $(this).remove()
+    $('.main__sidebar').removeClass 'toggled'
     return
 
   return

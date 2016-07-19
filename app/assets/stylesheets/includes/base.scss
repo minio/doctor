@@ -31,7 +31,6 @@ h1 {
     & > img {
       width: 100px;
       vertical-align: middle;
-      margin-left: 20px;
     }
   }
 }
@@ -63,14 +62,9 @@ a {
   }
 }
 
-.clearfix {
-  *zoom: 1;
-  &:before,
-  &:after {
-    display: table;
-    content: "";
-  }
-  &:after {
-    clear: both;
+ul {
+  & > li,
+  & > li > a {
+    font-size: $font-size - 1;
   }
 }
