@@ -52,10 +52,15 @@ a {
   }
 }
 
-img {
-  border-radius: 2px;
-  max-width: 800px;
-  width: 100%;
+*:not(a) {
+  & > img {
+    border-radius: 2px;
+    max-width: 800px;
+    width: 100%;
+    border: 1px solid $line-color;
+    padding: 5px;
+    background-color: #fff;
+  }
 }
 
 .clearfix {

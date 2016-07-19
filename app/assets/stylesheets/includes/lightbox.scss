@@ -1,9 +1,6 @@
 *:not(a) {
   img {
     &:not(.img-preview__img) {
-      border: 1px solid $line-color;
-      padding: 5px;
-      background-color: #fff;
       @include transition(box-shadow, 300ms);
       cursor: pointer;
 
