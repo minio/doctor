@@ -95,3 +95,29 @@
 .dashboard-stats__item--deep-orange {
   background-color: #FF7043;
 }
+
+
+/*---------------------------
+    Suggest Edit
+----------------------------*/
+.suggest-edit {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  .dropdown__toggle {
+    background: #fff;
+    font-size: 12px;
+    padding: 5px 10px;
+    display: inline-block;
+    line-height: 100%;
+    border-radius: 2px;
+    border: 1px solid $line-color;
+
+    &,
+    &:hover,
+    &:focus {
+      color: $text-color;
+    }
+  }
+}

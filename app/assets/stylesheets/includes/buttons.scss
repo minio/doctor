@@ -7,11 +7,17 @@
   border-width: 1px;
   display: inline-block;
   font-size: $font-size - 1;
+  text-align: center;
 
   &:not([class*="button--"]) {
     @include button-types(#fff, $text-color, #efefef);
 
   }
+}
+
+.button--block {
+  display: block;
+  width: 100%;
 }
 
 .button--blue {

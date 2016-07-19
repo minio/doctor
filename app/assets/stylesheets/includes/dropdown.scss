@@ -27,6 +27,7 @@
   padding: 10px 0;
   text-align: left;
   display: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.02);
 
   &:not(.dropdown__menu--right) {
     left: 0;
@@ -48,11 +49,24 @@
 
 .dropdown__menu--right {
   right: 0;
-  text-align: right;
 }
 
 .dropdown--up {
   .dropdown__menu {
     bottom: 0;
   }
+}
+
+.dropdown__menu--block {
+  padding: 20px;
+  min-width: 250px;
+
+  .button {
+    margin-top: 20px;
+  }
+}
+
+.dropdown__title {
+  color: $text-strong;
+  margin-bottom: 10px;
 }
