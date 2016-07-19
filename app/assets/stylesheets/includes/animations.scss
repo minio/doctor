@@ -1,0 +1,26 @@
+/*---------------------------
+    zoomIn
+----------------------------*/
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    @include scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/*---------------------------
+    fadeIn
+----------------------------*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
