@@ -1,9 +1,6 @@
 *:not(a) {
   img {
     &:not(.img-preview__img) {
-      border: 1px solid $line-color;
-      padding: 5px;
-      background-color: #fff;
       @include transition(box-shadow, 300ms);
       cursor: pointer;
 
@@ -78,24 +75,3 @@
 }
 
 
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    -webkit-transform: scale3d(.3, .3, .3);
-    transform: scale3d(.3, .3, .3);
-  }
-
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-}

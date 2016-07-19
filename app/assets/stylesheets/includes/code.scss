@@ -9,7 +9,6 @@ pre {
 
   code {
     padding: 0;
-    white-space: normal;
     background-color: transparent;
     color: darken($text-color, 10%);
   }
@@ -23,6 +22,7 @@ code {
   top: -1px;
   border-radius: 2px;
   font-size: $font-size - 1;
+  display: inline-block;
   
   &, &:hover {
     color: $text-color;

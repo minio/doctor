@@ -1,6 +1,6 @@
 #header {
   background-color: #373d42;
-  padding: 30px 40px;
+  padding: 30px 30px 30px 40px;
   clear: both;
   position: fixed;
   top: 0;
@@ -8,8 +8,16 @@
   width: 100%;
   z-index: 10;
 
-  &, a {
-    color: #fff;
+  @media (max-width: $screen-sm-max) {
+    min-height: 62px;
+
+    &:not(.header--alt) {
+      padding: 20px 20px 20px 78px;
+    }
+
+    &.header--alt {
+      padding: 20px;
+    }
   }
 }
 
@@ -17,24 +25,64 @@
   float: left;
   font-size: 22px;
   line-height: 100%;
+  text-transform: uppercase;
+
+  &, a {
+    color: #fff;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    font-size: 17px;
+    line-height: 22px;
+  }
 }
 
 .header__menu {
-  float: right;
+  @media (min-width: $screen-sm-min) {
+    float: right;
 
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
 
-    & > li {
-      display: inline-block;
+      & > li {
+        display: inline-block;
 
-      & > a {
-        display: block;
-        font-size: 15px;
-        padding: 0 10px;
+        & > a {
+          display: block;
+          font-size: 15px;
+          padding: 0 10px;
+          color: rgba(255,255,255,0.6);
+
+          &:hover {
+            color: rgba(255,255,255,0.9);
+          }
+        }
       }
     }
+  }
+
+  @media (max-width: $screen-xs-max) {
+    display: none;
+  }
+}
+
+.header__trigger {
+  font-size: 17px;
+  line-height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 60px;
+  text-align: center;
+  padding-top: 22px;
+  background-color: rgba(0,0,0,0.15);
+  cursor: pointer;
+  color: #fff;
+
+  @media (min-width: $screen-md-min) {
+    display: none;
   }
 }

@@ -14,17 +14,17 @@
   limitations under the License.
  -->
 
-<p id="notice"><%= notice %></p>
+<div id="notice"><%= notice %></div>
 
 <div class="row dashboard-stats">
-	<div class="col-sm-6 col-md-3">
+	<div class="col-sm-4 col-lg-3">
 		<div class="dashboard-stats__item dashboard-stats__item--deep-orange">
 			<h2><%= @doc_count %></h2>
 			<small>Total Documents</small>
 		</div>
 	</div>
 
-	<div class="col-sm-6 col-md-3">
+	<div class="col-sm-4 col-lg-3">
 		<div class="dashboard-stats__item dashboard-stats__item--orange">
 			<h2><%= @cat_count %></h2>
 			<small>Total Categories</small>
@@ -32,7 +32,7 @@
 	</div>
 
 
-	<div class="col-sm-6 col-md-3">
+	<div class="col-sm-4 col-lg-3">
 		<div class="dashboard-stats__item dashboard-stats__item--amber">
 			<h2><%= @user_count %></h2>
 			<small>Total Users</small>
@@ -41,8 +41,8 @@
 </div>
 
 
-<div class="row">
-	<div class="col-md-6">
+<div class="row dashboard-recent">
+	<div class="col-lg-6">
 		<header class="content-title content-title--box">
 			<h2>Recent Categories</h2>
 
@@ -69,7 +69,7 @@
 		</div>
 	</div>
 
-	<div class="col-md-6">
+	<div class="col-lg-6">
 		<header class="content-title content-title--box">
 			<h2>Recent Documents</h2>
 

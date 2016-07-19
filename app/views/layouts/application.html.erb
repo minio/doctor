@@ -29,6 +29,10 @@
 
   <body>
     <header id="header" class="clearfix">
+      <div class="header__trigger">
+        <%= icon('bars') %>
+      </div>
+
       <div class="header__logo">
         <% if @mybrand %>
             <%= link_to @mybrand.title, hub_path %>
@@ -64,7 +68,7 @@
                 <% if category.documents.any? %>
                     <ul>
                       <% category.documents.each do |doc| %>
-                          <li><%= link_to doc.name, document_path(doc.slug) %></li>
+                          <li><%= link_to doc.name, document_path(doc.slug), :class => current_class?(document_path(doc.slug)) %></li>
                       <% end %>
                     </ul>
                 <% end %>

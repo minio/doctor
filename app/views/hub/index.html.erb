@@ -1,9 +1,17 @@
+<div class="dropdown suggest-edit">
+  <a href="" class="dropdown__toggle">Suggest Edit</a>
 
- <!-- Needs to be styled. Please put styling params in :class -->
- 
- <%= link_to 'suggest edits', @gitlink, :class=> "btn btn-primary" %>
-	 	 
- <%= @contents.html_safe %>
+  <div class="dropdown__menu dropdown__menu--right dropdown__menu--block">
+    <div class="dropdown__title">Suggest Edit</div>
+
+    <small class="text-muted">Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</small> <!-- Need real texts-->
+
+    <%= link_to icon('github')+' Edit in Github', @gitlink, :class=> "button button--blue button--block", :target => '_blank' %>
+  </div>
+</div>
+
+
+<%= @contents.html_safe %>
 	 
 
 

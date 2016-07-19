@@ -36,7 +36,7 @@
 
 .content-title__action {
   position: absolute;
-  top: 0;
+  top: 5px;
   right: 25px;
   color: $text-muted;
   border: 1px solid $line-color;
@@ -94,4 +94,131 @@
 
 .dashboard-stats__item--deep-orange {
   background-color: #FF7043;
+}
+
+.dashboard-recent {
+  .col-lg-6 {
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+/*---------------------------
+    Suggest Edit
+----------------------------*/
+@media(min-width: $screen-md-min) {
+  .suggest-edit {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    .dropdown__toggle {
+      background: #fff;
+      font-size: 12px;
+      padding: 5px 10px;
+      display: inline-block;
+      line-height: 100%;
+      border-radius: 2px;
+      border: 1px solid $line-color;
+
+      &,
+      &:hover,
+      &:focus {
+        color: $text-color;
+      }
+    }
+  }
+}
+
+@media(max-width: $screen-sm-max) {
+  .suggest-edit {
+    display: none;
+  }
+}
+
+
+/*---------------------------
+    Page Loader
+----------------------------*/
+.page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 20px;
+  z-index: 1;
+  @include animation(fadeIn, 300ms);
+
+  & > i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 2px solid #e7e7e7;
+    border-left-color: $blue;
+    display: inline-block;
+    @include animation(spinner, 800ms);
+    @include animation-timing(linear);
+    @include animation-iteration(infinite);
+
+    &,
+    &:after {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+    }
+
+    &:after {
+      content: '';
+    }
+  }
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    @include rotate(0deg);
+  }
+  100% {
+    @include rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    @include rotate(0deg);
+  }
+  100% {
+    @include rotate(360deg);
+  }
+}
+
+
+/*---------------------------
+    Prevent Scroll
+----------------------------*/
+.prevent-scroll {
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+/*---------------------------
+    Clearfix
+----------------------------*/
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
 }
