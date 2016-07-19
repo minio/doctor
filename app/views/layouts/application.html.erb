@@ -68,7 +68,7 @@
                 <% if category.documents.any? %>
                     <ul>
                       <% category.documents.each do |doc| %>
-                          <li><%= link_to doc.name, document_path(doc.slug) %></li>
+                          <li><%= link_to doc.name, document_path(doc.slug), :class => current_class?(document_path(doc.slug)) %></li>
                       <% end %>
                     </ul>
                 <% end %>

@@ -51,7 +51,11 @@
           margin: 0 -40px 0;
 
           &:hover {
-            background-color: #e8e8e8;
+            background-color: #ededed;
+          }
+
+          &.active {
+            background-color: #e5e5e5;
           }
         }
       }

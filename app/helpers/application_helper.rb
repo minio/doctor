@@ -13,9 +13,12 @@
  # See the License for the specific language governing permissions and
  # limitations under the License.
 #
- 
+
 module ApplicationHelper
-  
- 
-  
+
+    def current_class?(check_path)
+        return 'active' if request.path == check_path
+        ''
+    end
+
 end
