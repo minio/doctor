@@ -1,6 +1,6 @@
-/*--------------------
+/*------------------------
   Buttons
---------------------*/
+------------------------*/
 @mixin button-types($bg-color, $color, $border-color) {
   background-color: $bg-color;
   color: $color;
@@ -14,9 +14,9 @@
 }
 
 
-/*--------------------
+/*------------------------
   Background Image
---------------------*/
+------------------------*/
 @mixin image-retina($file-1x, $file-2x, $width, $height) {
   background-image: url($file-1x);
 
@@ -33,9 +33,9 @@
 }
 
 
-/*--------------------
+/*------------------------
   Transition
---------------------*/
+------------------------*/
 @mixin transition($transition, $transition-duratiob) {
   -webkit-transition: $transition;
   -o-transition: $transition;
@@ -45,14 +45,54 @@
 }
 
 
-/*--------------------
+/*------------------------
+  Animation
+------------------------*/
+@mixin animation($name, $duration: 300ms) {
+  -webkit-animation-name: $name;
+  animation-name: $name;
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+
+/*------------------------
+  Animation Timing
+------------------------*/
+@mixin animation-timing($timing) {
+  -webkit-animation-timing-function: $timing;
+  animation-timing-function: $timing;
+}
+
+
+/*------------------------
+  Animation Iteration
+------------------------*/
+@mixin animation-iteration($iteration) {
+  -webkit-animation-iteration-count: $iteration;
+  animation-iteration-count: $iteration;
+}
+
+
+/*------------------------
   Transform - Rotate
---------------------*/
+------------------------*/
 @mixin rotate($degrees) {
   -webkit-transform: rotate($degrees);
   -ms-transform: rotate($degrees);
   -o-transform: rotate($degrees);
   transform: rotate($degrees);
+}
+
+
+/*------------------------
+  Transform - scale3d
+------------------------*/
+@mixin scale3d($sx, $sy, $sz) {
+  -webkit-transform: scale3d($sx, $sy, $sz);
+  transform: scale3d($sx, $sy, $sz);
 }
 
 
@@ -67,9 +107,9 @@
 }
 
 
-/*--------------------
+/*------------------------
   Clearfix
---------------------*/
+------------------------*/
 @mixin clearfix() {
   &:before,
   &:after {
@@ -82,14 +122,3 @@
 }
 
 
-/*--------------------
-  Animation
---------------------*/
-@mixin animation($name, $duration: 300ms) {
-  -webkit-animation-name: $name;
-  animation-name: $name;
-  -webkit-animation-duration: $duration;
-  animation-duration: $duration;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}

@@ -60,4 +60,15 @@ $(document).on 'page:change', ->
         closeImgPreview()
     return
 
+
+
+  #-----------------------------
+  # Page loading indicator
+  #-----------------------------
+  $(document).one 'page:fetch', ->
+    $loader = '<div class="page-loader"><i /></div>'
+
+    $('.main__page').prepend $loader;
+    return
+
   return
