@@ -2,16 +2,9 @@
   text-align: center;
   padding: 30px;
   border-top: 1px solid lighten($line-color, 1%);
-  position: relative;
   color: #9F9F9F;
 
   a:hover {
     color: #737373;
   }
-}
-
-.footer__user {
-  position: absolute;
-  left: 20px;
-  top: 23px;
 }

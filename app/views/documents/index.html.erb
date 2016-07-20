@@ -21,7 +21,7 @@
           </a>
 
           <div class="list-group__actions dropdown">
-            <i class="icon icon--more dropdown__toggle"></i>
+            <%= link_to icon('ellipsis-h'), "", :class => 'dropdown__toggle' %>
             <ul class="dropdown__menu dropdown__menu--right">
               <li><%= link_to 'Edit', edit_document_path(document) %></li>
               <li><%= link_to 'Github Link', document.link, :target => '_blank' %></li>

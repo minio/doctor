@@ -20,7 +20,7 @@
 }
 
 .list-group__item {
-  padding: 25px 30px;
+  padding: 20px 25px;
   display: block;
   position: relative;
   border: 1px solid $line-color;
@@ -38,10 +38,7 @@ a.list-group__item,
 .list-group__item {
   &:hover {
     .list-group__actions {
-      & > .icon {
-        border-color: $line-color;
-        @include rotate(180deg);
-      }
+      @include opacity(1);
     }
   }
 }
@@ -59,38 +56,46 @@ a.list-group__item,
 .list-group__title {
   font-weight: 500;
   color: $text-strong;
+  font-size: $font-size - 1;
 }
 
 .list-group__text {
   color: $text-muted;
   margin-top: 8px;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .list-group__actions {
   height: 100%;
   width: 60px;
+  right: 0;
+  @include opacity(0);
+  @include transition(opacity, 250ms);
 
-  &, & > .icon {
+  &, & > .dropdown__toggle {
     position: absolute;
-    right: 0;
     top: 0;
   }
 
-  & > .icon {
-    width: 39px;
-    height: 39px;
+  .dropdown__toggle {
+    width: 36px;
+    height: 36px;
+    line-height: 38px;
     text-align: center;
+    font-size: 22px;
     border-radius: 50%;
-    background-color: #fff;
-    border: 1px solid #fff;
-    cursor: pointer;
     left: 0;
-    right: 0;
     bottom: 0;
-    margin: auto 0;
-    @include transition(all, 500ms);
+    margin: auto;
+    color: lighten($text-color, 10%);
+    border: 1px solid transparent;
+
+    &:hover {
+      border-color: $line-color;
+      background-color: #fff;
+    }
   }
+
 }
 
 .list-group-summary {

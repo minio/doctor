@@ -52,7 +52,6 @@
               <li><a href="#">Github </a></li>
               <li><a href="#">Gitter </a></li>
           <% end %>
-
         </ul>
       </nav>
     </header>
@@ -64,10 +63,12 @@
             <a href="">Welcome Admin!</a>
 
             <ul class="main__menu__icons">
+              <li><%= link_to (icon("line-chart")+ "Dashboard"), dashboard_path, :class => current_class?(dashboard_path) %></li>
               <li><%= link_to (icon("th-large")+ "Categories"), categories_path, :class => current_class?(categories_path) %></li>
               <li><%= link_to (icon("file-text")+ "Documents"), documents_path, :class => current_class?(documents_path) %></li>
               <li><%= link_to (icon("adjust")+ "Brand"), brands_path, :class => current_class?(brands_path) %></li>
               <li><%= link_to (icon("user")+ "Users"), users_path, :class => current_class?(users_path) %></li>
+              <li><%= link_to (icon("sign-out")+ "Logout"), logout_path %></li>
             </ul>
           </li>
          </ul>

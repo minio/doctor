@@ -19,7 +19,7 @@
           </a>
 
           <div class="list-group__actions dropdown">
-            <i class="icon icon--more dropdown__toggle"></i>
+            <%= link_to icon('ellipsis-h'), "", :class => 'dropdown__toggle' %>
             <ul class="dropdown__menu dropdown__menu--right">
               <li><%= link_to 'Edit', edit_user_path(user) %></li>
               <li><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></li>
