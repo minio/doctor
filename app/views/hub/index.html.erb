@@ -1,17 +1,18 @@
 <div class="dropdown suggest-edit">
-  <a href="" class="dropdown__toggle">Suggest Edit</a>
+  <a href="" class="dropdown__toggle">Suggest Edits</a>
 
   <div class="dropdown__menu dropdown__menu--right dropdown__menu--block">
-    <div class="dropdown__title">Suggest Edit</div>
+    <div class="dropdown__title">Suggest Edits</div>
 
-    <small class="text-muted">Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</small> <!-- Need real texts-->
+    <small class="text-muted">
+		<ol>
+			<li> Log into Github. </li>
+			<li> Edit files with your changes by clicking on 'Edit the file in your fork of this project' button in Github. </li>
+			<li> Commit changes via 'Create a new branch for this commit and start a pull request'.  </li>
+		</ol>
+	</small>  
 
     <%= link_to icon('github')+' Edit in Github', @gitlink, :class=> "button button--blue button--block", :target => '_blank' %>
   </div>
 </div>
-
-
 <%= @contents.html_safe %>
-	 
-
-
