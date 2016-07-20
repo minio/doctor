@@ -1,26 +1,4 @@
 <footer id="footer">
-  <div class="footer__user">
-    <% if current_user %>
-
-            <span class="dropdown dropdown--up">
-              <a href="" class="dropdown__toggle button"><%= current_user.email %></a>
-
-              <ul class="dropdown__menu">
-                <% if current_user.admin? %>
-                    <li><%= link_to "DashBoard", dashboard_path %></li>
-                <% else %>
-
-                <% end %>
-                <li><%= link_to "Logout", logout_path %></li>
-              </ul>
-            </span>
-
-    <% else %>
-        <% unless current_page?('/login') %>
-            <%= link_to "Dashboard", login_path, :class => "button" %>
-        <% end %>
-    <% end %>
-  </div>
 	<% if @mybrand %>
 			<%=  @mybrand.footer_text %>
 			 
