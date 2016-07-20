@@ -15,7 +15,7 @@ $(document).on 'page:change', ->
   # Open
   $body.on 'click', '.dropdown__toggle', (e) ->
     e.preventDefault()
-    $body.append '<div class="backdrop backdrop--dropdown" />'
+    $(this).parent().append '<div class="backdrop backdrop--dropdown" />'
     $(this)
       .closest('.dropdown')
       .addClass 'dropdown--open'
