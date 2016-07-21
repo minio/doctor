@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
 
   resources :users
-  resources :documents
+  resources :documents, :path => "docs"
   resources :sessions
   resources :categories
   get 'hub/index'
@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get  'dashboard', to: 'hub#dashboard', as: 'dashboard'
-
-   
+     
   root 'hub#index', as: 'hub'
 end
