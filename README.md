@@ -1,9 +1,13 @@
-# Project Doctor
-* Doctor is a simple documentation framework. 
-* It renders content from hosted markdown files. 
-* It is useful when you have multiple Readme.MD files in github and they need to be aggregated to form your docs.
+# Project Doctor 
+* Doctor is a Documentation Server for all your project docs. 
+* Doctor beautifully decouples document serving and document contents.
+* Create your docs in markdown. Store them anywhere (github/dropbox/google drive/ anywhere really).
+* Login to Doctor's Dashboard. Setup links to your doc files in Doctor's Dashboard. 
+* You are done! Made with :heart: at Minio.
 
-## Pre-Requisites
+
+## Pre-Requisites to Deploy Doctor
+
 ### OSX
 * Install Ruby 2.2.2 using the instructions [here](https://rvm.io/rvm/install).
 * Install Rails 4.2.4 using the instructions [here](https://rvm.io/rvm/install).
@@ -29,9 +33,9 @@ Now visit http://localhost:3000
 
 ## Organization
 * Documents are organized under Categories. 
-* Create a new Category : http://localhost:3000/category/new
-* Create a new Document : http://localhost:3000/document/new
+* Login to the dashboard
+* Use the Dashboard or Create a new Category : http://localhost:3000/category/new
+* Use the Dashboard Create a new Document : http://localhost:3000/document/new
 * Required : All documents need to be associated under a Category
-
 
 
