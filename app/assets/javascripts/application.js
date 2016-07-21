@@ -15,8 +15,8 @@
 //= require turbolinks
 //= require_tree .
 //= require toastr
+//= require highlight.js/highlight.min
 $(document).ready(function() {
-	 
 	toastr.options = {
 		"closeButton": true,
 		"debug": true,
@@ -32,3 +32,4 @@ $(document).ready(function() {
 		"hideMethod": "fadeOut"
 	}
 });
+
