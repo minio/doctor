@@ -3,7 +3,7 @@
 * Doctor beautifully decouples document serving and document contents.
 * Create your docs in markdown. Store them anywhere (github/dropbox/google drive/ anywhere really).
 * Login to Doctor's Dashboard. Setup links to your doc files in Doctor's Dashboard. 
-* You are done! Made with :heart: at Minio.
+* You are done! 
 
 
 ## Pre-Requisites to Deploy Doctor
