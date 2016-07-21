@@ -2,6 +2,15 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+#-----------------------
+# Syntax Highlighting
+#-----------------------
+$(document).on 'ready page:load', ->
+  $('pre code').each (i, block) ->
+    hljs.highlightBlock block
+    return
+  return
+
 
 $(document).on 'page:change', ->
   $this = $(this)
@@ -33,7 +42,7 @@ $(document).on 'page:change', ->
   #-----------------------
   # Image Preview
   #-----------------------
-  #Close function
+  # Close function
   closeImgPreview = ->
     $closeTarget = $('.img-preview')
     $closeTarget.fadeOut 200

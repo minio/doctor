@@ -1,11 +1,13 @@
 pre {
   font-family: $font-family-mono;
-  background-color: #f1f1f1;
-  padding: 20px 30px;
-  color: darken($text-color, 10%);
+  color: $text-color;
   border-radius: 2px;
   overflow-x: auto;
   margin-bottom: 30px;
+
+  .hljs {
+    padding: 25px 30px;
+  }
 
   code {
     padding: 0;
@@ -23,8 +25,4 @@ code {
   border-radius: 2px;
   font-size: $font-size - 1;
   display: inline-block;
-  
-  &, &:hover {
-    color: $text-color;
-  }
 }
