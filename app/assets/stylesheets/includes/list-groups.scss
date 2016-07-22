@@ -80,9 +80,9 @@ a.list-group__item,
   .dropdown__toggle {
     width: 36px;
     height: 36px;
-    line-height: 38px;
+    line-height: 35px;
     text-align: center;
-    font-size: 22px;
+    font-size: 20px;
     border-radius: 50%;
     left: 0;
     bottom: 0;
@@ -101,5 +101,6 @@ a.list-group__item,
 .list-group-summary {
   color: $text-muted;
   padding-left: 30px;
+  font-size: 14px;
   margin-bottom: 12px;
 }

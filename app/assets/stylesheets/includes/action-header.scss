@@ -18,7 +18,8 @@
     padding-left: 30px;
     height: 61px;
     color: darken($text-muted, 30%);
-    line-height: 63px;
+    line-height: 62px;
+    font-size: 15px;
   }
 
   &:before {
@@ -27,7 +28,7 @@
     position: absolute;
     left: 25px;
     top: 23px;
-    font-size: 18px;
+    font-size: 16px;
     color: lighten($text-color, 10%);
     font-weight: normal;
   }
@@ -42,7 +43,7 @@
 }
 
 .action-header__add {
-  padding: 14px 25px;
+  padding: 15px 25px;
 }
 
 .action-header__right {
@@ -98,7 +99,5 @@
 
 .action-header__title {
   font-size: 15px;
-  font-weight: 500;
-  color: $text-strong;
   padding-top: 25px;
 }
