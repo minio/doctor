@@ -16,6 +16,12 @@
 ### Ubuntu
 * Install Rails & Ruby using the instructions [here](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-on-ubuntu-14-04-using-rvm).
 * Install Postgres using the instructions [here](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-14-04).
+* Install `libpg-dev` using following instructions
+
+```sh
+> apt install libpg-dev
+```
+* Install `nodejs` using the instructions [here](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04)
 
 **Note** - Ping us on our [gitter channel](https://gitter.im/minio/minio) to report any installation issues on your platform.
 
@@ -24,9 +30,9 @@
 > git clone https://github.com/minio/doctor.git
 > cd doctor
 > bundle install
-> rake db:create
-> rake db:migrate
-> rake db:seed
+> rake db:drop
+> rake db:setup
+
 > rails s
 ```
 Now visit http://localhost:3000 
