@@ -13,8 +13,14 @@ $(document).on 'ready page:load', ->
 
 
 $(document).on 'page:change', ->
-  $this = $(this)
   $body = $('body')
+
+
+  #------------------------------
+  # Scroll to sidebar link
+  #------------------------------
+  $pathname = window.location.pathname
+  $('.main__sidebar').scrollTop $('a[href="' + $pathname + '"]').offset().top - 85
 
 
   #-----------------------
@@ -107,5 +113,11 @@ $(document).on 'page:change', ->
     $(this).remove()
     $('.main__sidebar').removeClass 'toggled'
     return
+
+
+  #-----------------------------
+  # Mobile Sidebar
+  #-----------------------------
+  $('.main__sidebar').affix offset: top: 100
 
   return

@@ -1,9 +1,9 @@
 .main__sidebar {
   width: 300px;
   z-index: 9;
-  position: fixed;
+  position: absolute;
   left: 0;
-  height: calc(100% - 80px);
+  height: 100%;
   overflow-y: auto;
   padding: 40px;
   background-color: $sidebar-bg;
@@ -23,6 +23,11 @@
       @include translate3d(0, 0, 0);
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
     }
+  }
+  
+  &.affix {
+    position: fixed;
+    top: 0;
   }
 }
 

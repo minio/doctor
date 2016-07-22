@@ -2,11 +2,11 @@
   background-color: #373d42;
   padding: 30px 30px 30px 40px;
   clear: both;
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 10;
+  position: relative;
 
   @media (max-width: $screen-sm-max) {
     min-height: 62px;
