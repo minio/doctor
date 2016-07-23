@@ -27,13 +27,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+  font-size: 1.6em !important;
+  border-bottom: 1px solid $line-color;
+  padding-bottom: 15px;
+  margin-bottom: 30px !important;
+
   & > a {
     & > img {
       width: 100px;
       vertical-align: middle;
+      position: relative;
+      top: -1px;
+      margin-left: 5px;
     }
   }
 }
+
+h2 { font-size: 1.3em; }
+h3 { font-size: 1.1em; }
+h4 { font-size: 1em; }
+h5 { font-size: 0.9em; }
+h6 { font-size: 0.8em; }
 
 p {
   margin: 0 0 15px;
@@ -48,6 +62,11 @@ a {
   
   &, &:hover {
     text-decoration: none;
+  }
+
+  &[name] {
+    display: block;
+    padding-top: 15px;
   }
 }
 

@@ -4,6 +4,7 @@ pre {
   border-radius: 2px;
   overflow-x: auto;
   margin-bottom: 30px;
+  font-size: $font-size - 2;
 
   .hljs {
     padding: 25px 30px;
@@ -23,6 +24,6 @@ code {
   position: relative;
   top: -1px;
   border-radius: 2px;
-  font-size: $font-size - 1;
+  font-size: $font-size - 2;
   display: inline-block;
 }

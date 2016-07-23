@@ -16,6 +16,8 @@
 //= require_tree .
 //= require toastr
 //= require highlight.js/highlight.min
+//= require affix/affix
+
 $(document).ready(function() {
 	toastr.options = {
 		"closeButton": true,
