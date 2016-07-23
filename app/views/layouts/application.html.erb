@@ -45,14 +45,14 @@
         <ul>
  
           <% if @mybrand %>
-              <li><%= link_to "Home", @mybrand.home_link %></li>
-              <li><%= link_to "Github", @mybrand.github_link %></li>
-              <li><%= link_to "Gitter", @mybrand.gitter_link %></li>
- 
-          <% else %>
-              <li><a href="#">Home </a></li>
-              <li><a href="#">Github </a></li>
-              <li><a href="#">Gitter </a></li>
+              <li><%= link_to icon('home'), @mybrand.home_link %></li>
+              <li><%= link_to icon('github'), @mybrand.github_link %></li>
+              <li>
+                <%= link_to @mybrand.gitter_link, :title => '' do %>
+                    <i class="icon icon--gitter"></i>
+                <% end %>
+              </li>
+              <li><%= link_to icon('twitter'), 'https://twitter.com/Minio', :target => '_blank' %></li>
           <% end %>
 
         </ul>

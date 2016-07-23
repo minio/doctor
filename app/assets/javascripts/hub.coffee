@@ -20,7 +20,7 @@ $(document).on 'page:change', ->
   # Scroll to sidebar link
   #------------------------------
   $pathname = window.location.pathname
-  $('.main__sidebar').scrollTop $('a[href="' + $pathname + '"]').offset().top - 85
+  $('.main__sidebar').scrollTop $('a[href="' + $pathname + '"]').offset().top - 82 #82 is the height(px) of header
 
 
   #-----------------------
@@ -118,6 +118,6 @@ $(document).on 'page:change', ->
   #-----------------------------
   # Mobile Sidebar
   #-----------------------------
-  $('.main__sidebar').affix offset: top: 100
+  $('.main__sidebar').affix offset: top: 82 #header height
 
   return
