@@ -1,12 +1,11 @@
 #header {
   background-color: #373d42;
-  padding: 30px 30px 30px 40px;
-  clear: both;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 10;
   position: relative;
+  padding: 30px 40px;
 
   @media (max-width: $screen-sm-max) {
     min-height: 62px;
@@ -19,6 +18,8 @@
       padding: 20px;
     }
   }
+
+  @include clearfix();
 }
 
 .header__logo {
@@ -39,7 +40,12 @@
 
 .header__menu {
   @media (min-width: $screen-sm-min) {
-    float: right;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 30px;
+    margin: auto;
+    height: 39px;
 
     ul {
       list-style: none;
@@ -51,12 +57,22 @@
 
         & > a {
           display: block;
-          font-size: 15px;
-          padding: 0 10px;
-          color: rgba(255,255,255,0.6);
+          width: 39px;
+          text-align: center;
+          font-size: 21px;
+          height: 39px;
+          border-radius: 50%;
+          line-height: 38px;
+          color: #fff;
+          margin-left: 5px;
+          @include transition(background-color, 200ms);
+
+          & > i {
+            line-height: 100%;
+          }
 
           &:hover {
-            color: rgba(255,255,255,0.9);
+            background-color: rgba(0,0,0,0.25);
           }
         }
       }

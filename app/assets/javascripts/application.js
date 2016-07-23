@@ -17,6 +17,7 @@
 //= require toastr
 //= require highlight.js/highlight.min
 //= require affix/affix
+//= require custom
 
 $(document).ready(function() {
 	toastr.options = {
