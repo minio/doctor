@@ -15,7 +15,6 @@ $(document).on 'ready page:load', ->
 $(document).on 'page:change', ->
   $body = $('body')
 
-
   #------------------------------
   # Scroll to sidebar link
   #------------------------------
@@ -115,8 +114,9 @@ $(document).on 'page:change', ->
     return
 
 
+
   #-----------------------------
-  # Mobile Sidebar
+  # Header Affix
   #-----------------------------
   $('.main__sidebar').affix offset: top: 82 #header height
 
