@@ -28,37 +28,10 @@
 
 
   <body>
-    <header id="header" class="clearfix">
-      <div class="header__trigger">
-        <%= icon('bars') %>
-      </div>
+     
 
-      <div class="header__logo">
-        <% if @mybrand %>
-            <%= link_to @mybrand.title, hub_path %>
-        <% else %>
-            Your Project
-        <% end %>
-      </div>
-
-      <nav class="header__menu">
-        <ul>
- 
-          <% if @mybrand %>
-              <li><%= link_to icon('home'), @mybrand.home_link %></li>
-              <li><%= link_to icon('github'), @mybrand.github_link %></li>
-              <li>
-                <%= link_to @mybrand.gitter_link, :title => '' do %>
-                    <i class="icon icon--gitter"></i>
-                <% end %>
-              </li>
-              <li><%= link_to icon('twitter'), 'https://twitter.com/Minio', :target => '_blank' %></li>
-          <% end %>
-
-        </ul>
-      </nav>
-    </header>
-
+	<%= render 'layouts/header' %>
+	  
     <div id="main">
       <div class="main__sidebar">
         <ul class="main__menu">

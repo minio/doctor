@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160706220851) do
+ActiveRecord::Schema.define(version: 20160724012021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160706220851) do
     t.string   "footer_chatlink"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "twitter_link"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -49,6 +50,7 @@ ActiveRecord::Schema.define(version: 20160706220851) do
 
   add_index "documents", ["category_id", "created_at"], name: "index_documents_on_category_id_and_created_at", using: :btree
   add_index "documents", ["category_id"], name: "index_documents_on_category_id", using: :btree
+  add_index "documents", ["slug"], name: "index_documents_on_slug", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
