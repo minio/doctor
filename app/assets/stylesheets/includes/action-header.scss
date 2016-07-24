@@ -1,6 +1,6 @@
 .action-header {
   border-bottom: 1px solid $line-color;
-  margin: -48px -50px 50px;
+  margin: -50px -50px 50px;
   height: 62px;
 
   @media (max-width: $screen-sm-max) {
@@ -99,5 +99,5 @@
 
 .action-header__title {
   font-size: 15px;
-  padding-top: 25px;
+  padding-top: 24px;
 }
