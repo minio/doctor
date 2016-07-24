@@ -86,8 +86,11 @@ $(document).on 'page:change', ->
   #-----------------------------
   $(document).one 'page:fetch', ->
     $loader = '<div class="page-loader"><i /></div>'
-
     $('.main__page').prepend $loader
+    return
+
+  $(document).one 'page:receive', ->
+    $('.page-loader').remove()
     return
 
 
