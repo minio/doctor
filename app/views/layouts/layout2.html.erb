@@ -26,29 +26,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">	</head>
   <body>
  
-		<header id="header" class="header--alt clearfix">
-			<div class="header__logo">
-				<% if @mybrand %>
-						<%= link_to @mybrand.title, hub_path %>
-				<% else %>
-						Your Project
-				<% end %>
-			</div>
- 
-			<nav class="header__menu">
-				<ul>
-					<% if @mybrand %>
-							<li><%= link_to "Home", @mybrand.home_link %></li>
-							<li><%= link_to "Github", @mybrand.github_link %></li>
-							<li><%= link_to "Gitter", @mybrand.gitter_link %></li>
-					<% else %>
-							<li><a href="#">Home </a></li>
-							<li><a href="#">Github </a></li>
-							<li><a href="#">Gitter </a></li>
-					<% end %>
-				</ul>
-			</nav>
-		</header>
+	<%= render 'layouts/header' %>	
 
     <div id="main" class="main--alt">
 
