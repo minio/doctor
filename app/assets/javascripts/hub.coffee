@@ -124,11 +124,22 @@ $(document).on 'page:change', ->
   $('.main__sidebar').affix offset: top: 82 #header height
 
 
+  
   #-----------------------------
   # Notification Toggle
   #-----------------------------
   $('.notify').addClass('notify--show').delay(5000).queue ->
     $(this).removeClass('notify--show').dequeue()
+    return
+
+
+
+  #-----------------------------
+  # Responsive Table
+  #-----------------------------
+  $('table').each ->
+    if !$(this).parent().is('.table-responsive')
+      $(this).wrap '<div class="table-responsive" />'
     return
 
   return
