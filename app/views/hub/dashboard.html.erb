@@ -14,7 +14,10 @@
   limitations under the License.
  -->
 
-<div id="notice"><%= notice %></div>
+<% flash.each do |key, value| %>
+		<div class="notify notify--icon notify--<%= key %>"><%= value %></div>
+<% end %>
+<%= yield %>
 
 <div class="row dashboard-stats">
 	<div class="col-sm-4 col-lg-3">

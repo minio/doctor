@@ -26,9 +26,9 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
        if current_user.admin
-        redirect_to dashboard_path, notice: "Welcome Admin!"
+        redirect_to dashboard_path, info: "Welcome back admin!"
        else 
-        redirect_to hub_index, notice: "Not Authorized!"
+        redirect_to hub_index, warning: "Not Authorized!"
        end
     else
       flash.now.alert = "Email or password is invalid"

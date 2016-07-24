@@ -120,4 +120,12 @@ $(document).on 'page:change', ->
   #-----------------------------
   $('.main__sidebar').affix offset: top: 82 #header height
 
+
+  #-----------------------------
+  # Notification Toggle
+  #-----------------------------
+  $('.notify').addClass('notify--show').delay(5000).queue ->
+    $(this).removeClass('notify--show').dequeue()
+    return
+
   return
