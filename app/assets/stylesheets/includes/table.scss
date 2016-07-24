@@ -20,3 +20,9 @@ th {
 th, td {
   padding: 10px 15px;
 }
+
+.table-responsive {
+  max-width: 100%;
+  width: 100%;
+  overflow-x: auto;
+}
