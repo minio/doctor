@@ -1,4 +1,6 @@
 # Project Doctor 
+
+[![Join the chat at https://gitter.im/minio/doctor](https://badges.gitter.im/minio/doctor.svg)](https://gitter.im/minio/doctor?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 * Doctor is a Documentation Server for all your project docs. 
 * Doctor beautifully decouples document serving and document contents.
 * Create your docs in markdown. Store them anywhere (github/dropbox/google drive/ anywhere really).
