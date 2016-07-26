@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  match '/404', :to => 'errors#not_found', :via => :all
+  match '/500', :to => 'errors#internal_server_error', :via => :all
+
+  get 'errors/not_found'
+
+  get 'errors/internal_server_error'
+
   resources :brands
   get 'sessions/new'
 
@@ -18,4 +25,6 @@ Rails.application.routes.draw do
   get  'dashboard', to: 'hub#dashboard', as: 'dashboard'
      
   root 'hub#index', as: 'hub'
+
+
 end
