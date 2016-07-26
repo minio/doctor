@@ -80,10 +80,3 @@ a {
     background-color: #fff;
   }
 }
-
-ul {
-  & > li,
-  & > li > a {
-    font-size: $font-size - 1;
-  }
-}
