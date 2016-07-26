@@ -1,0 +1,21 @@
+postgresql: &postgresql
+  adapter: postgresql
+  username: postgres
+  password:
+  database: doctor_<%= Rails.env %>
+  min_message: ERROR
+
+defaults: &defaults
+  pool: 5
+  timeout: 5000
+  host: localhost
+  <<: *<%= ENV['DB'] || "postgresql" %>
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

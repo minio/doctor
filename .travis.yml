@@ -1,0 +1,19 @@
+language: ruby
+
+rvm:
+  - 2.2
+
+services:
+  - postgresql
+
+env:
+  - DB=postgresql
+
+script:
+  - RAILS_ENV=test bundle exec rake db:setup
+  - bundle exec rake db:test:prepare
+  - bundle exec rake
+
+before_script:
+  - cp config/database.travis.yml config/database.yml
+  - psql -c 'create database doctor_test' -U postgres

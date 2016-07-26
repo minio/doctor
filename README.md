@@ -23,10 +23,9 @@
 ```
 > git clone https://github.com/minio/doctor.git
 > cd doctor
-> bundle install
-> rake db:create
-> rake db:migrate
-> rake db:seed
+> bundle install --path vendor/bundle
+> rake db:drop
+> rake db:setup
 > rails s
 ```
 Now visit http://localhost:3000 
