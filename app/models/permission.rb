@@ -5,6 +5,8 @@ class Permission < Struct.new(:user)
     return true if controller == "users" && action != "index"
     #return true if controller == "categories" && action.in?(%w[show])
     return true if controller == "documents" && action.in?(%w[show])
+    return true if controller == "errors"
+    
   
     if user
       return true if controller == "categories" && action.in?(%w[index show edit new create])
