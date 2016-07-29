@@ -40,7 +40,7 @@
 
   & > li {
     & > a {
-      color: #a2a2a2;
+      color: $sidebar-heading-color;
       font-size: 12px;
       text-transform: uppercase;
       display: block;
@@ -51,17 +51,19 @@
       & > li {
         & > a {
           padding: 9px 40px;
-          color: #5c6267;
+          color: $sidebar-link-color;
           display: block;
           margin: 0 -40px 0;
-          font-size: $font-size - 2;
+          font-size: $font-size - 1;
 
           &:hover {
-            background-color: #ededed;
+            background-color: $sidebar-link-hover-bg;
+            color: $sidebar-link-hove-color;
           }
 
           &.active {
-            background-color: #e5e5e5;
+            background-color: $sidebar-link-active-bg;
+            color: $sidebar-link-active-color;;
           }
         }
       }

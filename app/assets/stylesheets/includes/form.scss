@@ -1,7 +1,7 @@
 .form-wrapper {
-  background-color: #fff;
+  background-color: $form-wrapper-bg;
   padding: 35px;
-  border: 1px solid $line-color;
+  border: 1px solid $form-wrapper-border-color;
   border-radius: 2px;
 }
 
@@ -38,7 +38,7 @@
 
   &:focus {
     color: darken($text-muted, 20%);
-    border-color: #B3E5FC;
+    border-color: $input-focus-border-color;
   }
 }
 
