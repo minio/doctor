@@ -1,14 +1,19 @@
-$body-bg: #fafafa;
-
 /*--------------------
-  Font
+  Base
 --------------------*/
+$body-bg: #fafafa;
 $font-family: 'Lato', sans-serif;
 $font-family-glyph: fontAwesome;
 $font-family-headings: 'Lato', sans-serif;
 $font-family-mono: 'Roboto Mono', monospace;
-$font-size: 17px;
+$font-size: 16px;
 $line-height: 1.5;
+
+
+/*--------------------
+  Heading
+--------------------*/
+$headings-font-weight: 400;
 $line-height-heading: 1.1;
 
 
@@ -16,26 +21,45 @@ $line-height-heading: 1.1;
   Text Colors
 --------------------*/
 $heading-color: #5c6267;
-$link-color: #4FA2E4;
+$link-color: #237dac;
 $text-color: #7c8287;
 $text-muted: #9a9a9a;
 $text-strong: #4e4e4e;
 
 
-$headings-font-weight: 400;
+/*--------------------
+  Header
+--------------------*/
+$header-bg: #373d42;
+$logo-color: #fff;
+$header-link-color: #fff;
 
 
 /*--------------------
   Border Colors
 --------------------*/
 $line-color: #efefef;
+
+
+/*--------------------
+  Form
+--------------------*/
 $input-border: #f4f4f4;
+$input-focus-border-color: #B3E5FC;
+$form-wrapper-bg: #fff;
+$form-wrapper-border-color: #efefef;
 
 
 /*--------------------
   Sidebar
 --------------------*/
 $sidebar-bg: #f1f1f1;
+$sidebar-heading-color: #a2a2a2;
+$sidebar-link-color: #5c6267;
+$sidebar-link-hover-bg: #ededed;
+$sidebar-link-active-bg: #e5e5e5;
+$sidebar-link-hove-color: #5c6267;
+$sidebar-link-active-color: #5c6267;
 
 
 /*--------------------
@@ -53,3 +77,48 @@ $amber: #FFC107;
 $grey: #9E9E9E;
 $blue-gray: #607D8B;
 $dark: #252b2f;
+
+
+/*--------------------
+  Code
+--------------------*/
+$code-bg: #F1F1F1;
+$code-color: darken($text-color, 10%);
+
+
+/*--------------------
+  Table
+--------------------*/
+$table-bg: #fff;
+$table-border-color: $line-color;
+$th-bg: #fbfbfb;
+$th-color: darken($text-color, 10%);
+
+
+/*--------------------
+  Button
+--------------------*/
+$button-default-border-color: #efefef;
+$button-default-bg: #fff;
+$button-blue-bg: #42A5F5;
+$button-blue-border-color: #42A5F5;
+$button-red-bg: #EF5350;
+$button-red-border-color: #EF5350;
+$button-green-bg: #4CAF50;
+$button-green-border-color: #4CAF50;
+
+
+/*--------------------
+  Footer
+--------------------*/
+$footer-color: #9F9F9F;
+
+
+/*--------------------
+  Dropdown
+--------------------*/
+$dropdown-bg: #fff;
+$dropdown-border-color: #efefef;
+$dropdown-link-color: #7c8287;
+$dropdown-link-hover-bg: #f9f9f9;
+$dropdown-link-hover-color: #7c8287;

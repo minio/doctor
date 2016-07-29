@@ -80,3 +80,11 @@ a {
     background-color: #fff;
   }
 }
+
+.main__page {
+  ul:not([class]) {
+    li {
+      padding-bottom: 8px;
+    }
+  }
+}

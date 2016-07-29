@@ -76,6 +76,12 @@
         color: $text-color;
       }
     }
+
+    ol {
+      li {
+        padding-bottom: 10px;
+      }
+    }
   }
 }
 
