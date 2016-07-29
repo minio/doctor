@@ -21,7 +21,7 @@
   min-width: 150px;
   background-color: #fff;
   border-radius: 2px;
-  border: 1px solid $line-color;
+  border: 1px solid $dropdown-border-color;
   margin: 0;
   list-style: none;
   padding: 10px 0;
@@ -37,11 +37,11 @@
     & > a {
       display: block;
       padding: 7px 15px;
-      color: $text-color;
-      font-size: $font-size - 3;
+      color: $dropdown-link-color;
+      font-size: $font-size - 2;
 
       &:hover {
-        background-color: #f9f9f9;
+        background-color: $dropdown-link-hover-bg;
       }
     }
   }

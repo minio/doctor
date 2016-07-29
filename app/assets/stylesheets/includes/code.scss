@@ -1,30 +1,29 @@
 pre {
-  font-family: $font-family-mono;
-  color: $text-color;
   border-radius: 2px;
   overflow-x: auto;
   margin-bottom: 30px;
-  font-size: $font-size - 3;
+  font-size: $font-size - 2;
   line-height: 20px;
 
   .hljs {
     padding: 25px 30px;
+    border-radius: 3px;
   }
 
-  code {
-    padding: 0;
-    background-color: transparent;
-    color: darken($text-color, 10%);
+  &, code {
+    font-family: $font-family-mono;
   }
 }
 
 code {
-  background: #F1F1F1;
-  padding: 3px 10px;
+  background: $code-bg;
+  color: $code-color;
+  border: 1px solid darken($code-bg, 5%);
+  padding: 0 8px;
   white-space: pre;
   position: relative;
   top: -1px;
   border-radius: 2px;
-  font-size: $font-size - 2;
+  font-size: $font-size - 1;
   display: inline-block;
 }

@@ -1,5 +1,5 @@
 #header {
-  background-color: #373d42;
+  background-color: $header-bg;
   top: 0;
   left: 0;
   width: 100%;
@@ -29,7 +29,7 @@
   text-transform: uppercase;
 
   &, a {
-    color: #fff;
+    color: $logo-color;
   }
 
   @media (max-width: $screen-sm-max) {
@@ -63,7 +63,7 @@
           height: 39px;
           border-radius: 50%;
           line-height: 38px;
-          color: #fff;
+          color: $header-link-color;
           margin-left: 5px;
           @include transition(background-color, 200ms);
 
@@ -96,7 +96,7 @@
   padding-top: 22px;
   background-color: rgba(0,0,0,0.15);
   cursor: pointer;
-  color: #fff;
+  color: $header-link-color;
 
   @media (min-width: $screen-md-min) {
     display: none;
