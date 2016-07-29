@@ -13,7 +13,7 @@ $(document).on('page:change', function () {
         $sidecarScript = '<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" />';
         $('body').append($sidecarScript);
         ((window.gitter = {}).chat = {}).options = {
-            room: 'minio/minio'
+            room: '' //Add you gitter room
         };
     }
 
