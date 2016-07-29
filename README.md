@@ -23,7 +23,7 @@
 ```
 > git clone https://github.com/minio/doctor.git
 > cd doctor
-> bundle install --path vendor/bundle
+> bundle install
 > rake db:drop
 > rake db:setup
 > rails s
