@@ -9,7 +9,7 @@ The second level of customization can be done on variables.scss file. You may ch
 sidebar to your needs. In the next version of Doctor some of these tuning will also be available through the dashboard.
 
 ## Code Customizations
-For doing this, please fork the repository at https://github.com/minio/doctor and edit the variable.scss fiel
+For doing this, please fork the repository at https://github.com/minio/doctor and edit the variable.scss 
 ```css
 $body-bg: #fafafa;
 
