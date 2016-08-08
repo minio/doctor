@@ -29,8 +29,14 @@
 
       <div class="form-group">
         <%= f.label :category_id %>
-		    <%= f.select :category_id, options_for_select(@categories.map{|s|[s.title, s.id]}), :class => 'form-group__field' %>
-
+			
+			<% if @document.new_record? %> 
+				<%= f.select :category_id, options_from_collection_for_select(@categories,"id", "title")  %>
+			<% else %>	
+		 		<%= f.select :category_id, options_from_collection_for_select(@categories,"id", "title", @document.category.id)  %>
+	 
+			<% end %>	
+		  	    
       </div>
 
       <div class="form-wrapper__footer">
