@@ -28,7 +28,8 @@ class ApplicationController < ActionController::Base
 
   delegate :allow?, to: :current_permission
   helper_method :allow?
-
+  include Mengpaneel::Controller
+  before_action :setup_mixpanel
 
   private
   
@@ -57,4 +58,22 @@ class ApplicationController < ActionController::Base
     @documents = Document.where(:category_id => params[:id])
     @mybrand = Brand.first 
   end
+  
+  def setup_mixpanel
+    return unless current_user
+
+    # For technical reasons, you need to do setup from a `mengpaneel.setup` block.
+    # I'll go into those reasons later.
+    mengpaneel.setup do
+      mixpanel.identify(current_user.id)
+
+      mixpanel.people.set(
+        "ID"              => current_user.id,
+        "$email"          => current_user.email,
+        "$created"        => current_user.created_at
+         
+      )
+    end
+  end
+  
 end

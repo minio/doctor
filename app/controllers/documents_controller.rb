@@ -37,7 +37,7 @@ class DocumentsController < ApplicationController
           :lax_html_blocks => true,
           :superscript => true).render(file)
           
-          
+    mixpanel.track("Doc Page Viewed", "Page Title" => @document.name )        
     # prepare the suggested edit URL from the document.link      
     @gitlink = @document.link.dup
     @gitlink = @gitlink.gsub("raw.githubusercontent","github")

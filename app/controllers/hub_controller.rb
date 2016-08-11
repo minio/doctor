@@ -29,7 +29,8 @@ class HubController < ApplicationController
           :strikethrough => true,
           :lax_html_blocks => true,
           :superscript => true).render(file)
-    
+      
+    mixpanel.track("Home Page Viewed")  
     # prepare the suggested edit URL from the document.link          
     @gitlink = @document.link.dup
     @gitlink = @gitlink.sub('raw.githubusercontent','github')
@@ -48,6 +49,7 @@ class HubController < ApplicationController
      @user_count = User.count
      
      @brands = Brand.all
+     mixpanel.track("DashBoard Viewed")  
   end
   
   private
