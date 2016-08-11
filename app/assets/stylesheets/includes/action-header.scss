@@ -100,3 +100,38 @@
   font-size: 15px;
   padding-top: 24px;
 }
+
+.action-header__menu {
+  list-style: none;
+  padding: 0;
+  margin: 0 15px 0 0;
+  width: 100%;
+  text-align: center;
+
+  & > li {
+    display: inline-block;
+    
+    &.active {
+      & > a {
+        color: $text-strong;
+        border-bottom-color: $light-blue;
+      }
+    }
+
+    &:not(.active) {
+      & > a {
+        &:hover {
+          color: $text-color;
+        }
+      }
+    }
+
+    & > a {
+      display: block;
+      padding: 22px 15px 23px;
+      color: lighten($text-color, 15%);
+      @include transition(all, 300ms);
+      border-bottom: 1px solid transparent;
+    }
+  }
+}
