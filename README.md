@@ -30,6 +30,8 @@
 ```
 Now visit http://localhost:3000 
 
+Use `sysadmin@doctor.io` with password `Doctor!23` to login. Visit [http://localhost:3000](http://localhost:3000) to navigate the docs. This can be changed anytime via the Dashboard. We highly recommend that you do if you use Doctor in deployment.
+
 ## Organization
 * Documents are organized under Categories. 
 * Login to the dashboard
