@@ -37,7 +37,7 @@ gem 'toastr-rails'
 gem 'puma'
 gem 'friendly_id'
 gem 'font-awesome-sass', '~> 4.6.2'
-
+gem 'mengpaneel'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

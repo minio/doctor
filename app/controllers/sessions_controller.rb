@@ -26,6 +26,9 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
        if current_user.admin
+         mixpanel.track("Sign In", "ID"          => current_user.id,
+                                    "Email"       => current_user.email) 
+                                    
         redirect_to dashboard_path, info: "Welcome back admin!"
        else 
         redirect_to hub_index, warning: "Not Authorized!"
@@ -38,6 +41,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
+    mixpanel.track("Sign Out")
     redirect_to hub_url, notice: "Logged out!"
   end
 end
