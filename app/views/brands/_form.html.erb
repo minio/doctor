@@ -1,57 +1,163 @@
 <%= form_for(@brand) do |f| %>
-  <% if @brand.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@brand.errors.count, "error") %> prohibited this brand from being saved:</h2>
+    <% if @brand.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(@brand.errors.count, "error") %> prohibited this brand from being saved:</h2>
+            <ul>
+                <% @brand.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
 
-      <ul>
-      <% @brand.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="container">
+        <div class="tab-content">
+
+            <!-- Project Settings-->
+            <div class="form-wrapper tab-content__pane active" id="settings-project">
+                <div class="form-group">
+                    <%= f.label :title %>
+                    <%= f.text_field :title, :class => 'form-group__field' %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :logo_url , 'Logo URL' %>
+                    <%= f.text_field :logo_url, :class => 'form-group__field' %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :home_link, 'Home URL' %>
+                    <%= f.text_field :home_link, :class => 'form-group__field' %>
+                </div>
+
+                <div class="form-group"> <!-- need fix -->
+                    <%= f.label 'Description' %>
+                    <%= f.text_area :title, :class => 'form-group__field' %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :footer_text, 'Footer Text' %>
+                    <%= f.text_area :footer_text, :class => 'form-group__field' %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :footer_img, 'Footer Image URL' %>
+                    <%= f.text_field :footer_img, :class => 'form-group__field' %>
+                </div>
+            </div>
+
+
+            <!-- Social Links -->
+            <div class="form-wrapper tab-content__pane" id="settings-social">
+                <div class="form-group">
+                    <%= f.label :github_link, 'Github' %>
+                    <%= f.text_field :github_link, :class => 'form-group__field' %>
+                </div>
+
+                <div class="form-group"> <!-- need fix -->
+                    <%= f.label :github_link, 'Bitbucket' %>
+                    <%= f.text_field :github_link, :class => 'form-group__field' %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :gitter_link, 'Gitter' %>
+                    <%= f.text_field :gitter_link, :class => 'form-group__field' %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :footer_chatlink, 'Gitter Sidecar' %>
+                    <%= f.text_field :footer_chatlink, :class => 'form-group__field', :placeholder => 'e.g minio/minio' %>
+                </div>
+
+                <div class="form-group"> <!-- need fix -->
+                    <%= f.label :gitter_link, 'Slack' %>
+                    <%= f.text_field :gitter_link, :class => 'form-group__field' %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :twitter_link, 'Twitter' %>
+                    <%= f.text_field :twitter_link, :class => 'form-group__field' %>
+                </div>
+            </div>
+
+
+            <!-- Appearance -->
+            <div class="tab-content__pane" id="settings-appearance">
+                <div class="misc-title">Scaffolding</div>
+                <div class="form-wrapper form-wrapper--stack">
+                    <div class="form-group">
+                        <%= f.label :font_family, 'Font family' %>
+                        <input type="text" class="form-group__field" />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label :font_size, 'Font size' %>
+                        <select class="form-group__field">
+                            <option>11px</option>
+                            <option>12px</option>
+                            <option>13px</option>
+                            <option>14px</option>
+                            <option>16px</option>
+                            <option>17px</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label :text_color, 'Text color' %>
+                        <input type="text" class="form-group__field" />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label :link_color, 'Link color' %>
+                        <input type="text" class="form-group__field" />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label :heading_color, 'Heading color' %>
+                        <input type="text" class="form-group__field" />
+                    </div>
+                </div>
+
+                <div class="misc-title">Header</div>
+                <div class="form-wrapper form-wrapper--stack">
+                    <div class="form-group">
+                        <%= f.label :header_background_color, 'Background color' %>
+                        <input type="text" class="form-group__field" />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label :header_text_color, 'Text color' %>
+                        <input type="text" class="form-group__field" />
+                    </div>
+                </div>
+
+                <div class="misc-title">Sidebar</div>
+                <div class="form-wrapper">
+                    <div class="form-group">
+                        <%= f.label :sidebar_background_color, 'Background color' %>
+                        <input type="text" class="form-group__field" />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label :sidebar_link_color, 'Link color' %>
+                        <input type="text" class="form-group__field" />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label :menu_hover_background_color, 'Menu link hover background color' %>
+                        <input type="text" class="form-group__field" />
+                    </div>
+
+                    <div class="form-group">
+                        <%= f.label :sidebar_link_color, 'Menu title color' %>
+                        <input type="text" class="form-group__field" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-footer">
+                <%= f.submit 'Save', :class => 'button button--blue' %>
+            </div>
+        </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :logo_url , 'Logo Image URL' %><br>
-    <%= f.text_field :logo_url %>
-  </div>
-  <div class="field">
-    <%= f.label :tagline, 'Project Tagline' %><br>
-    <%= f.text_field :tagline %>
-  </div>
-  <div class="field">
-    <%= f.label :home_link, 'Home Link' %><br>
-    <%= f.text_field :home_link %>
-  </div>
-  <div class="field">
-    <%= f.label :github_link, 'Github Link' %><br>
-    <%= f.text_field :github_link %>
-  </div>
-  <div class="field">
-    <%= f.label :gitter_link, 'Gitter Link' %><br>
-    <%= f.text_field :gitter_link %>
-  </div>
-  <div class="field">
-    <%= f.label :twitter_link, 'Twitter Link' %><br>
-    <%= f.text_field :twitter_link %>
-  </div>
-  <div class="field">
-    <%= f.label :footer_text, 'Footer Text' %><br>
-    <%= f.text_field :footer_text %>
-  </div>
-  <div class="field">
-    <%= f.label :footer_img, 'Footer Image URL' %><br>
-    <%= f.text_field :footer_img %>
-  </div>
-  <div class="field">
-    <%= f.label :footer_chatlink, 'Footer Chat Link' %><br>
-    <%= f.text_field :footer_chatlink %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

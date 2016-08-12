@@ -16,4 +16,5 @@
 //= require_tree .
 //= require highlight.js/highlight.min
 //= require affix/affix
+//= require tab/tab
 //= require custom
