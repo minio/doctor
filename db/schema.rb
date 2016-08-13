@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160724012021) do
+ActiveRecord::Schema.define(version: 20160813021658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,9 +26,21 @@ ActiveRecord::Schema.define(version: 20160724012021) do
     t.string   "footer_text"
     t.string   "footer_img"
     t.string   "footer_chatlink"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "twitter_link"
+    t.string   "font_family"
+    t.string   "font_size"
+    t.string   "text_color"
+    t.string   "link_color"
+    t.string   "heading_color"
+    t.string   "header_background_color"
+    t.string   "header_text_color"
+    t.string   "sidebar_background_color"
+    t.string   "sidebar_link_color"
+    t.string   "menu_hover_background_color"
+    t.string   "menu_title_color"
+    t.string   "slack_link"
   end
 
   create_table "categories", force: :cascade do |t|

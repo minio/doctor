@@ -70,8 +70,8 @@
                 </div>
 
                 <div class="form-group"> <!-- need fix -->
-                    <%= f.label :gitter_link, 'Slack' %>
-                    <%= f.text_field :gitter_link, :class => 'form-group__field' %>
+                    <%= f.label :slack_link, 'Slack' %>
+                    <%= f.text_field :slack_link, :class => 'form-group__field' %>
                 </div>
 
                 <div class="form-group">
@@ -87,34 +87,29 @@
                 <div class="form-wrapper form-wrapper--stack">
                     <div class="form-group">
                         <%= f.label :font_family, 'Font family' %>
-                        <input type="text" class="form-group__field" />
+                        <%= f.text_field :font_family, :class => 'form-group__field' %>
                     </div>
 
                     <div class="form-group">
                         <%= f.label :font_size, 'Font size' %>
-                        <select class="form-group__field">
-                            <option>11px</option>
-                            <option>12px</option>
-                            <option>13px</option>
-                            <option>14px</option>
-                            <option>16px</option>
-                            <option>17px</option>
-                        </select>
+						<%= f.select :font_size, [ '11px', '12px', '13px', '14px', '15px', '16px', '17px' ],  :class=>"form-group__field" %>
+						
+				 		 
                     </div>
 
                     <div class="form-group">
                         <%= f.label :text_color, 'Text color' %>
-                        <input type="text" class="form-group__field" />
+                        <%= f.text_field :text_color, :class => 'form-group__field' %>
                     </div>
 
                     <div class="form-group">
                         <%= f.label :link_color, 'Link color' %>
-                        <input type="text" class="form-group__field" />
+                        <%= f.text_field :link_color, :class => 'form-group__field' %>
                     </div>
 
                     <div class="form-group">
                         <%= f.label :heading_color, 'Heading color' %>
-                        <input type="text" class="form-group__field" />
+                        <%= f.text_field :heading_color, :class => 'form-group__field' %>
                     </div>
                 </div>
 
@@ -122,12 +117,12 @@
                 <div class="form-wrapper form-wrapper--stack">
                     <div class="form-group">
                         <%= f.label :header_background_color, 'Background color' %>
-                        <input type="text" class="form-group__field" />
+                        <%= f.text_field :header_background_color, :class => 'form-group__field' %>
                     </div>
 
                     <div class="form-group">
                         <%= f.label :header_text_color, 'Text color' %>
-                        <input type="text" class="form-group__field" />
+                        <%= f.text_field :header_text_color, :class => 'form-group__field' %>
                     </div>
                 </div>
 
@@ -135,22 +130,22 @@
                 <div class="form-wrapper">
                     <div class="form-group">
                         <%= f.label :sidebar_background_color, 'Background color' %>
-                        <input type="text" class="form-group__field" />
+                         <%= f.text_field :sidebar_background_color, :class => 'form-group__field' %>
                     </div>
 
                     <div class="form-group">
                         <%= f.label :sidebar_link_color, 'Link color' %>
-                        <input type="text" class="form-group__field" />
+                        <%= f.text_field :sidebar_link_color, :class => 'form-group__field' %>
                     </div>
 
                     <div class="form-group">
                         <%= f.label :menu_hover_background_color, 'Menu link hover background color' %>
-                        <input type="text" class="form-group__field" />
+                        <%= f.text_field :menu_hover_background_color, :class => 'form-group__field' %>
                     </div>
 
                     <div class="form-group">
-                        <%= f.label :sidebar_link_color, 'Menu title color' %>
-                        <input type="text" class="form-group__field" />
+                        <%= f.label :menu_title_color, 'Menu title color' %>
+                        <%= f.text_field :menu_title_color, :class => 'form-group__field' %>
                     </div>
                 </div>
             </div>
