@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160813021658) do
+ActiveRecord::Schema.define(version: 20160817095902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 20160813021658) do
     t.string   "menu_hover_background_color"
     t.string   "menu_title_color"
     t.string   "slack_link"
+    t.string   "description"
+    t.string   "bitbucket_link"
   end
 
   create_table "categories", force: :cascade do |t|
