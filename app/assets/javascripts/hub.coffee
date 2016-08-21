@@ -142,4 +142,15 @@ $(document).on 'page:change', ->
       $(this).wrap '<div class="table-responsive" />'
     return
 
+
+  #-----------------------------
+  # Color Picker
+  #-----------------------------
+  if $('.color-pick')[0]
+    $('.color-pick__target').each ->
+      colorOutput = $(this).closest('.color-pick').find('.color-pick__value')
+      $(this).farbtastic colorOutput
+      return
+
+
   return
