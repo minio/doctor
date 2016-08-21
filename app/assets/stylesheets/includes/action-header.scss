@@ -19,7 +19,7 @@
     height: 61px;
     color: darken($text-muted, 30%);
     line-height: 62px;
-    font-size: 15px;
+    font-size: 0.95em;
   }
 
   &:before {
@@ -42,7 +42,8 @@
 }
 
 .action-header__add {
-  padding: 15px 25px;
+  padding: 0 25px;
+  line-height: 58px;
 }
 
 .action-header__right {
@@ -97,8 +98,8 @@
 }
 
 .action-header__title {
-  font-size: 15px;
-  padding-top: 24px;
+  font-size: 0.95em;
+  line-height: 62px;
 }
 
 .action-header__item--menu {
@@ -128,10 +129,13 @@
 
     & > a {
       display: block;
-      padding: 22px 15px 23px;
+      padding: 0 15px;
       color: lighten($text-color, 15%);
       @include transition(all, 300ms);
       border-bottom: 1px solid transparent;
+      font-size: 1em;
+      height: 62px;
+      line-height: 62px;
     }
   }
 }

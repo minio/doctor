@@ -56,13 +56,13 @@ a.list-group__item,
 .list-group__title {
   font-weight: 500;
   color: $text-strong;
-  font-size: $font-size - 1;
+  font-size: 0.95em;
 }
 
 .list-group__text {
   color: $text-muted;
-  margin-top: 8px;
-  font-size: 12px;
+  margin-top: 10px;
+  font-size: 0.8em;
 }
 
 .list-group__actions {

@@ -27,7 +27,7 @@
   & > label {
     display: block;
     margin-bottom: 5px;
-    font-size: $font-size - 3;
+    font-size: 0.85em;
   }
 }
 
@@ -35,9 +35,9 @@
 .form-group__field {
   width: 100%;
   border: 1px solid $input-border;
-  padding: 7px 10px;
+  padding: 8px 12px;
   color: $text-strong;
-  font-size: $font-size - 3;
+  font-size: 0.85em;
   border-radius: 0;
   background-color: transparent;
   @include transition(all, 300ms);
