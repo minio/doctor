@@ -153,4 +153,21 @@ $(document).on 'page:change', ->
       return
 
 
+  #---------------------------------
+  # Make settings tabs persistent
+  #---------------------------------
+  if $('.action-header__item--tabs')[0]
+    url = document.location.hash
+    if url.match('#')
+      $('.action-header__item--tabs > li > a[href="#' + url.split('#')[1] + '"]').tab 'show'
+      setTimeout ->
+        window.scrollTo 0, 0
+        return
+
+    $('.action-header__item--tabs > li > a').on 'shown.bs.tab', (e) ->
+      window.location.hash = e.target.hash
+      window.scrollTo 0, 0
+
+      return
+
   return
