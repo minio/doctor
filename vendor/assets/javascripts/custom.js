@@ -1,4 +1,7 @@
 $(document).on('page:change', function () {
+	
+	 
+	
     /*---------------------------
         Mobile Detect
     ----------------------------*/
@@ -13,7 +16,7 @@ $(document).on('page:change', function () {
         $sidecarScript = '<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" />';
         $('body').append($sidecarScript);
         ((window.gitter = {}).chat = {}).options = {
-            room: '' //Add you gitter room
+            room: $('#settings').data('url')
         };
     }
 
