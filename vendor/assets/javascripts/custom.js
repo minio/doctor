@@ -1,7 +1,5 @@
 $(document).on('page:change', function () {
-	
-	 
-	
+   
     /*---------------------------
         Mobile Detect
     ----------------------------*/
