@@ -27,6 +27,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @documents = Document.where(:category_id => params[:id]).order('created_at ASC')
   end
 
   # GET /categories/new
@@ -77,7 +78,7 @@ class CategoriesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
   private
   
     def resolve_layout
