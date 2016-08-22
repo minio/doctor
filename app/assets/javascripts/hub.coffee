@@ -18,8 +18,9 @@ $(document).on 'page:change', ->
   #------------------------------
   # Scroll to sidebar link
   #------------------------------
-  $pathname = window.location.pathname
-  $('.main__sidebar').scrollTop $('a[href="' + $pathname + '"]').offset().top - 82 #82 is the height(px) of header
+  if $('.main__sidebar--scroll')[0]
+    $pathname = window.location.pathname
+    $('.main__sidebar--scroll').scrollTop $('a[href="' + $pathname + '"]').offset().top - 82 #82 is the height(px) of header
 
 
   #-----------------------
