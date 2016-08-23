@@ -37,7 +37,7 @@
         <ul class="main__menu">
           <% @categories.each do |category| %>
               <li>
-                <a href=""><%= category.title %></a>
+                <a href="<%=category_path(category.id) %>"><%= category.title %></a>
                 <% if category.documents.any? %>
                     <ul>
                       <% category.documents.each do |doc| %>

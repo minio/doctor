@@ -1,14 +1,14 @@
+
+
+
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @category.title %>
-</p>
-
-<p>
-  <strong>Desc:</strong>
-  <%= @category.desc %>
-</p>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<div class="list-group list-group--action">
+  <% @documents.each do |doc| %>
+      <div class="list-group__wrap">
+        <a class="list-group__item" href="<%=document_path(doc.slug) %>" >
+          <div class="list-group__title"><%= doc.name %></div>
+          <div class="list-group__text"><%= doc.description %></div>
+        </a>            
+      </div>
+  <% end %>
+</div>
