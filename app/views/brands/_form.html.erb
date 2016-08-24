@@ -14,7 +14,7 @@
         <div class="tab-content">
 
             <!-- Project Settings-->
-            <div class="form-wrapper tab-content__pane active" id="settings-project">
+            <div class="form-wrapper tab-content__pane active" id="project-settings">
                 <div class="form-group">
                     <%= f.label :title %>
                     <%= f.text_field :title, :class => 'form-group__field' %>
@@ -48,7 +48,7 @@
 
 
             <!-- Social Links -->
-            <div class="form-wrapper tab-content__pane" id="settings-social">
+            <div class="form-wrapper tab-content__pane" id="social-links">
                 <div class="form-group">
                     <%= f.label :github_link, 'Github' %>
                     <%= f.text_field :github_link, :class => 'form-group__field' %>
@@ -82,7 +82,7 @@
 
 
             <!-- Appearance -->
-            <div class="tab-content__pane" id="settings-appearance">
+            <div class="tab-content__pane" id="appearance">
                 <div class="misc-title">Scaffolding</div>
                 <div class="form-wrapper form-wrapper--stack">
                     <div class="form-group">
@@ -93,23 +93,48 @@
                     <div class="form-group">
                         <%= f.label :font_size, 'Font size' %>
 						<%= f.select :font_size, [ '11px', '12px', '13px', '14px', '15px', '16px', '17px' ],  :class=>"form-group__field" %>
-						
-				 		 
                     </div>
 
                     <div class="form-group">
                         <%= f.label :text_color, 'Text color' %>
-                        <%= f.text_field :text_color, :class => 'form-group__field' %>
+
+                        <div class="color-pick dropdown">
+                            <%= f.text_field :text_color, :class => 'form-group__field dropdown__toggle color-pick__value' %>
+
+                            <i class="color-pick__preview color-pick__value"></i>
+
+                            <div class="dropdown__menu">
+                                <div class="color-pick__target"></div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="form-group">
                         <%= f.label :link_color, 'Link color' %>
-                        <%= f.text_field :link_color, :class => 'form-group__field' %>
+
+                        <div class="color-pick dropdown">
+                            <%= f.text_field :link_color, :class => 'form-group__field dropdown__toggle color-pick__value' %>
+
+                            <i class="color-pick__preview color-pick__value"></i>
+
+                            <div class="dropdown__menu">
+                                <div class="color-pick__target"></div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="form-group">
                         <%= f.label :heading_color, 'Heading color' %>
-                        <%= f.text_field :heading_color, :class => 'form-group__field' %>
+
+                        <div class="color-pick dropdown">
+                            <%= f.text_field :heading_color, :class => 'form-group__field dropdown__toggle color-pick__value' %>
+
+                            <i class="color-pick__preview color-pick__value"></i>
+
+                            <div class="dropdown__menu">
+                                <div class="color-pick__target"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -117,12 +142,32 @@
                 <div class="form-wrapper form-wrapper--stack">
                     <div class="form-group">
                         <%= f.label :header_background_color, 'Background color' %>
-                        <%= f.text_field :header_background_color, :class => 'form-group__field' %>
+
+                        <div class="form-group">
+                            <div class="color-pick dropdown">
+                                <%= f.text_field :header_background_color, :class => 'form-group__field dropdown__toggle color-pick__value' %>
+
+                                <i class="color-pick__preview color-pick__value"></i>
+
+                                <div class="dropdown__menu">
+                                    <div class="color-pick__target"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="form-group">
                         <%= f.label :header_text_color, 'Text color' %>
-                        <%= f.text_field :header_text_color, :class => 'form-group__field' %>
+
+                        <div class="color-pick dropdown">
+                            <%= f.text_field :header_text_color, :class => 'form-group__field dropdown__toggle color-pick__value' %>
+
+                            <i class="color-pick__preview color-pick__value"></i>
+
+                            <div class="dropdown__menu">
+                                <div class="color-pick__target"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -130,22 +175,58 @@
                 <div class="form-wrapper">
                     <div class="form-group">
                         <%= f.label :sidebar_background_color, 'Background color' %>
-                         <%= f.text_field :sidebar_background_color, :class => 'form-group__field' %>
+
+                        <div class="color-pick dropdown">
+                            <%= f.text_field :sidebar_background_color, :class => 'form-group__field dropdown__toggle color-pick__value' %>
+
+                            <i class="color-pick__preview color-pick__value"></i>
+
+                            <div class="dropdown__menu">
+                                <div class="color-pick__target"></div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="form-group">
                         <%= f.label :sidebar_link_color, 'Link color' %>
-                        <%= f.text_field :sidebar_link_color, :class => 'form-group__field' %>
+
+                        <div class="color-pick dropdown">
+                            <%= f.text_field :sidebar_link_color, :class => 'form-group__field dropdown__toggle color-pick__value' %>
+
+                            <i class="color-pick__preview color-pick__value"></i>
+
+                            <div class="dropdown__menu">
+                                <div class="color-pick__target"></div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="form-group">
                         <%= f.label :menu_hover_background_color, 'Menu link hover background color' %>
-                        <%= f.text_field :menu_hover_background_color, :class => 'form-group__field' %>
+
+                        <div class="color-pick dropdown">
+                            <%= f.text_field :menu_hover_background_color, :class => 'form-group__field dropdown__toggle color-pick__value' %>
+
+                            <i class="color-pick__preview color-pick__value"></i>
+
+                            <div class="dropdown__menu">
+                                <div class="color-pick__target"></div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="form-group">
                         <%= f.label :menu_title_color, 'Menu title color' %>
-                        <%= f.text_field :menu_title_color, :class => 'form-group__field' %>
+
+                        <div class="color-pick dropdown">
+                            <%= f.text_field :menu_title_color, :class => 'form-group__field dropdown__toggle color-pick__value' %>
+
+                            <i class="color-pick__preview color-pick__value"></i>
+
+                            <div class="dropdown__menu">
+                                <div class="color-pick__target"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

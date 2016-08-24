@@ -17,4 +17,5 @@
 //= require highlight.js/highlight.min
 //= require affix/affix
 //= require tab/tab
+//= require farbtastic/farbtastic.min
 //= require custom

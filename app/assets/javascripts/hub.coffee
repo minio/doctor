@@ -18,8 +18,9 @@ $(document).on 'page:change', ->
   #------------------------------
   # Scroll to sidebar link
   #------------------------------
-  $pathname = window.location.pathname
-  $('.main__sidebar').scrollTop $('a[href="' + $pathname + '"]').offset().top - 82 #82 is the height(px) of header
+  if $('.main__sidebar--scroll')[0]
+    $pathname = window.location.pathname
+    $('.main__sidebar--scroll').scrollTop $('a[href="' + $pathname + '"]').offset().top - 82 #82 is the height(px) of header
 
 
   #-----------------------
@@ -141,5 +142,33 @@ $(document).on 'page:change', ->
     if !$(this).parent().is('.table-responsive')
       $(this).wrap '<div class="table-responsive" />'
     return
+
+
+  #-----------------------------
+  # Color Picker
+  #-----------------------------
+  if $('.color-pick')[0]
+    $('.color-pick__target').each ->
+      colorOutput = $(this).closest('.color-pick').find('.color-pick__value')
+      $(this).farbtastic colorOutput
+      return
+
+
+  #---------------------------------
+  # Make settings tabs persistent
+  #---------------------------------
+  if $('.action-header__item--tabs')[0]
+    url = document.location.hash
+    if url.match('#')
+      $('.action-header__item--tabs > li > a[href="#' + url.split('#')[1] + '"]').tab 'show'
+      setTimeout ->
+        window.scrollTo 0, 0
+        return
+
+    $('.action-header__item--tabs > li > a').on 'shown.bs.tab', (e) ->
+      window.location.hash = e.target.hash
+      window.scrollTo 0, 0
+
+      return
 
   return
