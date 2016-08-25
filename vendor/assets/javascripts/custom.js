@@ -11,11 +11,13 @@ $(document).on('page:change', function () {
         Sidecar
     ----------------------------*/
     if (!isMobile()) {
-        $sidecarScript = '<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" />';
-        $('body').append($sidecarScript);
-        ((window.gitter = {}).chat = {}).options = {
-            room: $('#settings').data('url')
-        };
+        if($('[data-sidecar]')[0]) {
+            $sidecarScript = '<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" />';
+            $('body').append($sidecarScript);
+            ((window.gitter = {}).chat = {}).options = {
+                room: $('[data-sidecar]').data('sidecar')
+            };
+        }
     }
 
     $('body').on('click', '.gitter-open-chat-button', function() {
