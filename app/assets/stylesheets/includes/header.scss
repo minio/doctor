@@ -28,7 +28,10 @@
   line-height: 100%;
   text-transform: uppercase;
 
-  &, a {
+  &,
+  a,
+  a:hover,
+  a:focus {
     color: $logo-color;
   }
 
@@ -72,7 +75,7 @@
           }
 
           &:hover {
-            background-color: rgba(0,0,0,0.25);
+            background-color: rgba(0,0,0,0.2);
           }
         }
       }

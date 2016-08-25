@@ -25,16 +25,17 @@
     <%= csrf_meta_tags %>
 
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <%= render 'layouts/style' %>
   </head>
 
 
   <body>
-     
 
 	<%= render 'layouts/header' %>
 	  
     <div id="main">
-      <div class="main__sidebar">
+      <div class="main__sidebar main__sidebar--scroll">
         <ul class="main__menu">
           <% @categories.each do |category| %>
               <li>

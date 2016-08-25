@@ -1,0 +1,41 @@
+<style type="text/css">
+    body {
+        font-size: <%= @mybrand.font_size %> !important;
+        color: <%= @mybrand.text_color %>;
+    }
+    
+    a,
+    a:hover,
+    a:focus {
+        color: <%= @mybrand.link_color %>;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: <%= @mybrand.heading_color %>;
+    }
+
+    #header {
+        background-color: <%= @mybrand.header_background_color %>;
+    }
+
+    .main__sidebar {
+        background-color: <%= @mybrand.sidebar_background_color %>;
+    }
+
+    .main__menu > li > ul > li > a,
+    .main__menu > li > ul > li > a:hover,
+    .main__menu > li > ul > li > a:focus {
+        color: <%= @mybrand.sidebar_link_color %>;
+    }
+
+    .main__menu > li > ul > li > a.active,
+    .main__menu > li > ul > li > a:hover {
+        background-color: <%= @mybrand.menu_hover_background_color %>;
+    }
+
+    .main__menu > li > a,
+    .main__menu > li > a:hover,
+    .main__menu > li > a:focus {
+        color: <%= @mybrand.menu_title_color %>;
+    }
+</style>
