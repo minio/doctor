@@ -31,7 +31,7 @@ class SessionsController < ApplicationController
                                     
         redirect_to dashboard_path, info: "Welcome back admin!"
        else 
-        redirect_to hub_index, warning: "Not Authorized!"
+        redirect_to hub_index_path, warning: "Not Authorized!"
        end
     else
       flash.now.alert = "Email or password is invalid"
