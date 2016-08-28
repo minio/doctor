@@ -20,6 +20,8 @@
 }
 
 .form-group {
+  position: relative;
+
   &:not(:last-child) {
     margin-bottom: 20px;
   }
@@ -75,6 +77,21 @@ textarea.form-group__field {
 
   .button {
     margin: 0 2px;
+  }
+}
+
+
+/*---------------------------
+    Help Icon
+----------------------------*/
+.form-group__help {
+  position: absolute;
+  top: 3px;
+  right: 1px;
+  cursor: pointer;
+  
+  &:hover {
+    color: #4f4f4f;
   }
 }
 

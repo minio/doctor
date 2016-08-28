@@ -88,11 +88,15 @@
                     <div class="form-group">
                         <%= f.label :font_family, 'Font family' %>
                         <%= f.text_field :font_family, :class => 'form-group__field' %>
+
+                        <%= icon('question-circle-o form-group__help', :data => {toggle: 'tooltip'}, :title => 'Sets a font family to change the overall look of the texts') %>
                     </div>
 
                     <div class="form-group">
                         <%= f.label :font_size, 'Font size' %>
 						<%= f.select :font_size, [ '11px', '12px', '13px', '14px', '15px', '16px', '17px' ],  :class=>"form-group__field" %>
+
+                        <%= icon('question-circle-o form-group__help', :data => {toggle: 'tooltip'}, :title => 'Sets the overall font sizes including paragraphs, heading, links, etc.') %>
                     </div>
 
                     <div class="form-group">
@@ -107,6 +111,8 @@
                                 <div class="color-pick__target"></div>
                             </div>
                         </div>
+
+                        <%= icon('question-circle-o form-group__help', :data => {toggle: 'tooltip'}, :title => 'Sets a custom text color for documents') %>
                     </div>
 
                     <div class="form-group">
@@ -121,6 +127,9 @@
                                 <div class="color-pick__target"></div>
                             </div>
                         </div>
+
+                        <%= icon('question-circle-o form-group__help', :data => {toggle: 'tooltip'}, :title => 'Sets a custom link color for documents') %>
+
                     </div>
 
                     <div class="form-group">
@@ -135,6 +144,9 @@
                                 <div class="color-pick__target"></div>
                             </div>
                         </div>
+
+                        <%= icon('question-circle-o form-group__help', :data => {toggle: 'tooltip'}, :title => 'Sets a custom heading color for documents which includes h1 - h6') %>
+
                     </div>
                 </div>
 
@@ -154,6 +166,8 @@
                                 </div>
                             </div>
                         </div>
+
+                        <%= icon('question-circle-o form-group__help', :data => {toggle: 'tooltip'}, :title => 'Sets a background color for site header which will match your brand') %>
                     </div>
                 </div>
 
@@ -171,6 +185,8 @@
                                 <div class="color-pick__target"></div>
                             </div>
                         </div>
+
+                        <%= icon('question-circle-o form-group__help', :data => {toggle: 'tooltip'}, :title => 'Sets a custom background color for the left sidebar') %>
                     </div>
 
                     <div class="form-group">
@@ -185,6 +201,8 @@
                                 <div class="color-pick__target"></div>
                             </div>
                         </div>
+
+                        <%= icon('question-circle-o form-group__help', :data => {toggle: 'tooltip'}, :title => 'Sets a custom text color for sidebar menu links') %>
                     </div>
 
                     <div class="form-group">
@@ -199,6 +217,8 @@
                                 <div class="color-pick__target"></div>
                             </div>
                         </div>
+
+                        <%= icon('question-circle-o form-group__help', :data => {toggle: 'tooltip'}, :title => 'Sets a background color to toggle when mouse-hover the menu links') %>
                     </div>
 
                     <div class="form-group">
@@ -213,6 +233,9 @@
                                 <div class="color-pick__target"></div>
                             </div>
                         </div>
+
+                        <%= icon('question-circle-o form-group__help', :data => {toggle: 'tooltip'}, :title => 'Sets a custom text color for menu link titles') %>
+
                     </div>
                 </div>
             </div>

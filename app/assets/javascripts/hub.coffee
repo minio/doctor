@@ -154,6 +154,13 @@ $(document).on 'page:change', ->
       return
 
 
+  #-----------------------------
+  # Tooltip
+  #-----------------------------
+  if $('[data-toggle="tooltip"]')[0]
+    $('[data-toggle="tooltip"]').tooltip()
+
+
   #---------------------------------
   # Make settings tabs persistent
   #---------------------------------
