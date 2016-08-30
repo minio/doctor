@@ -18,4 +18,5 @@
 //= require affix/affix
 //= require tab/tab
 //= require farbtastic/farbtastic.min
+//= require tooltip/tooltip.min
 //= require custom
