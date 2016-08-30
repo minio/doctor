@@ -1,9 +1,12 @@
 <footer id="footer">
 	<% if @mybrand %>
-			<%=  @mybrand.footer_text %>
+        <%=  @mybrand.footer_text %>
+
+        <% if !@mybrand.footer_img.blank? %>
+            <img class="footer__img" src="<%= @mybrand.footer_img %>" alt="">
+        <% end %>
 			 
 	<% else %>
-		 	Doctor is licensed under Apache 2.0 License.
+        Doctor is licensed under Apache 2.0 License.
 	<% end %>
-
 </footer>

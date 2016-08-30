@@ -58,7 +58,7 @@ $(document).on 'page:change', ->
     return
 
   # Open
-  $body.on 'click', '*:not("a") > img:not(".img-preview__img")', ->
+  $body.on 'click', '*:not("a") > img:not(".img-preview__img"):not(".footer__img")', ->
     $imgSrc = $(this).attr('src')
     $imgWrap =  '<div class="img-preview">' +
                   '<div class="img-preview__close img-preview__close--back"></div>' +

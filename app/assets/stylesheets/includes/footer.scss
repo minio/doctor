@@ -12,3 +12,16 @@
     color: darken($footer-color, 10%);
   }
 }
+
+.footer__img {
+  display: inline-block;
+  max-width: 100px;
+  max-height: 50px;
+  vertical-align: text-bottom;
+  margin-left: 10px;
+
+  @media (max-width: $screen-xs-max) {
+    display: block;
+    margin: 10px auto 0;
+  }
+}
