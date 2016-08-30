@@ -71,7 +71,7 @@ a {
 }
 
 *:not(a) {
-  & > img {
+  & > img:not([class]) {
     border-radius: 2px;
     max-width: 800px;
     width: 100%;

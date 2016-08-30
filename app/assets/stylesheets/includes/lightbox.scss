@@ -1,5 +1,5 @@
 *:not(a) {
-  img {
+  img:not([class]) {
     &:not(.img-preview__img) {
       @include transition(box-shadow, 300ms);
       cursor: pointer;
