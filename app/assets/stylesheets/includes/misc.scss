@@ -105,7 +105,7 @@
   text-align: center;
   padding: 20px;
   z-index: 1;
-  @include animation(fadeIn, 300ms);
+  @include animation(fadeIn, 1900ms);
 
   & > i {
     position: absolute;

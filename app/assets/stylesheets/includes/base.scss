@@ -70,18 +70,18 @@ a {
   }
 }
 
-*:not(a) {
-  & > img:not([class]) {
-    border-radius: 2px;
-    max-width: 800px;
-    width: 100%;
-    border: 1px solid $line-color;
-    padding: 5px;
-    background-color: #fff;
-  }
-}
-
 .main__page {
+  *:not(a) {
+    & > img:not([class]) {
+      border-radius: 2px;
+      max-width: 800px;
+      width: 100%;
+      border: 1px solid $line-color;
+      padding: 5px;
+      background-color: #fff;
+    }
+  }
+
   ul:not([class]) {
     li {
       padding-bottom: 8px;

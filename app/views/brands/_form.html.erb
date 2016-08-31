@@ -23,6 +23,8 @@
                 <div class="form-group">
                     <%= f.label :logo_url , 'Logo URL' %>
                     <%= f.text_field :logo_url, :class => 'form-group__field' %>
+
+                    <%= icon('question-circle-o form-group__help', :data => {toggle: 'tooltip'}, :title => 'Logo base area is 150x45(px). Consider using 2x image size for mobile displays') %>
                 </div>
 
                 <div class="form-group">
@@ -30,7 +32,7 @@
                     <%= f.text_field :home_link, :class => 'form-group__field' %>
                 </div>
 
-                <div class="form-group"> <!-- need fix -->
+                <div class="form-group">
                     <%= f.label 'Description' %>
                     <%= f.text_area :description, :class => 'form-group__field' %>
                 </div>
@@ -54,7 +56,7 @@
                     <%= f.text_field :github_link, :class => 'form-group__field' %>
                 </div>
 
-                <div class="form-group"> <!-- need fix -->
+                <div class="form-group">
                     <%= f.label :bitbucket_link, 'Bitbucket' %>
                     <%= f.text_field :bitbucket_link, :class => 'form-group__field' %>
                 </div>
@@ -69,7 +71,7 @@
                     <%= f.text_field :footer_chatlink, :class => 'form-group__field', :placeholder => 'e.g minio/minio' %>
                 </div>
 
-                <div class="form-group"> <!-- need fix -->
+                <div class="form-group">
                     <%= f.label :slack_link, 'Slack' %>
                     <%= f.text_field :slack_link, :class => 'form-group__field' %>
                 </div>
