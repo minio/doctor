@@ -3,13 +3,17 @@
     <%= icon('bars') %>
   </div>
 
-  <div class="header__logo">
+  <a class="header__brand" href="<%= hub_path %>">
     <% if @mybrand %>
-        <%= link_to @mybrand.title, hub_path %>
+        <% if !@mybrand.logo_url.empty? %>
+            <img class="header__logo" src="<%= @mybrand.logo_url %>" alt="">
+        <% end %>
+
+        <span class="header__title"><%= @mybrand.title %></span>
     <% else %>
         Your Project
     <% end %>
-  </div>
+  </a>
 
   <nav class="header__menu">
     <ul>

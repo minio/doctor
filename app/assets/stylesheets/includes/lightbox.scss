@@ -1,11 +1,13 @@
-*:not(a) {
-  img:not([class]) {
-    &:not(.img-preview__img) {
-      @include transition(box-shadow, 300ms);
-      cursor: pointer;
+.main__page {
+  *:not(a) {
+    img:not([class]) {
+      &:not(.img-preview__img) {
+        @include transition(box-shadow, 300ms);
+        cursor: pointer;
 
-      &:hover {
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        &:hover {
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
       }
     }
   }
