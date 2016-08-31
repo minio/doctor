@@ -5,7 +5,7 @@
 
   <a class="header__brand" href="<%= hub_path %>">
     <% if @mybrand %>
-        <% if !@mybrand.logo_url.empty? %>
+        <% if @mybrand.logo_url %>
             <img class="header__logo" src="<%= @mybrand.logo_url %>" alt="">
         <% end %>
 
