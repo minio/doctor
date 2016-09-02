@@ -29,7 +29,6 @@ gem 'nokogiri'
 gem 'albino'
 gem 'github-markup' 
 gem 'pygments.rb', '~> 0.6.3'
-gem 'pry'
 gem 'pg'
 gem 'coderay'
 gem 'bcrypt'
@@ -51,6 +50,7 @@ gem 'mengpaneel'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'pry'
 end
 
 group :development do
