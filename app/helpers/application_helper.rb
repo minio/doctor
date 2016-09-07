@@ -15,10 +15,13 @@
 #
 
 module ApplicationHelper
-
-    def current_class?(check_path)
-        return 'active' if request.path == check_path
+    def is_active_controller(controller_name)
+        return 'active' if params[:controller] == controller_name
         ''
     end
 
+    def is_active_path(path_name)
+        return 'active' if request.path == path_name
+        ''
+    end
 end
