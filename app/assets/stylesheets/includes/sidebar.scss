@@ -56,9 +56,12 @@
           margin: 0 -40px 0;
           font-size: 1em;
 
-          &.active,
           &:hover {
             background-color: $sidebar-link-hover-bg;
+          }
+
+          &.active {
+            background-color: $sidebar-link-active-bg;
           }
         }
       }
