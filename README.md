@@ -1,4 +1,8 @@
-# Project Doctor
+<p align="center">
+<img src="https://github.com/minio/doctor/blob/master/public/Doctor_logo_888x1024.png?raw=true" width="140px">
+</p>
+
+# Doctor
 * Doctor is a Documentation Server for all your project docs.
 * Doctor beautifully decouples document serving and document contents.
 * Create your docs in markdown. Store them anywhere (github/dropbox/google drive/ anywhere really).
