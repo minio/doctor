@@ -73,12 +73,13 @@ a {
 .main__page {
   *:not(a) {
     & > img:not([class]) {
-      border-radius: 2px;
-      max-width: 800px;
-      width: 100%;
       border: 1px solid $line-color;
       padding: 5px;
       background-color: #fff;
+      border-radius: 2px;
+      display: block;
+      max-width: 100%;
+      height: auto;
     }
   }
 
