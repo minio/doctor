@@ -46,7 +46,7 @@ Use `sysadmin@doctor.io` with password `Doctor!23` to login. Visit [http://local
 ## Organization
 * Documents are organized under Categories.
 * Login to the dashboard
-* Step 1 : Use the Dashboard to create a new Category : http://localhost:3000/category/new
-* Step 2 : Use the Dashboard to create a link to a new Document : http://localhost:3000/document/new
+* Step 1 : Use the Dashboard to create a new Category : http://localhost:3000/categories/new
+* Step 2 : Use the Dashboard to create a link to a new Document : http://localhost:3000/docs/new
 * Step 3: Paste the raw URL to the md file when linking a new document. The "Raw" button is on the top of the MD file in github.
 * Required : All documents need to be associated under a Category
