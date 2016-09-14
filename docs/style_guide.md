@@ -1,4 +1,4 @@
-# Customization
+# Customizations
 
 Customizations can be done from within the dashboard. 
  * Project Settings : Change project name, project logo in the header, the footer text, footer chat in this tab. 
