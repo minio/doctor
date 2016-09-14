@@ -9,6 +9,8 @@
 * Login to Doctor's Dashboard. Setup links to your doc files in Doctor's Dashboard.
 * You are done!
 
+# Live Demos of Doctor Deployments
+* [Minio Docs](https://docs.minio.io)
 
 ## Pre-Requisites to Deploy Doctor
 
