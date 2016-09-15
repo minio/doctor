@@ -13,33 +13,29 @@
 * [Minio Docs](https://docs.minio.io) has a doctor server running that pulls together MD files that reside across a number of repos :
  
 Minio Server : 
-  * Readme.MD in https://github.com/minio/minio
-  * MD files in https://github.com/minio/minio/tree/master/docs
+* Readme.MD in https://github.com/minio/minio
+* MD files in https://github.com/minio/minio/tree/master/docs
 
 `mc` : 
-  * Readme.MD https://github.com/minio/mc
-  * MD files in https://github.com/minio/mc/tree/master/docs
+* Readme.MD https://github.com/minio/mc
+* * MD files in https://github.com/minio/mc/tree/master/docs
 
 Recipes : 
-  * MD files in https://github.com/minio/cookbook
+* MD files in https://github.com/minio/cookbook
 
-Minio SDKs : 
-Readme.MD files in
-
-  * Go - https://github.com/minio/minio-go
-  * JS - https://github.com/minio/minio-js
-  * Python - https://github.com/minio/minio-py
-  * Java - https://github.com/minio/minio-java
+Minio SDKs : Readme.MD files in
+* Go - https://github.com/minio/minio-go
+* JS - https://github.com/minio/minio-js
+* Python - https://github.com/minio/minio-py
+* Java - https://github.com/minio/minio-java
  
-Minio Full Examples :
-Readme.MD files in 
-
-  * Javascript Shopping App - https://github.com/minio/minio-js-store-app
-  * Go Music Player App - https://github.com/minio/minio-go-media-player
-  * Java Photo API Service -  https://github.com/minio/minio-java-rest-example
-  * Android Photo App - https://github.com/minio/android-photo-app
-  * Swift Photo App - https://github.com/minio/swift-photo-app
-  * Rails Resume Uploader App - https://github.com/minio/ror-resumeuploader-app
+Minio Full Examples : Readme.MD files in 
+* Javascript Shopping App - https://github.com/minio/minio-js-store-app
+* Go Music Player App - https://github.com/minio/minio-go-media-player
+* Java Photo API Service -  https://github.com/minio/minio-java-rest-example
+* Android Photo App - https://github.com/minio/android-photo-app
+* Swift Photo App - https://github.com/minio/swift-photo-app
+* Rails Resume Uploader App - https://github.com/minio/ror-resumeuploader-app
  
 You may use the `Suggest Edits` feature in Doctor to submit changes to any of the MD files in github. Doctor relies on github workflow to accept PRs for changes. 
 
