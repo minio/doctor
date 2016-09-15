@@ -89,45 +89,9 @@ textarea.form-group__field {
   top: 3px;
   right: 1px;
   cursor: pointer;
+  color: #c2c2c2;
   
   &:hover {
-    color: #4f4f4f;
+    color: darken(#c2c2c2, 25%);
   }
-}
-
-
-/*---------------------------
-    Color Picker
-----------------------------*/
-.color-pick {
-  position: relative;
-  width: 100%;
-
-  .dropdown__menu {
-    padding: 20px;
-    top: 34px !important;
-  }
-}
-
-input.color-pick__value {
-  background-color: #fff !important;
-  color: $text-strong !important;
-  
-  &:focus {
-    & ~ .dropdown__menu {
-      border-top-color: $input-focus-border-color;
-    }
-  }
-}
-
-.color-pick__preview {
-  position: absolute;
-  right: 7px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  pointer-events: none;
 }

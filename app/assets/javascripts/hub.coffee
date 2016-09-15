@@ -147,11 +147,9 @@ $(document).on 'page:change', ->
   #-----------------------------
   # Color Picker
   #-----------------------------
-  if $('.color-pick')[0]
-    $('.color-pick__target').each ->
-      colorOutput = $(this).closest('.color-pick').find('.color-pick__value')
-      $(this).farbtastic colorOutput
-      return
+  if $('.form-group__field--color')[0]
+    $('.form-group__field--color').minicolors()
+
 
 
   #-----------------------------

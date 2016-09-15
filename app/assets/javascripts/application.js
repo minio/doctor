@@ -17,6 +17,9 @@
 //= require highlight.js/highlight.min
 //= require affix/affix
 //= require tab/tab
-//= require farbtastic/farbtastic.min
+//= require jquery-minicolors/jquery.minicolors
 //= require tooltip/tooltip.min
 //= require custom
+
+
+
