@@ -12,24 +12,24 @@
 ## Live Demo
   * [Minio Docs](https://docs.minio.io) has a doctor server running that pulls together MD files that reside across a number of repos :
  
-### Minio Server : 
+#### Minio Server : 
   * Readme.MD in https://github.com/minio/minio
   * MD files in https://github.com/minio/minio/tree/master/docs
 
-### `mc` : 
+#### `mc` : 
   * Readme.MD https://github.com/minio/mc
   * MD files in https://github.com/minio/mc/tree/master/docs
 
-### Recipes : 
+#### Recipes : 
   * MD files in https://github.com/minio/cookbook
 
-### Minio SDKs : Readme.MD files in
+#### Minio SDKs : Readme.MD files in
   * Go - https://github.com/minio/minio-go
   * JS - https://github.com/minio/minio-js
   * Python - https://github.com/minio/minio-py
   * Java - https://github.com/minio/minio-java
 
-### Minio Full Examples : Readme.MD files in 
+#### Minio Full Examples : Readme.MD files in 
   * Javascript Shopping App - https://github.com/minio/minio-js-store-app
   * Go Music Player App - https://github.com/minio/minio-go-media-player
   * Java Photo API Service -  https://github.com/minio/minio-java-rest-example
