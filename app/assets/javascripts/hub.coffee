@@ -118,21 +118,18 @@ $(document).on 'page:change', ->
     return
 
 
-
   #-----------------------------
   # Header Affix
   #-----------------------------
   $('.main__sidebar').affix offset: top: 82 #header height
 
 
-  
   #-----------------------------
   # Notification Toggle
   #-----------------------------
   $('.notify').addClass('notify--show').delay(5000).queue ->
     $(this).removeClass('notify--show').dequeue()
     return
-
 
 
   #-----------------------------
@@ -142,15 +139,6 @@ $(document).on 'page:change', ->
     if !$(this).parent().is('.table-responsive')
       $(this).wrap '<div class="table-responsive" />'
     return
-
-
-  #-----------------------------
-  # Color Picker
-  #-----------------------------
-  if $('.form-group__field--color')[0]
-    $('.form-group__field--color').minicolors()
-
-
 
   #-----------------------------
   # Tooltip
