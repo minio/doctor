@@ -15,5 +15,5 @@ $(document).on 'page:change', ->
     ## Validation(mask)
     $('.form-group__field--color').mask 'ASSSSSS', 'translation':
       A: pattern: /['#']/
-      S: pattern: /[A-Za-z-0-9]/
+      S: pattern: /[A-Za-z0-9]/
 
