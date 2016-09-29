@@ -13,21 +13,21 @@
 [Minio Docs](https://docs.minio.io) has a doctor server running that pulls together MD files that reside across a number of repos :
  
 #### Minio Server : 
-  * Readme.MD in https://github.com/minio/minio
-  * MD files in https://github.com/minio/minio/tree/master/docs
+  * README.md in https://github.com/minio/minio
+  * Markdown files in https://github.com/minio/minio/tree/master/docs
 
 #### `mc` : 
-  * Readme.MD https://github.com/minio/mc
-  * MD files in https://github.com/minio/mc/tree/master/docs
+  * README.md https://github.com/minio/mc
+  * Markdown files in https://github.com/minio/mc/tree/master/docs
 
 #### Recipes : 
-  * MD files in https://github.com/minio/cookbook
+  * Markdown files in https://github.com/minio/cookbook
 
 You may use the `Suggest Edits` feature in Doctor to submit changes to any of the MD files in github. Doctor relies on github workflow to accept PRs for changes. 
 
 ## Pre-Requisites to Deploy Doctor
 
-### OSX
+### OS X
 * Install Ruby 2.2.2 using the instructions [here](https://rvm.io/rvm/install).
 * Install Rails 4.2.4 using the instructions [here](https://rvm.io/rvm/install).
 * Install Postgres using the command `brew install postgres`. Configure Launch Agent to start it automatically or use the command `pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start` to start it manually.
