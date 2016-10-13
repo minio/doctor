@@ -26,7 +26,7 @@
     margin-bottom: 20px;
   }
 
-  & > label {
+  label {
     display: block;
     margin-bottom: 5px;
     font-size: 0.85em;
@@ -93,5 +93,21 @@ textarea.form-group__field {
   
   &:hover {
     color: darken(#c2c2c2, 25%);
+  }
+}
+
+
+/*---------------------------
+    Validation
+----------------------------*/
+.field_with_errors {
+  .form-group__field {
+    border-color: lighten($red, 25%);
+  }
+
+  label.message {
+    text-align: right;
+    color: $red;
+    font-size: 0.75em;
   }
 }
