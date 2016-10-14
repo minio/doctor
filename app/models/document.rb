@@ -18,4 +18,9 @@ class Document < ActiveRecord::Base
   belongs_to :category
   extend FriendlyId
   friendly_id :name, use: :slugged
+
+  validates :name, :link, :presence => true
+  validates :name, :length => { :minimum => 2 }
+  validates :name, :uniqueness => true
+  validates :link, :url => true
 end

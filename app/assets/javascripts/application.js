@@ -20,6 +20,8 @@
 //= require jquery-minicolors/jquery.minicolors
 //= require tooltip/tooltip.min
 //= require custom
+//= require rails.validations
+
 
 
 
