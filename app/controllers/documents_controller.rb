@@ -30,7 +30,9 @@ class DocumentsController < ApplicationController
   def show
     @document = Document.friendly.find(params[:id])
     file = open(@document.link).read 
-    @contents = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new, :tables=>true,:fenced_code_blocks => true,
+    @renderer = Render.new;
+    @renderer.setDocument(@document);
+    @contents = Redcarpet::Markdown.new(@renderer, :tables=>true,:fenced_code_blocks => true,
           :no_intra_emphasis => true,
           :autolink => true,
           :strikethrough => true,
