@@ -11,6 +11,13 @@ pre {
   &, code {
     font-family: $font-family-mono;
   }
+
+  code {
+    background: #232323;
+    color: #e6e1dc;
+    padding: 25px 30px;
+    display: block;
+  }
 }
 
 code {
