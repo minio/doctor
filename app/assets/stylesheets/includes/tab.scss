@@ -1,9 +1,0 @@
-.tab-content {
-  position: relative;
-}
-
-.tab-content__pane {
-  &:not(.active) {
-    display: none;
-  }
-}
