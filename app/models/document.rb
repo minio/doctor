@@ -17,10 +17,14 @@
 class Document < ActiveRecord::Base
   belongs_to :category
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :category_and_name, use: :slugged
 
   validates :name, :link, :presence => true
   validates :name, :length => { :minimum => 2 }
-  validates :name, :uniqueness => true
+  validates :name, uniqueness: {scope: :category_id}
   validates :link, :url => true
+
+  def category_and_name
+    [[category.title, :name]]
+  end
 end
