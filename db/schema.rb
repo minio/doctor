@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160817095902) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20161203084551) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "title"
@@ -62,9 +59,10 @@ ActiveRecord::Schema.define(version: 20160817095902) do
     t.string   "slug"
   end
 
-  add_index "documents", ["category_id", "created_at"], name: "index_documents_on_category_id_and_created_at", using: :btree
-  add_index "documents", ["category_id"], name: "index_documents_on_category_id", using: :btree
-  add_index "documents", ["slug"], name: "index_documents_on_slug", using: :btree
+  add_index "documents", ["category_id", "created_at"], name: "index_documents_on_category_id_and_created_at"
+  add_index "documents", ["category_id"], name: "index_documents_on_category_id"
+  add_index "documents", ["name", "category_id"], name: "index_documents_on_name_and_category_id", unique: true
+  add_index "documents", ["slug"], name: "index_documents_on_slug"
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
@@ -74,5 +72,4 @@ ActiveRecord::Schema.define(version: 20160817095902) do
     t.boolean  "admin",           default: false
   end
 
-  add_foreign_key "documents", "categories"
 end
