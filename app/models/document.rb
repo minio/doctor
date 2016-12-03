@@ -21,6 +21,7 @@ class Document < ActiveRecord::Base
 
   validates :name, :link, :presence => true
   validates :name, :length => { :minimum => 2 }
-  validates :name, :uniqueness => true
+  validates :name, uniqueness: { scope: :category_id,
+      message: "Document with this name in current category already exists" }
   validates :link, :url => true
 end
