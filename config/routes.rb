@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   resources :users
   resources :documents, :path => "docs"
+  get 'docs/:id/hide', to: 'documents#hide', as: 'hide'
+  get 'docs/:id/unhide', to: 'documents#unhide', as: 'unhide'
   resources :sessions
   resources :categories
   get 'hub/index'
