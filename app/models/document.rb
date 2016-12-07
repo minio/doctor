@@ -23,8 +23,13 @@ class Document < ActiveRecord::Base
   validates :name, :length => { :minimum => 2 }
   validates :name, uniqueness: {scope: :category_id}
   validates :link, :url => true
+  validates :slug, uniqueness: true
 
   def category_and_name
-    [[category.title, :name]]
+    [name.parameterize, ["#{category.title.parameterize}/#{name.parameterize}"]]
+  end
+
+  def normalize_friendly_id(string)
+    string
   end
 end

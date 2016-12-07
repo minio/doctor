@@ -12,11 +12,9 @@ class DocumentTest < ActiveSupport::TestCase
   end
 
   test "documents with same names should have correct slugs" do
-    new_doc = Document.create(category: Category.create(title: 'cat1'), name: 'test',
-                                                                       link: "http://ex.com")
-    new_doc1 = Document.create(category: Category.create(title: 'cat2'), name: 'test', 
-                                                                    link: "http://ex.com")
-    assert_equal new_doc.slug, "#{new_doc.category.title}-#{new_doc.name}"
-    assert_equal new_doc1.slug, "#{new_doc1.category.title}-#{new_doc1.name}"
+    new_doc = Document.create(category: Category.create(title: 'cat1'), name: 'test', link: "http://ex.com")
+    new_doc1 = Document.create(category: Category.create(title: 'cat2'), name: 'test', link: "http://ex.com")
+    assert_equal new_doc.slug, new_doc.name
+    assert_equal new_doc1.slug, "#{new_doc1.category.title}/#{new_doc1.name}"
   end
 end

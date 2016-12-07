@@ -77,7 +77,7 @@ class DocumentsController < ApplicationController
   def update
     respond_to do |format|
       if @document.update(document_params)
-         format.html { render :edit,  notice: 'Document was successfully created.' }
+        format.html { redirect_to @document, notice: 'Document was successfully created.' }
       else
         format.html { render :edit }
         format.json { render json: @document.errors, status: :unprocessable_entity }
@@ -92,6 +92,24 @@ class DocumentsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to documents_url, notice: 'Document was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def check_name
+    respond_to do |format|
+      format.json do
+        render json: {show_dialog: Document.where('name = ? and category_id != ?',
+                                                  params[:name], params[:cat_id].to_i).count > 0 &&
+                                   Document.where(name: params[:name], category_id: params[:cat_id].to_i).count == 0}
+      end
+    end
+  end
+
+  def check_slug
+    respond_to do |format|
+      format.json do
+        render json: {show_error: Document.find_by_slug(params[:slug]).present?}
+      end
     end
   end
 
@@ -113,6 +131,6 @@ class DocumentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def document_params
-      params.require(:document).permit(:name, :description, :link, :category_id)
+      params.require(:document).permit(:name, :description, :link, :category_id, :slug)
     end
 end

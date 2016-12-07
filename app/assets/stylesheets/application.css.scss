@@ -16,6 +16,7 @@
  *= require highlight.js/railscasts.min
  *= require jquery-minicolors/jquery.minicolors
  *= require custom
+ *= require jquery-ui
  */
 
 @import "font-awesome-sprockets";
@@ -43,4 +44,4 @@
 @import "includes/notify";
 @import "includes/tab";
 @import "includes/tooltip";
-
+@import "includes/slug_dialog";

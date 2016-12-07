@@ -27,6 +27,15 @@
         <%= f.text_field :link, :class => 'form-group__field' %>
       </div>
 
+      <% unless @document.new_record? %>
+        <div class="form-group">
+          <%= f.label :slug %>
+          <%= f.text_field :slug, :class => 'form-group__field' %>
+        </div>
+        <% else %>
+          <%= f.hidden_field :slug %>
+      <% end %>
+
       <div class="form-group">
         <%= f.label :category_id %>
 			

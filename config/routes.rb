@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
 
   resources :users
-  resources :documents, :path => "docs"
+  resources :documents, only: [:index, :new, :create], :path => "docs"
   resources :sessions
   resources :categories
   get 'hub/index'
@@ -26,5 +26,13 @@ Rails.application.routes.draw do
      
   root 'hub#index', as: 'hub'
 
+  get 'docs/(*id)/edit', constraints: {id: %r{[a-z-]*(?:|\/[a-z-]*)}},
+                         to: 'documents#edit', as: "edit_document"
+  get '/docs/(*id)', to: 'documents#show', as: "document"
+  patch '/docs/(*id)', to: 'documents#update'
+  put '/docs/(*id)', to: 'documents#update'
+  delete '/docs/(*id)', to: 'documents#destroy'
 
+  get '/document/check_name', to: 'documents#check_name'
+  get '/document/check_slug', to: 'documents#check_slug'
 end
