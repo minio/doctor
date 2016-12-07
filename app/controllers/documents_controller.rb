@@ -56,6 +56,30 @@ class DocumentsController < ApplicationController
   def edit
   end
 
+  def hide
+      @document = Document.friendly.find(params[:id])
+      @document.state = "hidden"
+      respond_to do |format|
+        if @document.save
+          format.html { redirect_to request.referrer, notice: 'Document was successfully hidden.' }
+        else
+          format.html { redirect_to request.referrer, notice: 'Document could not be hidden.' }
+        end
+      end
+  end
+
+  def unhide
+      @document = Document.friendly.find(params[:id])
+      @document.state = ""
+      respond_to do |format|
+        if @document.save
+          format.html { redirect_to request.referrer, notice: 'Document was successfully hidden.' }
+        else
+          format.html { redirect_to request.referrer, notice: 'Document could not be hidden.' }
+        end
+      end
+  end
+
   # POST /documents
   # POST /documents.json
   def create
@@ -113,6 +137,6 @@ class DocumentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def document_params
-      params.require(:document).permit(:name, :description, :link, :category_id)
+      params.require(:document).permit(:name, :description, :link, :category_id, :state)
     end
 end
