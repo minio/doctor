@@ -46,7 +46,9 @@
                 <% if category.documents.any? %>
                     <ul>
                       <% category.documents.each do |doc| %>
-                          <li><%= link_to doc.name, document_path(doc.slug), :class => is_active_path(document_path(doc.slug)) %></li>
+                          <% if doc.state != "hidden" %>
+                              <li><%= link_to doc.name, document_path(doc.slug), :class => is_active_path(document_path(doc.slug)) %></li>
+                          <% end %>
                       <% end %>
                     </ul>
                 <% end %>

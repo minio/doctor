@@ -93,6 +93,11 @@
 
 						<ul class="dropdown__menu dropdown__menu--right">
 							<li><%= link_to 'Edit', edit_document_path(document) %></li>
+                            <% if document.state == "hidden" %>
+                                <li><%= link_to 'Unhide', unhide_path(document) %></li>
+                            <% else %>
+                                <li><%= link_to 'Hide', hide_path(document) %></li>
+                            <% end %>
 							<li><%= link_to 'Delete', document, method: :delete, data: { confirm: 'Are you sure?' } %></li>
 						</ul>
 					</div>
