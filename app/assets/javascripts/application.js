@@ -19,8 +19,9 @@
 //= require tab/tab
 //= require jquery-minicolors/jquery.minicolors
 //= require tooltip/tooltip.min
-//= require custom
 //= require rails.validations
+//= require clipboard/clipboard.min.js
+//= require custom
 
 
 
