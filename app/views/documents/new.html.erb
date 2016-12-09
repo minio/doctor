@@ -7,7 +7,17 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container new-doc">
   <%= render 'form' %>
 </div>
 
+<div id="dialog-confirm" title="Confirm creation">
+  <span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;">
+  </span>
+  <p class="validateTips">A document with that name already exist. Please, pick the document slug name</p>
+  <form>
+    <fieldset>
+      <input type="text" id="slug-name" class="text ui-widget-content ui-corner-all">
+    </fieldset>
+  </form>
+</div>
