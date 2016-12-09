@@ -1,34 +1,43 @@
 <header id="header" class="clearfix">
-  <div class="header__trigger">
-    <%= icon('bars') %>
-  </div>
+    <div class="header__trigger">
+        <%= icon('bars') %>
+    </div>
 
-  <a class="header__brand" href="<%= hub_path %>">
-    <% if @mybrand %>
+    <a class="header__brand" href="<%= hub_path %>">
+        <% if @mybrand %>
         <% if @mybrand.logo_url %>
-            <img class="header__logo" src="<%= @mybrand.logo_url %>" alt="">
+        <img class="header__logo" src="<%= @mybrand.logo_url %>" alt="">
         <% end %>
 
         <span class="header__title"><%= @mybrand.title %></span>
-    <% else %>
+        <% else %>
         Your Project
-    <% end %>
-  </a>
+        <% end %>
+    </a>
 
-  <nav class="header__menu">
-    <ul>
+    <nav class="header__menu">
+        <ul>
 
-      <% if @mybrand %>
-          <li><%= link_to icon('home'), @mybrand.home_link %></li>
-          <li><%= link_to icon('github'), @mybrand.github_link %></li>
-          <li>
-            <%= link_to @mybrand.gitter_link, :title => '' do %>
+            <% if @mybrand %>
+            <li class="header__search-toggle"><%= link_to icon('search'), '' %></li>
+            <li><%= link_to icon('home'), @mybrand.home_link %></li>
+            <li><%= link_to icon('github'), @mybrand.github_link %></li>
+            <li>
+                <%= link_to @mybrand.gitter_link, :title => '' do %>
                 <i class="icon icon--gitter"></i>
+                <% end %>
+            </li>
+            <li><%= link_to icon('twitter'), @mybrand.twitter_link, :target => '_blank' %></li>
             <% end %>
-          </li>
-          <li><%= link_to icon('twitter'), @mybrand.twitter_link, :target => '_blank' %></li>
-      <% end %>
 
-    </ul>
-  </nav>
+        </ul>
+    </nav>
+
+    <div class="header__search">
+        <div class="header__search__inner">
+            <%= icon('arrow-left', :class => 'header__search__close') %>
+            <input type="text" placeholder="Search..." class="header__search__input">
+        </div>
+    </div>
+
 </header>
