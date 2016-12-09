@@ -274,3 +274,26 @@
   font-size: 14px;
   margin-bottom: 12px;
 }
+
+
+/*---------------------------
+    Copy to Clipboard
+----------------------------*/
+.copy-to-clipboard {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  color: $white;
+  font-family: $font-family;
+  text-transform: uppercase;
+  font-size: $font-size - 4;
+  background-color: rgba($white, .2);
+  padding: 4px 10px 3px;
+  border-radius: 0 2px 0 2px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba($white, .25);
+  }
+}

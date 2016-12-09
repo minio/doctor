@@ -147,6 +147,21 @@ $(document).on 'page:change', ->
     $('[data-toggle="tooltip"]').tooltip()
 
 
+  #-----------------------------
+  # Copy to clipboard
+  #-----------------------------
+
+  # Add 'Copy' button
+  $('pre').each ->
+    if $(this).find('.copy-to-clipboard').length == 0
+      $(this).prepend '<span class="copy-to-clipboard">Copy</span>'
+
+  # Initiate Clipboard.js
+  new Clipboard('.copy-to-clipboard', text: (trigger) ->
+    trigger.nextElementSibling.innerText
+  )
+
+
   #---------------------------------
   # Make settings tabs persistent
   #---------------------------------
