@@ -16,20 +16,6 @@ $(document).on 'page:change', ->
   $body = $('body')
 
   #------------------------------
-  # Search
-  #------------------------------
-  $('body').on 'click', '.header__search-toggle', (e) ->
-    e.preventDefault()
-    $('.header__search').fadeIn 200
-    $('.header__search__input').focus()
-    return
-
-  $('body').on 'click', '.header__search__close', ->
-    $('.header__search__input').val ''
-    $('.header__search').fadeOut 200
-    return
-
-  #------------------------------
   # Scroll to sidebar link
   #------------------------------
   if $('.main__sidebar--scroll')[0]
