@@ -1,0 +1,26 @@
+{
+  "name": "Doctor",
+  "description": "Serve your docs from github with Doctor",
+  "repository": "https://github.com/minio/doctor",
+  "keywords": [
+    "doctor",
+    "documentation",
+    "server"
+  ],
+  "website": "http://getdoctor.io",
+  "repository": "https://github.com/minio/doctor",
+  "logo": "https://github.com/minio/doctor/blob/master/public/Doctor_logo_128.png?raw=true",
+  "success_url": "/",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:setup"
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "9.5"
+      }
+    }
+  ]
+   
+}
