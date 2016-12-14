@@ -9,6 +9,9 @@
 * Login to Doctor's Dashboard. Setup links to your doc files in Doctor's Dashboard.
 * You are done!
 
+## Quick Deploy 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/minio/doctor)
+
 ## Live Demo
 [Minio Docs](https://docs.minio.io) has a doctor server running that pulls together MD files that reside across a number of repos :
  
