@@ -157,10 +157,18 @@ $(document).on 'page:change', ->
       $(this).prepend '<span class="copy-to-clipboard">Copy</span>'
 
   # Initiate Clipboard.js
-  new Clipboard('.copy-to-clipboard', text: (trigger) ->
+  clipboard = new Clipboard('.copy-to-clipboard', text: (trigger) ->
     trigger.nextElementSibling.innerText
   )
 
+  clipboard.on 'success', (e) ->
+    e.clearSelection()
+    e.trigger.textContent = 'Copied'
+    window.setTimeout (->
+      e.trigger.textContent = 'Copy'
+      return
+    ), 2000
+    return
 
   #---------------------------------
   # Make settings tabs persistent
