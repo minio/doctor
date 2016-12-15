@@ -11,6 +11,7 @@
 
 ## Quick Deploy 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/minio/doctor)
+[![Deploy](https://cdn.scalingo.com/deploy/button.svg.)](https://my.scalingo.com/deploy?source=https://github.com/minio/doctor)
 
 ## Live Demo
 [Minio Docs](https://docs.minio.io) has a doctor server running that pulls together MD files that reside across a number of repos :
