@@ -11,7 +11,7 @@
 
 ## Quick Deploy 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/minio/doctor)
-[![Deploy](https://cdn.scalingo.com/deploy/button.svg.)](https://my.scalingo.com/deploy?source=https://github.com/minio/doctor)
+[![Deploy](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/minio/doctor)
 
 ## Live Demo
 [Minio Docs](https://docs.minio.io) has a doctor server running that pulls together MD files that reside across a number of repos :
@@ -42,7 +42,7 @@ You may use the `Suggest Edits` feature in Doctor to submit changes to any of th
 
 **Note** - Ping us on our [gitter channel](https://gitter.im/minio/minio) to report any installation issues on your platform.
 
-## How to run Doctor
+## How to run Doctor from source
 ```
 > git clone https://github.com/minio/doctor.git
 > cd doctor
