@@ -163,8 +163,8 @@ $(document).on 'page:change', ->
 
   clipboard.on 'success', (e) ->
     e.clearSelection()
-    e.trigger.textContent = 'Copied'
-    window.setTimeout (->
+    e.trigger.textContent = 'Copied to clipboard'
+    setTimeout (->
       e.trigger.textContent = 'Copy'
       return
     ), 2000

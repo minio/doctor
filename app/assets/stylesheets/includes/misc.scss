@@ -284,16 +284,16 @@
   top: 0;
   right: 0;
   z-index: 1;
-  color: $white;
+  color: darken($white, 15%);
   font-family: $font-family;
   text-transform: uppercase;
-  font-size: $font-size - 4;
-  background-color: rgba($white, .2);
-  padding: 4px 10px 3px;
+  font-size: $font-size - 5;
+  background-color: rgba($white, .1);
+  padding: 5px 10px 4px;
   border-radius: 0 2px 0 2px;
   cursor: pointer;
 
   &:hover {
-    background-color: rgba($white, .25);
+    background-color: rgba($white, .15);
   }
 }
