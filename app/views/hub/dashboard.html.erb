@@ -85,7 +85,9 @@
 				<div class="list-group__wrap">
 					<a class="list-group__item" href="<%= edit_document_path(document) %>">
 						<div class="list-group__title"><%= document.name %></div>
-						<div class="list-group__text"><%= document.description %></div>
+						<% if !document.description.blank? %>
+							<div class="list-group__text"><%= document.description %></div>
+						<% end %>
 					</a>
 
 					<div class="list-group__actions dropdown">
@@ -106,65 +108,4 @@
 		</div>
 	</div>
 </div>
-
-<!-- Need a separate page for branding
-
-<div class="form-wrapper form-wrapper--centered">
-	<div class="form-group">
-		<label>Title</label>
-		<input type="text" class="form-group__field">
-	</div>
-
-	<div class="form-group">
-		<label>Logo URL</label>
-		<input type="text" class="form-group__field">
-	</div>
-
-	<div class="form-group">
-		<label>Tagline</label>
-		<input type="text" class="form-group__field">
-	</div>
-
-	<div class="form-group">
-		<label>Github Link</label>
-		<input type="text" class="form-group__field">
-	</div>
-
-	<div class="form-group">
-		<label>Gitter Link</label>
-		<input type="text" class="form-group__field">
-	</div>
-
-	<div class="form-group">
-		<label>Footer Text</label>
-		<input type="text" class="form-group__field">
-	</div>
-</div>
-
-
-<table>
-
-  <tbody>
-    <% @brands.each do |brand| %>
-      <tr>
-        <td><%= brand.title %></td>
-        <td><%= brand.logo_url %></td>
-        <td><%= brand.tagline %></td>
-        <td><%= brand.home_link %></td>
-        <td><%= brand.github_link %></td>
-        <td><%= brand.gitter_link %></td>
-        <td><%= brand.footer_text %></td>
-        <td><%= brand.footer_img %></td>
-        <td><%= brand.footer_chatlink %></td>
-        <td><%= link_to 'Show', brand %></td>
-        <td><%= link_to 'Edit', edit_brand_path(brand) %></td>
-        <td><%= link_to 'Destroy', brand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
--->
-
-
 
