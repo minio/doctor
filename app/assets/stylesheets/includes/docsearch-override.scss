@@ -1,0 +1,27 @@
+.algolia-autocomplete {
+  width: 100%;
+
+  .algolia-docsearch-suggestion--title {
+    font-weight: normal;
+  }
+
+  .ds-dropdown-menu {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    min-width: 700px;
+    max-width: 700px;
+
+    @media(max-width: $screen-sm-max) {
+      min-width: 200px;
+    }
+
+    [class^=ds-dataset-] {
+      border: 0;
+      border-radius: 2px;
+      padding: 10px 30px;
+    }
+
+    &:before {
+      display: none;
+    }
+  }
+}

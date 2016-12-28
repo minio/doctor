@@ -23,6 +23,31 @@ $(document).on 'page:change', ->
     $('.main__sidebar--scroll').scrollTop $('a[href="' + $pathname + '"]').offset().top - 82 #82 is the height(px) of header
 
 
+  #------------------------------
+  # Search
+  #------------------------------
+  if $('.header__menu__search')[0]
+    #Open
+    $('body').on 'click', '.header__menu__search > a', (e) ->
+      e.preventDefault()
+      $('.header__search').fadeIn 300
+      $('.header__search input[type=text]').focus()
+      return
+
+    #Close
+    $('body').on 'click', '.header__search__close', ->
+      $('.header__search').fadeOut 300
+      $('.header__search input[type=text]').val ''
+      return
+
+    #Doc Search
+    docsearch
+      apiKey: '0ba0d26da4d1483f96c03fe508304a64'
+      indexName: 'minio'
+      inputSelector: '.header__search__inner input[type=text]'
+      debug: true
+
+
   #-----------------------
   # Dropdown Menu
   #-----------------------

@@ -11,11 +11,12 @@
  * file per style scope.
  *
  *= #require_tree
- *= require_self
  *= require normalize/normalize
  *= require highlight.js/railscasts.min
  *= require jquery-minicolors/jquery.minicolors
+ *= require docsearch/docsearch.min
  *= require custom
+ *= require_self
  */
 
 @import "font-awesome-sprockets";
@@ -43,4 +44,10 @@
 @import "includes/notify";
 @import "includes/tab";
 @import "includes/tooltip";
+
+// Vendor Overrides
+@import "includes/docsearch-override";
+
+
+
 

@@ -32,7 +32,6 @@
     <%= render 'layouts/style' %>
   </head>
 
-
   <body <%= 'data-sidecar='+@mybrand.footer_chatlink  if !@mybrand.footer_chatlink.blank? %>>
 
 	<%= render 'layouts/header' %>
@@ -86,5 +85,7 @@
       <%= render 'layouts/footer' %>
     </div>
 
+    <!-- Search -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
   </body>
 </html>
