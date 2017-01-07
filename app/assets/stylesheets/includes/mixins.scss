@@ -143,3 +143,17 @@
   -ms-user-select: none;
   user-select: none;
 }
+
+
+/*------------------------
+  Placeholder
+------------------------*/
+@mixin placeholder($color) {
+  // Firefox
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder { color: $color; }
+  &::-webkit-input-placeholder  { color: $color; }
+}
