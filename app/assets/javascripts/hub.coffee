@@ -23,6 +23,24 @@ $(document).on 'page:change', ->
     $('.main__sidebar--scroll').scrollTop $('a[href="' + $pathname + '"]').offset().top - 82 #82 is the height(px) of header
 
 
+  #------------------------------
+  # Search
+  #------------------------------
+  if $('.header__menu__search')[0]
+    #Open
+    $('body').on 'click', '.header__menu__search > a', (e) ->
+      e.preventDefault()
+      $('.header__search').fadeIn 300
+      $('.header__search input[type=text]').focus()
+      return
+
+    #Close
+    $('body').on 'click', '.header__search__close', ->
+      $('.header__search').fadeOut 300
+      $('.header__search input[type=text]').val ''
+      return
+
+
   #-----------------------
   # Dropdown Menu
   #-----------------------
