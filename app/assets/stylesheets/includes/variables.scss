@@ -20,9 +20,9 @@ $line-height-heading: 1.1;
 /*--------------------
   Text Colors
 --------------------*/
-$heading-color: #5c6267;
+$text-color: #4a4a4a;
+$heading-color: darken($text-color, 10%);
 $link-color: #237dac;
-$text-color: #7c8287;
 $text-muted: #9a9a9a;
 $text-strong: #4e4e4e;
 
@@ -54,8 +54,8 @@ $form-wrapper-border-color: #efefef;
   Sidebar
 --------------------*/
 $sidebar-bg: #f1f1f1;
-$sidebar-heading-color: #a2a2a2;
-$sidebar-link-color: #5c6267;
+$sidebar-heading-color: #969696;
+$sidebar-link-color: $text-color;
 $sidebar-link-hover-bg: rgba(0,0,0,0.02);
 $sidebar-link-active-bg: rgba(0,0,0,0.04);
 $sidebar-link-hove-color: #5c6267;

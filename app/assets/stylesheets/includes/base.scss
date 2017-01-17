@@ -27,10 +27,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 1.6em !important;
+  font-size: 1.6em;
   border-bottom: 1px solid $line-color;
   padding-bottom: 15px;
-  margin-bottom: 30px !important;
 
   & > a {
     & > img {
