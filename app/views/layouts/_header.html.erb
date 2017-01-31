@@ -20,14 +20,18 @@
             <li class="header__menu__search"><%= link_to icon('search'), '' %></li>
 
             <% if @mybrand %>
-                <li><%= link_to icon('home'), @mybrand.home_link %></li>
-                <li><%= link_to icon('github'), @mybrand.github_link %></li>
-                <li>
-                    <%= link_to @mybrand.gitter_link, :title => '' do %>
-                        <i class="icon icon--gitter"></i>
-                    <% end %>
-                </li>
-                <li><%= link_to icon('twitter'), @mybrand.twitter_link, :target => '_blank' %></li>
+                <% if !@mybrand.home_link.blank?%><li><%= link_to icon('home'), @mybrand.home_link, :target => '_blank' %></li><% end %>
+                <% if !@mybrand.github_link.blank?%><li><%= link_to icon('github'), @mybrand.github_link, :target => '_blank' %></li><% end %>
+                <% if !@mybrand.bitbucket_link.blank?%><li><%= link_to icon('bitbucket'), @mybrand.bitbucket_link, :target => '_blank' %></li><% end %>
+                <% if !@mybrand.slack_link.blank?%><li><%= link_to icon('slack'), @mybrand.slack_link, :target => '_blank' %></li><% end %>
+                <% if !@mybrand.gitter_link.blank?%>
+                    <li>
+                        <%= link_to @mybrand.gitter_link, :target => '_blank', :title => '' do %>
+                            <i class="icon icon--gitter"></i>
+                        <% end %>
+                    </li>
+                <% end %>
+                <% if !@mybrand.twitter_link.blank?%><li><%= link_to icon('twitter'), @mybrand.twitter_link, :target => '_blank' %></li><% end %>
             <% end %>
 
         </ul>
