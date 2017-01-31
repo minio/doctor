@@ -67,11 +67,6 @@
                 </div>
 
                 <div class="form-group">
-                    <%= f.label :footer_chatlink, 'Gitter Sidecar' %>
-                    <%= f.text_field :footer_chatlink, :class => 'form-group__field', :placeholder => 'e.g minio/minio' %>
-                </div>
-
-                <div class="form-group">
                     <%= f.label :slack_link, 'Slack' %>
                     <%= f.text_field :slack_link, :class => 'form-group__field' %>
                 </div>
@@ -79,6 +74,11 @@
                 <div class="form-group">
                     <%= f.label :twitter_link, 'Twitter' %>
                     <%= f.text_field :twitter_link, :class => 'form-group__field' %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :footer_chatlink, 'Footer Chat Widget URL' %>
+                    <%= f.text_field :footer_chatlink, :class => 'form-group__field' %>
                 </div>
             </div>
 
