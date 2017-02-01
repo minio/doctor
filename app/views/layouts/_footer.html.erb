@@ -9,4 +9,6 @@
 	<% else %>
         Doctor is licensed under Apache 2.0 License.
 	<% end %>
+
+    <%= (link_to "Talk to community", @mybrand.footer_chatlink, :target => "_blank", :class => "footer__chatlink") if !@mybrand.footer_chatlink.blank? %>
 </footer>

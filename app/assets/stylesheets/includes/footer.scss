@@ -3,13 +3,14 @@
   padding: 30px;
   border-top: 1px solid lighten($line-color, 1%);
   font-size: 0.85em;
+  color: $footer-color;
 
-  &, a {
+  a:not(.footer__chatlink) {
     color: $footer-color;
-  }
 
-  a:hover {
-    color: darken($footer-color, 10%);
+    &:hover {
+      color: darken($footer-color, 10%);
+    }
   }
 }
 
@@ -23,5 +24,24 @@
   @media (max-width: $screen-xs-max) {
     display: block;
     margin: 10px auto 0;
+  }
+}
+
+.footer__chatlink {
+  position: fixed;
+  right: 30px;
+  bottom: 0;
+  background-color: $light-blue;
+  color: $white;
+  padding: 10px 20px;
+  font-size: $font-size - 1;
+  border-radius: 3px 3px 0 0;
+  @include transition(all, 300ms);
+  z-index: 10;
+
+  &:hover,
+  &:focus {
+    color: $white;
+    background-color: darken($light-blue, 5%);
   }
 }
