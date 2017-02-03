@@ -43,18 +43,18 @@
       color: $sidebar-heading-color;
       font-size: 0.8em;
       text-transform: uppercase;
-      display: block;
+      display: block; 
     }
 
     & > ul {
       margin: 10px 0 40px;
       & > li {
         & > a {
-          padding: 9px 40px;
+          padding: 5px 40px;
           color: $sidebar-link-color;
           display: block;
           margin: 0 -40px 0;
-          font-size: 1em;
+          font-size: $font-size - 1;
 
           &:hover {
             background-color: $sidebar-link-hover-bg;
