@@ -5,10 +5,13 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
+    volumes: 
+      - doctor_db:/var/lib/postgresql/data
+
   web:
     image: minio/doctor
-# FIXME: don't destroy data between restarts
-# FIXME: wait for postgres to get ready on the first run
+    depends_on:
+      - db
     command: bash -c "bundle exec rake db:setup && bundle exec rails s -p 3000 -b '0.0.0.0'"
     environment:
       DATABASE_URL: postgresql://postgres:postgres@db/doctor?pool=5
@@ -16,3 +19,6 @@ services:
       - "3000:3000"
     depends_on:
       - db
+
+volumes:
+  doctor_db:
