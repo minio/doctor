@@ -32,12 +32,17 @@ You may use the `Suggest Edits` feature in Doctor to submit changes to any of th
 ```
 docker pull minio/doctor
 ```
-#### Using Docker Pull
+#### Using Docker Compose
 
 ```bash
 > git clone https://github.com/minio/doctor.git
 > cd doctor
-> docker-compose up
+# start the services
+> docker-compose up -d
+ # get the container name of the web service
+> docker ps
+# setup the database in a one-off command
+> docker exec doctor_web_1 bundle exec rake db:setup 
 ```
 
 ## Features
