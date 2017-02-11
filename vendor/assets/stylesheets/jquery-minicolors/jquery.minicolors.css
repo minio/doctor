@@ -39,7 +39,7 @@
     height: 152px;
     background: #fff;
     box-shadow: 0 5px 10px #e4e4e4;
-    z-index: 99999;
+    z-index: 9;
     box-sizing: content-box;
     display: none;
     border: 3px solid #fff;

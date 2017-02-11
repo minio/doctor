@@ -13,11 +13,11 @@
 }
 
 .main__page {
-  padding: 50px 50px 80px;
+  padding: 120px 50px 80px;
   position: relative;
 
-  @media(max-width: $screen-sm-max) {
-    padding: 10px 25px 50px;
+  @media(max-width: $screen-xs-max) {
+    padding: 70px 25px 50px;
   }
 }
 
