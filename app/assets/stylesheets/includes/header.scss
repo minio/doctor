@@ -1,35 +1,28 @@
 #header {
   background-color: $header-bg;
   width: 100%;
-  z-index: 10;
-  position: relative;
-
-  @media(min-width: $screen-md-min) {
-    height: 82px;
-    padding: 21px 33px;
-  }
-
-  @media (max-width: $screen-sm-max) {
-    height: 62px;
-    padding: 11px;
-  }
+  z-index: $header-z-index;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 15px 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.3);
 
   @include clearfix();
 }
 
+// Brand
 .header__brand {
   float: left;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 100%;
   text-transform: uppercase;
   height: 100%;
+  padding-top: 2px;
   @include no-select();
 
   @media (max-width: $screen-sm-max) {
-    font-size: 16px;
-    line-height: 100%;
-    padding: 10px 15px;
-    margin-left: 62px;
+    margin-left: 55px;
   }
 
   &:before {
@@ -56,22 +49,18 @@
 }
 
 .header__logo {
-  max-height: 41px;
+  max-height: 35px;
   max-width: 150px;
   margin-right: 8px;
-
-  @media (max-width: $screen-sm-max) {
-    max-height: 30px;
-  }
 }
 
+
+// Search
 .header__search {
   @media(min-width: $screen-md-min) {
-    float: right;
     margin-top: 2px;
     position: relative;
-    width: 300px;
-    display: block !important;
+    overflow: hidden;
   }
 
   @media (max-width: $screen-sm-max) {
@@ -89,23 +78,26 @@
   input[type=text] {
     border-radius: 2px;
     border: 0;
-    padding: 7px 15px 7px 38px;
+    padding: 6px 15px 8px 38px;
     font-size: 15px;
     width: 100%;
     background-color: rgba($black, 0.3);
     text-align: left;
-    color: $header-link-color;
-    @include placeholder($header-link-color);
+    color: rgba($white, 0.7);
+    @include placeholder(rgba($white, 0.7));
   }
 }
 
 .header__search__inner {
   position: relative;
+  max-width: 60%;
+  margin: 0 auto;
 
   @media (max-width: $screen-sm-max) {
     display: inline-block;
     max-width: 700px;
     width: 100%;
+    margin-top: 4px;
   }
 
   & > i[class*="header__search__"] {
@@ -115,9 +107,9 @@
     height: 100%;
     width: 38px;
     text-align: center;
-    line-height: 36px;
+    line-height: 35px;
     font-size: 14px;
-    color: rgba($white, 0.3);
+    color: rgba($white, 0.5);
   }
 }
 
@@ -138,9 +130,10 @@
   }
 }
 
+
+// Menu (icons)
 .header__menu {
   float: right;
-  margin-left: 30px;
 
   ul {
     list-style: none;
@@ -154,7 +147,7 @@
         display: block;
         width: 39px;
         text-align: center;
-        font-size: 21px;
+        font-size: 18px;
         height: 39px;
         border-radius: 50%;
         line-height: 38px;
@@ -167,15 +160,11 @@
         }
 
         &:hover {
-          background-color: rgba(0,0,0,0.2);
+          background-color: rgba(0,0,0,0.15);
         }
       }
 
       &.header__menu__search {
-        & > a {
-          font-size: 19px;
-        }
-
         @media (min-width: $screen-md-min) {
           display: none;
         }
@@ -190,6 +179,8 @@
   }
 }
 
+
+// Sidebar trigger for mobile
 .header__trigger {
   font-size: 17px;
   line-height: 100%;
@@ -199,8 +190,8 @@
   height: 100%;
   width: 60px;
   text-align: center;
-  padding-top: 22px;
-  background-color: rgba(0,0,0,0.15);
+  padding-top: 25px;
+  background-color: rgba(0,0,0,0.10);
   cursor: pointer;
   color: $header-link-color;
 

@@ -33,6 +33,7 @@ $text-strong: #4e4e4e;
 $header-bg: #373d42;
 $logo-color: #fff;
 $header-link-color: #fff;
+$header-z-index: 10;
 
 
 /*--------------------
@@ -54,7 +55,7 @@ $form-wrapper-border-color: #efefef;
   Sidebar
 --------------------*/
 $sidebar-bg: #f1f1f1;
-$sidebar-heading-color: #969696;
+$sidebar-heading-color: #108dc5;
 $sidebar-link-color: $text-color;
 $sidebar-link-hover-bg: rgba(0,0,0,0.02);
 $sidebar-link-active-bg: rgba(0,0,0,0.04);

@@ -15,12 +15,11 @@
 //= require turbolinks
 //= require_tree .
 //= require highlight.js/highlight.min
-//= require affix/affix
 //= require tab/tab
 //= require jquery-minicolors/jquery.minicolors
 //= require tooltip/tooltip.min
 //= require rails.validations
-//= require clipboard/clipboard.min.js
+//= require clipboard/clipboard.min
 //= require custom
 
 

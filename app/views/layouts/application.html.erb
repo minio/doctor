@@ -56,27 +56,25 @@
           <% end %>
         </ul>
 
-        <div class="admin-login">
-          <% if current_user %>
-            <div class="dropdown dropdown--up">
-              <%= link_to "Dashboard", "", :class => "dropdown__toggle button button--blue" %>
+        <% if current_user %>
+          <div class="admin-login dropdown dropdown--up">
+            <%= link_to "Go to dashboard", "", :class => "dropdown__toggle button button--blue button--block" %>
 
-              <ul class="dropdown__menu">
-                <% if current_user.admin? %>
-                    <li><%= link_to "Dashboard", dashboard_path %></li>
-                <% else %>
+            <ul class="dropdown__menu">
+              <% if current_user.admin? %>
+                  <li><%= link_to "Dashboard", dashboard_path %></li>
+              <% else %>
 
-                <% end %>
-                <li><%= link_to "Logout", logout_path %></li>
-              </ul>
-            </div>
-
-          <% else %>
-              <% unless current_page?('/login') %>
-                  <%= link_to "Admin Login", login_path, :class => "button button--blue" %>
               <% end %>
-          <% end %>
-        </div>
+              <li><%= link_to "Logout", logout_path %></li>
+            </ul>
+          </div>
+
+        <% else %>
+            <% unless current_page?('/login') %>
+                <%= link_to "Admin Login", login_path, :class => "button button--blue button--block" %>
+            <% end %>
+        <% end %>
       </div>
 
       <section class="main__page">
