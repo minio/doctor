@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161207002743) do
+ActiveRecord::Schema.define(version: 20170214194932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20161207002743) do
     t.string   "slack_link"
     t.string   "description"
     t.string   "bitbucket_link"
+    t.string   "searchtoken"
   end
 
   create_table "categories", force: :cascade do |t|
