@@ -56,9 +56,7 @@
         .main__menu > li > a,
         .main__menu > li > a:hover,
         .main__menu > li > a:focus {
-            <% if (!@mybrand.menu_title_color.blank?) %>
-                color: <%= @mybrand.menu_title_color %>;
-        <% end %>
+            color: <%= @mybrand.menu_title_color %>;
         }
     <% end %>
 

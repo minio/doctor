@@ -55,7 +55,7 @@
 /*---------------------------
     Suggest Edit
 ----------------------------*/
-@media(min-width: $screen-sm-min) {
+@media(min-width: $screen-md-min) {
   .suggest-edit {
     position: absolute;
     top: 20px;
@@ -85,7 +85,7 @@
   }
 }
 
-@media(max-width: $screen-xs-max) {
+@media(max-width: $screen-sm-max) {
   .suggest-edit {
     display: none;
   }
