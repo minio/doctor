@@ -6,4 +6,3 @@ ADD Gemfile Gemfile.lock /doctor/
 RUN bundle install
 ADD . /doctor
 RUN rm config/database.yml
-# TODO: ADD console_whitelist.rb config/initializers/

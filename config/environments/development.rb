@@ -38,4 +38,8 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  if ENV['IS_DOCKER'] == 'true'
+    config.web_console.whitelisted_ips = ENV['CONSOLE_IP_WHITELIST']
+  end
 end
