@@ -16,64 +16,63 @@
 
 
 class ApplicationController < ActionController::Base
-  # Add custom flash types
-  add_flash_types :success, :warning, :danger, :info, :inverse
+    # Add custom flash types
+    add_flash_types :success, :warning, :danger, :info, :inverse
 
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
-  
-  before_filter :load_sidebar
-  before_filter :authorize
+    # Prevent CSRF attacks by raising an exception.
+    # For APIs, you may want to use :null_session instead.
+    protect_from_forgery with: :exception
 
-  delegate :allow?, to: :current_permission
-  helper_method :allow?
-  include Mengpaneel::Controller
-  before_action :setup_mixpanel
+    before_filter :load_sidebar
+    before_filter :authorize
 
-  private
-  
-  
-  def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
-    rescue ActiveRecord::RecordNotFound
-  end
-  helper_method :current_user
-  
-  
-  
-  def current_permission
-    @current_permission ||= Permission.new(current_user)
-  end
+    delegate :allow?, to: :current_permission
+    helper_method :allow?
+    include Mengpaneel::Controller
+    before_action :setup_mixpanel
 
-  def authorize
-    if !current_permission.allow?(params[:controller], params[:action])
-      redirect_to login_path, alert: "Not authorized."
+    private
+
+    def current_user
+        # Search token gon variable
+        @mybrand = Brand.first
+        gon.algoliatoken = @mybrand.searchtoken
+
+        @current_user ||= User.find(session[:user_id]) if session[:user_id]
+        rescue ActiveRecord::RecordNotFound
     end
-  end  
+    helper_method :current_user
 
-  def load_sidebar
-    
-    @categories = Category.includes(:documents).order("documents.id asc")
-    @documents = Document.where(:category_id => params[:id])
-    @mybrand = Brand.first 
-  end
-  
-  def setup_mixpanel
-    return unless current_user
-
-    # For technical reasons, you need to do setup from a `mengpaneel.setup` block.
-    # I'll go into those reasons later.
-    mengpaneel.setup do
-      mixpanel.identify(current_user.id)
-
-      mixpanel.people.set(
-        "ID"              => current_user.id,
-        "$email"          => current_user.email,
-        "$created"        => current_user.created_at
-         
-      )
+    def current_permission
+        @current_permission ||= Permission.new(current_user)
     end
-  end
+
+    def authorize
+        if !current_permission.allow?(params[:controller], params[:action])
+        redirect_to login_path, alert: "Not authorized."
+        end
+    end
+
+    def load_sidebar
+        @categories = Category.includes(:documents).order("documents.id asc")
+        @documents = Document.where(:category_id => params[:id])
+        @mybrand = Brand.first
+    end
   
+    def setup_mixpanel
+        return unless current_user
+
+            # For technical reasons, you need to do setup from a `mengpaneel.setup` block.
+            # I'll go into those reasons later.
+            mengpaneel.setup do
+            mixpanel.identify(current_user.id)
+
+            mixpanel.people.set(
+                "ID"              => current_user.id,
+                "$email"          => current_user.email,
+                "$created"        => current_user.created_at
+            )
+        end
+    end
+
 end

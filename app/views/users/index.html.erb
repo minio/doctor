@@ -1,10 +1,14 @@
-<div class="action-header clearfix">
-  <div class="action-header__item action-header__search">
+<div class="actions">
+  <div class="actions__trigger">
+    <%= icon('bars') %>
+  </div>
+
+  <div class="actions__search">
     <input type="text" placeholder="Search users...">
   </div>
 
-  <div class="action-header__item action-header__right action-header__add">
-    <%= link_to 'New User', new_user_path, :class => 'button button--red' %>
+  <div class="actions__add">
+    <%= link_to (raw('<span>New User</span>')), new_user_path, :class => 'button button--red' %>
   </div>
 </div>
 

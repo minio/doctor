@@ -1,13 +1,14 @@
-<div class="action-header clearfix">
-  <div class="action-header__item action-header__back">
-    <a href="<%= documents_path %>"></a>
-  </div>
-  <div class="action-header__item action-header__title">
-    Edit document
+<div class="actions">
+  <div class="actions__trigger">
+    <%= icon('bars') %>
   </div>
 
-  <div class="action-header__item action-header__right action-header__add">
-      <%= link_to 'Preview', '/docs/'+@document.slug, :class => 'button button--red', :target=> '_blank' %>
+  <div class="actions__back">
+    <a href="<%= documents_path %>"></a>
+  </div>
+
+  <div class="actions__title">
+    Edit document
   </div>
 </div>
 

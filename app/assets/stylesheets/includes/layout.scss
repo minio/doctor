@@ -1,23 +1,32 @@
-#main {
-  &:not(.main--alt) {
-    padding: 0 0 0 300px;
-
-    @media(max-width: $screen-sm-max) {
-      padding: 0;
+body {
+  &:not(.sidebar-toggled) {
+    .main {
+      &:not(.main--alt) {
+        @media(min-width: $screen-lg-min) {
+          padding: 0 0 0 $sidebar-width;
+        }
+      }
     }
   }
 
-  &.main--alt {
-    padding: 80px 0 0;
+  &.sidebar-toggled {
+    @media(max-width: $screen-xs-max) {
+      overflow: hidden;
+    }
   }
 }
 
-.main__page {
-  padding: 50px 50px 80px;
+.main--alt {
+  padding: 80px 0 0;
+}
+
+.content {
+  padding: 40px 40px 60px;
   position: relative;
+  min-height: calc(100vh - 83px);
 
   @media(max-width: $screen-sm-max) {
-    padding: 10px 25px 50px;
+    padding: 25px 25px 45px;
   }
 }
 

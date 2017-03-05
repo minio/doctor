@@ -9,38 +9,25 @@
 .dashboard-stats__item {
   border-radius: 2px;
   padding: 15px 20px;
-  color: #fff;
+  background-color: $dashboard-item-bg;
   margin-bottom: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 
   h2 {
-    color: #fff;
+    color: $white;
     margin: 0;
     line-height: 100%;
-    font-size: 25px;
+    font-size: 1.8em;
     font-weight: 500;
   }
 
   small {
     display: block;
-    font-size: 14px;
+    font-size: 0.9em;
     margin-top: 5px;
+    color: rgba($white, 0.6);
+    line-height: 100%;
   }
-}
-
-.dashboard-stats__item--orange {
-  background-color: #FFA726;
-}
-
-.dashboard-stats__item--amber {
-  background-color: #FFC107;
-}
-
-.dashboard-stats__item--red {
-  background-color: #EF5350;
-}
-
-.dashboard-stats__item--deep-orange {
-  background-color: #FF7043;
 }
 
 .dashboard-recent {

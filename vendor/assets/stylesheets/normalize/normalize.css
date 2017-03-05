@@ -145,15 +145,6 @@ dfn {
 }
 
 /**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */
-
-h1 {
-    margin: 0.67em 0;
-}
-
-/**
  * Add the correct background and color in IE 9-.
  */
 

@@ -4,20 +4,12 @@ pre {
   margin-bottom: 30px;
   position: relative;
 
-  .hljs {
-    padding: 25px 30px;
-    border-radius: 3px;
-  }
-
-  &, code {
-    font-family: $font-family-mono;
-  }
-
   code {
-    background: #232323;
-    color: #e6e1dc;
+    background: $pre-code-bg;
+    color: $pre-code-color;
     padding: 25px 30px;
     display: block;
+    border-radius: 3px;
   }
 }
 

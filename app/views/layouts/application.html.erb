@@ -23,68 +23,28 @@
     <meta name="description" content="<%= @mybrand.description %>">
 
     <title><%= @mybrand.title %></title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-
-    <%= render 'layouts/style' %>
   </head>
 
-
   <body>
+    <%= include_gon(:init => true) %>
 
-	<%= render 'layouts/header' %>
-	  
-    <div id="main">
-      <div class="main__sidebar main__sidebar--scroll">
-        <ul class="main__menu">
-          <% @categories.each do |category| %>
-              <li>
-                <a href="<%=category_path(category.id) %>"><%= category.title %></a>
-                <% if category.documents.any? %>
-                    <ul>
-                      <% category.documents.each do |doc| %>
-                          <% if doc.state != "hidden" %>
-                              <li><%= link_to doc.name, document_path(doc.slug), :class => is_active_path(document_path(doc.slug)) %></li>
-                          <% end %>
-                      <% end %>
-                    </ul>
-                <% end %>
-              </li>
-          <% end %>
-        </ul>
+    <main class="main">
+      <%= render 'layouts/sidebar' %>
 
-        <div class="admin-login">
-          <% if current_user %>
-            <div class="dropdown dropdown--up">
-              <%= link_to "Dashboard", "", :class => "dropdown__toggle button button--blue" %>
+      <section class="content">
+        <%= render 'layouts/header' %>
 
-              <ul class="dropdown__menu">
-                <% if current_user.admin? %>
-                    <li><%= link_to "Dashboard", dashboard_path %></li>
-                <% else %>
-
-                <% end %>
-                <li><%= link_to "Logout", logout_path %></li>
-              </ul>
-            </div>
-
-          <% else %>
-              <% unless current_page?('/login') %>
-                  <%= link_to "Admin Login", login_path, :class => "button button--blue" %>
-              <% end %>
-          <% end %>
-        </div>
-      </div>
-
-      <section class="main__page">
         <%= yield %>
       </section>
 
       <%= render 'layouts/footer' %>
-    </div>
-
+    </main>
   </body>
 </html>

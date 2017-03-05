@@ -1,29 +1,29 @@
 /*--------------------
   Base
 --------------------*/
-$body-bg: #fafafa;
+$body-bg: #fff;
 $font-family: 'Lato', sans-serif;
 $font-family-glyph: fontAwesome;
 $font-family-headings: 'Lato', sans-serif;
-$font-family-mono: 'Roboto Mono', monospace;
-$font-size: 16px;
-$line-height: 1.5;
-
+$font-size: 15px;
+$line-height: 1.6;
+$border-accent-color: #f1f1f1;
+$box-shadow-accent: 0 0 0 2px rgba(51, 51, 51, 0.02);
 
 /*--------------------
   Heading
 --------------------*/
 $headings-font-weight: 400;
-$line-height-heading: 1.1;
+$heading-line-heading: 1.1;
+$heading-color: #232323;
 
 
 /*--------------------
   Text Colors
 --------------------*/
 $text-color: #4a4a4a;
-$heading-color: darken($text-color, 10%);
 $link-color: #237dac;
-$text-muted: #9a9a9a;
+$text-muted: #969696;
 $text-strong: #4e4e4e;
 
 
@@ -33,6 +33,7 @@ $text-strong: #4e4e4e;
 $header-bg: #373d42;
 $logo-color: #fff;
 $header-link-color: #fff;
+$search-bg: #efefef;
 
 
 /*--------------------
@@ -44,22 +45,24 @@ $line-color: #efefef;
 /*--------------------
   Form
 --------------------*/
-$input-border: #f4f4f4;
+$input-border: darken($border-accent-color, 1%);
 $input-focus-border-color: #B3E5FC;
 $form-wrapper-bg: #fff;
-$form-wrapper-border-color: #efefef;
+$form-wrapper-border-color: $border-accent-color;
 
 
 /*--------------------
   Sidebar
 --------------------*/
-$sidebar-bg: #f1f1f1;
+$sidebar-width: 320px;
+$sidebar-bg: #fff;
 $sidebar-heading-color: #969696;
 $sidebar-link-color: $text-color;
-$sidebar-link-hover-bg: rgba(0,0,0,0.02);
+$sidebar-link-hover-bg: rgba(0,0,0,0.025);
 $sidebar-link-active-bg: rgba(0,0,0,0.04);
 $sidebar-link-hove-color: #5c6267;
 $sidebar-link-active-color: #5c6267;
+$sidebar-padding: 35px;
 
 
 /*--------------------
@@ -86,6 +89,8 @@ $black: #000;
 --------------------*/
 $code-bg: #F1F1F1;
 $code-color: darken($text-color, 10%);
+$pre-code-bg: #313131;
+$pre-code-color: #e6e1dc;
 
 
 /*--------------------
@@ -93,7 +98,7 @@ $code-color: darken($text-color, 10%);
 --------------------*/
 $table-bg: #fff;
 $table-border-color: $line-color;
-$th-bg: #fbfbfb;
+$th-bg: #f8f8f8;
 $th-color: darken($text-color, 10%);
 
 
@@ -120,7 +125,13 @@ $footer-color: #9F9F9F;
   Dropdown
 --------------------*/
 $dropdown-bg: #fff;
-$dropdown-border-color: #efefef;
-$dropdown-link-color: #7c8287;
+$dropdown-border-color: $border-accent-color;
+$dropdown-link-color: $text-color;
 $dropdown-link-hover-bg: #f9f9f9;
-$dropdown-link-hover-color: #7c8287;
+$dropdown-link-hover-color: darken($dropdown-link-color, 10%);
+
+
+/*--------------------
+  Dashboard
+--------------------*/
+$dashboard-item-bg: #3a3a3a;

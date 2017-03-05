@@ -11,7 +11,6 @@
   cursor: pointer;
 }
 
-
 /*---------------------------
     Titles
 ----------------------------*/
@@ -39,7 +38,7 @@
   top: -2px;
   right: 25px;
   color: $text-muted;
-  border: 1px solid $line-color;
+  border: 1px solid $border-accent-color;
   line-height: 100%;
   padding: 5px 10px;
   border-radius: 2px;
@@ -57,27 +56,31 @@
 ----------------------------*/
 @media(min-width: $screen-md-min) {
   .suggest-edit {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    float: right;
+    margin-top: -1px;
 
     .dropdown__toggle {
-      background: #fff;
-      font-size: 12px;
+      background: $white;
+      font-size: 0.8em;
       padding: 5px 10px;
       display: inline-block;
       line-height: 100%;
       border-radius: 2px;
-      border: 1px solid $line-color;
+      border: 1px solid $border-accent-color;
+      color: $text-color;
+      @include transition(all, 300ms);
 
-      &,
       &:hover,
       &:focus {
-        color: $text-color;
+        border-color: darken($border-accent-color, 10%);
+        color: darken($text-color, 10%);
       }
     }
 
     ol {
+      padding-left: 15px;
+      font-size: 0.9em;
+
       li {
         padding-bottom: 10px;
       }
@@ -101,10 +104,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255,255,255,0.7);
+  background-color: rgba(255,255,255,0.9);
   text-align: center;
   padding: 20px;
-  z-index: 1;
+  z-index: 2;
   @include animation(fadeIn, 1900ms);
 
   & > i {
@@ -114,8 +117,8 @@
     right: 0;
     bottom: 0;
     margin: auto;
-    border: 2px solid #e7e7e7;
-    border-left-color: $blue;
+    border: 3px solid #e7e7e7;
+    border-left-color: #3a3a3a;
     display: inline-block;
     @include animation(spinner, 800ms);
     @include animation-timing(linear);
@@ -270,8 +273,8 @@
 ----------------------------*/
 .misc-title {
   color: $text-muted;
-  padding-left: 30px;
-  font-size: 14px;
+  padding-left: 35px;
+  font-size: 0.95em;
   margin-bottom: 12px;
 }
 
@@ -292,6 +295,7 @@
   padding: 5px 10px 4px;
   border-radius: 0 2px 0 2px;
   cursor: pointer;
+  font-weight: bold;
 
   &:hover {
     background-color: rgba($white, .15);

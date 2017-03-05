@@ -1,4 +1,4 @@
-.main__page {
+.content {
   *:not(a) {
     img:not([class]) {
       &:not(.img-preview__img) {
@@ -42,6 +42,7 @@
   margin: auto;
   border-radius: 2px;
   z-index: 2;
+  background-color: $white;
   @include animation(zoomIn, 400ms);
 }
 
@@ -72,7 +73,7 @@
 
   &:hover {
     border: 1px solid rgba(255, 255, 255, 0.5);
-    color: #fff;
+    color: $white;
   }
 }
 
