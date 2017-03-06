@@ -14,13 +14,17 @@
  * limitations under the License.
  */-->
 
-<div class="action-header clearfix">
-  <div class="action-header__item action-header__search">
+<div class="actions">
+  <div class="actions__trigger">
+    <%= icon('bars') %>
+  </div>
+
+  <div class="actions__search">
     <input type="text" placeholder="Search categories...">
   </div>
 
-  <div class="action-header__item action-header__right action-header__add">
-    <%= link_to 'New Category', new_category_path, :class => 'button button--red' %>
+  <div class="actions__add">
+    <%= link_to (raw('<span>New Category</span>')), new_category_path, :class => 'button button--red' %>
   </div>
 </div>
 

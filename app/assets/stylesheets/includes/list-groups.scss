@@ -1,6 +1,6 @@
 .list-group {
-  background-color: #fff;
-
+  background-color: $white;
+  box-shadow: $box-shadow-accent;
   border-radius: 2px;
 }
 
@@ -23,7 +23,7 @@
   padding: 20px 25px;
   display: block;
   position: relative;
-  border: 1px solid $line-color;
+  border: 1px solid $border-accent-color;
   margin-bottom: -1px;
 }
 
@@ -55,13 +55,13 @@ a.list-group__item,
 
 .list-group__title {
   font-weight: 500;
-  color: $text-strong;
+  color: $heading-color;
   font-size: 0.95em;
 }
 
 .list-group__text {
   color: $text-muted;
-  font-size: 0.8em;
+  font-size: 0.9em;
   padding-bottom: 2px;
   margin-top: 10px;
 }
@@ -92,7 +92,7 @@ a.list-group__item,
     border: 1px solid transparent;
 
     &:hover {
-      border-color: $line-color;
+      border-color: $border-accent-color;
       background-color: #fff;
     }
   }

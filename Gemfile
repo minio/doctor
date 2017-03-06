@@ -39,6 +39,7 @@ gem 'font-awesome-sass', '~> 4.6.2'
 gem 'mengpaneel'
 gem 'client_side_validations'
 gem 'validate_url'
+gem 'gon'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

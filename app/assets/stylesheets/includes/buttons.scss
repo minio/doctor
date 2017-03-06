@@ -8,10 +8,11 @@
   display: inline-block;
   font-size: 0.85em;
   text-align: center;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.12);
 
-  &:not([class*="button--"]) {
+  &:not(.button--blue):not(.button--red):not(.button--green) {
     @include button-types($button-default-bg, $text-color, $button-default-border-color);
-
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.05);
   }
 }
 

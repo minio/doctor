@@ -15,6 +15,9 @@
  #
  
 class HubController < ApplicationController
+
+
+
   layout :resolve_layout
   
   require 'open-uri'

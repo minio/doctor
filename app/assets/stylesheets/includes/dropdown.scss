@@ -19,15 +19,14 @@
 .dropdown__menu {
   position: absolute;
   min-width: 150px;
-  background-color: #fff;
-  border-radius: 2px;
+  background-color: $white;
   border: 1px solid $dropdown-border-color;
   margin: 0;
   list-style: none;
   padding: 10px 0;
   text-align: left;
   display: none;
-  box-shadow: 0 0 10px rgba(0,0,0,0.06);
+  box-shadow: $box-shadow-accent;
 
   &:not(.dropdown__menu--right) {
     left: 0;
@@ -67,6 +66,9 @@
 }
 
 .dropdown__title {
-  color: $text-strong;
+  color: $heading-color;
+  font-weight: 700;
   margin-bottom: 10px;
+  font-size: 0.9em;
+  text-transform: uppercase;
 }

@@ -1,0 +1,11 @@
+<a class="brand" href="<%= hub_path %>">
+    <% if @mybrand %>
+        <% if @mybrand.logo_url %>
+            <img class="brand__logo" src="<%= @mybrand.logo_url %>" alt="">
+        <% end %>
+        <span class="brand__title"><%= @mybrand.title %></span>
+
+    <% else %>
+        <span class="brand__title">Your Project</span>
+    <% end %>
+</a>

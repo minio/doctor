@@ -29,36 +29,21 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
-    <%= render 'layouts/style' %>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+
   </head>
 
-  <body <%= 'data-sidecar='+@mybrand.footer_chatlink  if !@mybrand.footer_chatlink.blank? %>>
+  <body>
     
-    <%= render 'layouts/header' %>
-    <div id="main">
-      <div class="main__sidebar">
-        <ul class="main__menu">
-          <li>
-            <a href="">Welcome Admin!</a>
+    <main class="main">
+      <%= render 'layouts/sidebaradmin' %>
 
-            <ul class="main__menu__icons">
-              <li><%= link_to (icon("line-chart")+ "Dashboard"), dashboard_path, :class => is_active_path(dashboard_path) %></li>
-              <li><%= link_to (icon("th-large")+ "Categories"), categories_path, :class => is_active_controller('categories') %></li>
-              <li><%= link_to (icon("file-text")+ "Documents"), documents_path, :class => is_active_controller('documents') %></li>
-              <li><%= link_to (icon("gear")+ "Settings"), edit_brand_path(@mybrand.id), :class => is_active_controller('brands') %></li>
-              <li><%= link_to (icon("user")+ "Users"), users_path, :class => is_active_controller('users') %></li>
-              <li><%= link_to (icon("sign-out")+ "Logout"), logout_path %></li>
-            </ul>
-          </li>
-         </ul>
-      </div>
-
-      <section class="main__page">
+      <section class="content">
         <%= yield %>
       </section>
 
       <%= render 'layouts/footer' %>
-    </div>
+    </main>
 
   </body>
 </html>

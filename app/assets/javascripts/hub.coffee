@@ -18,27 +18,29 @@ $(document).on 'page:change', ->
   #------------------------------
   # Scroll to sidebar link
   #------------------------------
-  if $('.main__sidebar--scroll')[0]
+  if $('.sidebar--scroll')[0]
     $pathname = window.location.pathname
-    $('.main__sidebar--scroll').scrollTop $('a[href="' + $pathname + '"]').offset().top - 82 #82 is the height(px) of header
+    $('.sidebar--scroll').scrollTop $('a[href="' + $pathname + '"]').offset().top - 50
 
 
   #------------------------------
   # Search
   #------------------------------
-  if $('.header__menu__search')[0]
-    #Open
-    $('body').on 'click', '.header__menu__search > a', (e) ->
-      e.preventDefault()
-      $('.header__search').fadeIn 300
-      $('.header__search input[type=text]').focus()
-      return
+  $body.on 'focus', '.search__input', () ->
+    $('.header').addClass('header--toggled')
 
-    #Close
-    $('body').on 'click', '.header__search__close', ->
-      $('.header__search').fadeOut 300
-      $('.header__search input[type=text]').val ''
-      return
+  $body.on 'blur', '.search__input', () ->
+    $('.header').removeClass('header--toggled')
+
+  if $('.search__input')[0]
+    if gon.algoliatoken
+      #Doc Search
+      docsearch
+        apiKey: gon.algoliatoken
+        indexName: 'minio'
+        inputSelector: '.search__input'
+        appendTo: 'body'
+        autoselect: true
 
 
   #-----------------------
@@ -76,7 +78,7 @@ $(document).on 'page:change', ->
     return
 
   # Open
-  $body.on 'click', '.main__page *:not("a") > img:not(".img-preview__img")', ->
+  $body.on 'click', '.content *:not("a") > img:not(".img-preview__img")', ->
     $imgSrc = $(this).attr('src')
     $imgWrap =  '<div class="img-preview">' +
                   '<div class="img-preview__close img-preview__close--back"></div>' +
@@ -105,7 +107,7 @@ $(document).on 'page:change', ->
   #-----------------------------
   $(document).one 'page:fetch', ->
     $loader = '<div class="page-loader"><i /></div>'
-    $('.main__page').prepend $loader
+    $('.content').prepend $loader
     return
 
   $(document).one 'page:receive', ->
@@ -113,33 +115,22 @@ $(document).on 'page:change', ->
     return
 
 
-
   #-----------------------------
-  # Mobile Sidebar
+  # Toggle Sidebar
   #-----------------------------
 
   #Open
-  $body.on 'click', '.header__trigger', ->
-    $sidebarBckdrop =   '<div class="backdrop backdrop--sidebar" />'
-
-    $body
-      .addClass('prevent-scroll')
-      .append $sidebarBckdrop
-    $('.main__sidebar').addClass 'toggled'
+  $body.on 'click', '.top-menu__trigger, .actions__trigger', (e) ->
+    e.preventDefault()
+    $('.sidebar').toggleClass('sidebar--toggled')
+    $body.toggleClass('sidebar-toggled');
     return
 
   #Close
-  $body.on 'click', '.backdrop--sidebar', ->
-    $body.removeClass 'prevent-scroll'
-    $(this).remove()
-    $('.main__sidebar').removeClass 'toggled'
+  $body.on 'click', '.sidebar__close', ->
+    $body.removeClass 'sidebar-toggled'
+    $('.sidebar').removeClass 'sidebar--toggled'
     return
-
-
-  #-----------------------------
-  # Header Affix
-  #-----------------------------
-  $('.main__sidebar').affix offset: top: 82 #header height
 
 
   #-----------------------------
@@ -187,22 +178,5 @@ $(document).on 'page:change', ->
       return
     ), 2000
     return
-
-  #---------------------------------
-  # Make settings tabs persistent
-  #---------------------------------
-  if $('.action-header__item--tabs')[0]
-    url = document.location.hash
-    if url.match('#')
-      $('.action-header__item--tabs > li > a[href="#' + url.split('#')[1] + '"]').tab 'show'
-      setTimeout ->
-        window.scrollTo 0, 0
-        return
-
-    $('.action-header__item--tabs > li > a').on 'shown.bs.tab', (e) ->
-      window.location.hash = e.target.hash
-      window.scrollTo 0, 0
-
-      return
 
   return

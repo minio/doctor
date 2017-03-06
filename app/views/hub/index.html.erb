@@ -4,13 +4,11 @@
   <div class="dropdown__menu dropdown__menu--right dropdown__menu--block">
     <div class="dropdown__title">Suggest Edits</div>
 
-    <small class="text-muted">
-		<ol style="padding-left: 15px;">
-			<li> Log into Github. </li>
-			<li> Edit files with your changes by clicking on 'Edit the file in your fork of this project' button in Github. </li>
-			<li> Commit changes via 'Create a new branch for this commit and start a pull request'.  </li>
-		</ol>
-	</small>  
+    <ol>
+        <li> Log into Github. </li>
+        <li> Edit files with your changes by clicking on 'Edit the file in your fork of this project' button in Github. </li>
+        <li> Commit changes via 'Create a new branch for this commit and start a pull request'.  </li>
+    </ol>
 
     <%= link_to icon('github')+' Edit in Github', @gitlink, :class=> "button button--blue button--block", :target => '_blank' %>
   </div>

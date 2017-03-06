@@ -19,16 +19,26 @@
 <% end %>
 <%= yield %>
 
+<div class="actions">
+	<div class="actions__trigger">
+		<%= icon('bars') %>
+	</div>
+
+	<div class="actions__search">
+		<input type="text" placeholder="Search categories...">
+	</div>
+</div>
+
 <div class="row dashboard-stats">
 	<div class="col-sm-4 col-lg-3">
-		<div class="dashboard-stats__item dashboard-stats__item--deep-orange">
+		<div class="dashboard-stats__item">
 			<h2><%= @doc_count %></h2>
 			<small>Total Documents</small>
 		</div>
 	</div>
 
 	<div class="col-sm-4 col-lg-3">
-		<div class="dashboard-stats__item dashboard-stats__item--orange">
+		<div class="dashboard-stats__item">
 			<h2><%= @cat_count %></h2>
 			<small>Total Categories</small>
 		</div>
@@ -36,7 +46,7 @@
 
 
 	<div class="col-sm-4 col-lg-3">
-		<div class="dashboard-stats__item dashboard-stats__item--amber">
+		<div class="dashboard-stats__item">
 			<h2><%= @user_count %></h2>
 			<small>Total Users</small>
 		</div>
@@ -47,7 +57,7 @@
 <div class="row dashboard-recent">
 	<div class="col-lg-6">
 		<header class="content-title content-title--box">
-			<h3>Recent Categories</h3>
+			<h4>Recent Categories</h4>
 
 			<%= link_to 'View all', '/categories', :class => 'content-title__action' %>
 		</header>
@@ -74,7 +84,7 @@
 
 	<div class="col-lg-6">
 		<header class="content-title content-title--box">
-			<h3>Recent Documents</h3>
+			<h4>Recent Documents</h4>
 
 			<%= link_to 'View all', '/docs', :class => 'content-title__action' %>
 

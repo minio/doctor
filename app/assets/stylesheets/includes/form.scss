@@ -1,7 +1,5 @@
 .form-wrapper {
   background-color: $form-wrapper-bg;
-  padding: 35px;
-  border: 1px solid $form-wrapper-border-color;
   border-radius: 2px;
 }
 
@@ -15,8 +13,15 @@
 }
 
 .form-wrapper--login {
-  margin: 30px auto 0;
+  margin: 100px auto 0;
   max-width: 400px;
+  width: calc(100% - 50px);
+  padding: 35px;
+  border: 1px solid $border-accent-color;
+
+  @media(max-width: $screen-sm-max) {
+    margin-top: 25px;
+  }
 }
 
 .form-group {
@@ -29,7 +34,9 @@
   label {
     display: block;
     margin-bottom: 5px;
-    font-size: 0.85em;
+    font-size: 0.9em;
+    padding: 0 13px;
+    color: $heading-color;
   }
 }
 
@@ -61,13 +68,12 @@ textarea.form-group__field {
 }
 
 .form-wrapper__footer {
-  margin: 30px -35px -35px;
-  padding: 25px;
-  border-top: 1px solid $input-border;
+  margin: 0 -35px -35px;
+  padding: 20px;
   text-align: center;
 
   .button {
-    margin: 0 2px;
+    margin: 0 1px;
   }
 }
 

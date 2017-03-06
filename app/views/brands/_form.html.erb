@@ -86,9 +86,7 @@
             <!-- Appearance -->
             <div class="tab-content__pane" id="appearance">
                  
-
-                <div class="misc-title">Header</div>
-                <div class="form-wrapper form-wrapper--stack">
+                <div class="form-wrapper">
                     <div class="form-group">
                         <%= f.label :header_text_color, 'Text Color' %>
                         <%= f.text_field :header_text_color, :class => 'form-group__field form-group__field--color' %>
@@ -100,14 +98,11 @@
                         <%= f.text_field :header_background_color, :class => 'form-group__field form-group__field--color' %>
                         <%= icon('question-circle-o form-group__help', :data => {toggle: 'tooltip'}, :title => 'Sets a background color for site header which will match your brand. Make sure to set a darker background as text and icon will remain white. ') %>
                     </div>
-                </div>
-                
-                <div class="misc-title">Tokens</div>
-                <div class="form-wrapper form-wrapper--stack">
+
                     <div class="form-group">
                         <%= f.label :searchtoken, 'Algolia Document Search Token' %>
                         <%= f.text_field :searchtoken, :class => 'form-group__field  ' %>
-                        <%= icon('question-circle-o form-group__help', :data => {toggle: 'tooltip'}, :title => 'Sets algolia search token that is used for document search.') %>
+                        <%= icon('question-circle-o form-group__help', :data => {toggle: 'tooltip'}, :title => 'Sets Algolia search token that is used for document search.') %>
                     </div>
                 </div>
  
