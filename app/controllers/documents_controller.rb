@@ -1,21 +1,23 @@
 #
- # Doctor, (C) 2016 Minio, Inc.
- #
- # Licensed under the Apache License, Version 2.0 (the "License");
- # you may not use this file except in compliance with the License.
- # You may obtain a copy of the License at
- #
- #     http://www.apache.org/licenses/LICENSE-2.0
- #
- # Unless required by applicable law or agreed to in writing, software
- # distributed under the License is distributed on an "AS IS" BASIS,
- # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- # See the License for the specific language governing permissions and
- # limitations under the License.
+# Doctor (C) 2016, 2017 Minio, Inc.
 #
- 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
 class DocumentsController < ApplicationController
   require 'open-uri'
+  require 'github/markdown'
+
   before_action :set_document, only: [:show, :edit, :update, :destroy]
   layout :resolve_layout
 
@@ -29,22 +31,14 @@ class DocumentsController < ApplicationController
   # GET /documents/1.json
   def show
     @document = Document.friendly.find(params[:id])
-    file = open(@document.link).read 
-    @renderer = Render.new;
-    @renderer.setDocument(@document);
-    @contents = Redcarpet::Markdown.new(@renderer, :tables=>true,:fenced_code_blocks => true,
-          :no_intra_emphasis => true,
-          :autolink => true,
-          :strikethrough => true,
-          :lax_html_blocks => true,
-          :superscript => true).render(file)
-          
-    mixpanel.track("Doc Page Viewed", "Page Title" => @document.name )        
-    # prepare the suggested edit URL from the document.link      
+    @contents = GitHub::Markdown.render_gfm(open(@document.link).read)
+
+    mixpanel.track("Doc Page Viewed", "Page Title" => @document.name )
+    # prepare the suggested edit URL from the document.link
     @gitlink = @document.link.dup
     @gitlink = @gitlink.gsub("raw.githubusercontent","github")
-    @gitlink = @gitlink.sub('master', 'blob/master') 
-     
+    @gitlink = @gitlink.sub('master', 'blob/master')
+
   end
 
   # GET /documents/new
@@ -120,7 +114,7 @@ class DocumentsController < ApplicationController
   end
 
   private
-  
+
     def resolve_layout
      case action_name
      when "index", "edit","new"
@@ -129,7 +123,7 @@ class DocumentsController < ApplicationController
        "application"
      end
     end
-  
+
     # Use callbacks to share common setup or constraints between actions.
     def set_document
       @document = Document.friendly.find(params[:id])
