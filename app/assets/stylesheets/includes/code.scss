@@ -1,5 +1,4 @@
 pre {
-  border-radius: 2px;
   overflow-x: auto;
   margin-bottom: 30px;
   position: relative;
@@ -7,21 +6,18 @@ pre {
   code {
     background: $pre-code-bg;
     color: $pre-code-color;
-    padding: 25px 30px;
+    padding: 20px 25px;
     display: block;
-    border-radius: 3px;
   }
 }
 
 code {
   background: $code-bg;
   color: $code-color;
-  border: 1px solid darken($code-bg, 5%);
+  border: 1px solid darken($code-bg, 2%);
   padding: 0 8px;
   white-space: pre;
   position: relative;
-  top: -1px;
-  border-radius: 2px;
   font-size: 0.95em;
   display: inline-block;
 }
