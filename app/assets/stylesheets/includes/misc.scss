@@ -287,17 +287,18 @@
   top: 0;
   right: 0;
   z-index: 1;
-  color: darken($white, 15%);
+  color: lighten($text-color, 5%);
   font-family: $font-family;
   text-transform: uppercase;
   font-size: $font-size - 5;
-  background-color: rgba($white, .1);
+  border: 1px solid darken($code-bg, 2%);
+  background-color: $white;
   padding: 5px 10px 4px;
   border-radius: 0 2px 0 2px;
   cursor: pointer;
   font-weight: bold;
-
+  
   &:hover {
-    background-color: rgba($white, .15);
+    color: darken($text-color, 10%);
   }
 }
