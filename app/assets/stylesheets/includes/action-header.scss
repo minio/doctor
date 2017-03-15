@@ -3,7 +3,6 @@ $actions-height: 60px;
 .actions {
   border-bottom: 1px solid $border-accent-color;
   margin: -40px -40px 40px;
-  box-shadow: $box-shadow-accent;
   @include clearfix();
 
   @media (max-width: $screen-sm-max) {
@@ -35,7 +34,7 @@ $actions-height: 60px;
       font-family: $font-family-glyph;
       position: absolute;
       left: 0;
-      top: 19px;
+      top: 18px;
       font-weight: normal;
     }
   }

@@ -9,7 +9,6 @@
   padding: $sidebar-padding;
   background-color: $sidebar-bg;
   border-right: 1px solid $border-accent-color;
-  box-shadow: $box-shadow-accent;
   @include transition(all, 250ms);
 
   &:hover {
@@ -114,13 +113,17 @@
           color: $sidebar-link-color;
           display: block;
           font-size: 0.95em;
+          position: relative;
+          @include transition(color, 200ms);
 
           &:hover {
-            background-color: $sidebar-link-hover-bg;
+            color: $sidebar-link-hover-color;
           }
 
           &.active {
             background-color: $sidebar-link-active-bg;
+            color: $sidebar-link-active-color;
+            font-weight: 700;
           }
         }
       }
@@ -170,49 +173,4 @@
 // Login
 .admin-login {
   margin-top: 50px;
-}
-
-
-// Temp theme (will be removed...)
-.sidebar-inverse {
-  .sidebar {
-    background-color: #1f1f1f;
-
-    .brand__title {
-      color: $white;
-    }
-
-    .main-menu {
-      & > li {
-
-        & > a {
-          color: $white;
-        }
-
-        & > ul {
-          margin: 0 0 10px;
-
-          & > li {
-            & > a {
-              color: rgba($white, 0.6);
-              font-size: 0.9em;
-
-              &:hover {
-                background-color: $sidebar-link-hover-bg;
-              }
-
-              &.active {
-                background-color: rgba($white, 0.05);
-                color: rgba($white, 0.8);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  pre code {
-    background-color: #1f1f1f;
-  }
 }
