@@ -36,12 +36,12 @@
 /*------------------------
   Transition
 ------------------------*/
-@mixin transition($transition, $transition-duratiob) {
+@mixin transition($transition, $transition-duration) {
   -webkit-transition: $transition;
   -o-transition: $transition;
   transition: $transition;
-  -webkit-transition-duration: $transition-duratiob;
-  transition-duration: $transition-duratiob;
+  -webkit-transition-duration: $transition-duration;
+  transition-duration: $transition-duration;
 }
 
 

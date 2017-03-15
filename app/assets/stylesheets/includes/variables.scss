@@ -13,7 +13,7 @@ $box-shadow-accent: 0 0 0 2px rgba(51, 51, 51, 0.02);
 /*--------------------
   Heading
 --------------------*/
-$headings-font-weight: 400;
+$headings-font-weight: 700;
 $heading-line-heading: 1.1;
 $heading-color: #232323;
 
@@ -57,11 +57,12 @@ $form-wrapper-border-color: $border-accent-color;
 $sidebar-width: 320px;
 $sidebar-bg: #fff;
 $sidebar-heading-color: #969696;
-$sidebar-link-color: $text-color;
+$sidebar-link-color: lighten($text-color, 15%);
 $sidebar-link-hover-bg: rgba(0,0,0,0.025);
-$sidebar-link-active-bg: rgba(0,0,0,0.04);
+$sidebar-link-hover-color: $heading-color;
+$sidebar-link-active-bg: rgba(0,0,0,0.0);
 $sidebar-link-hove-color: #5c6267;
-$sidebar-link-active-color: #5c6267;
+$sidebar-link-active-color: $heading-color;
 $sidebar-padding: 35px;
 
 

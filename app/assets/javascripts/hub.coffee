@@ -2,25 +2,31 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-#-----------------------
-# Syntax Highlighting
-#-----------------------
-$(document).on 'ready page:load', ->
-  $('pre code').each (i, block) ->
-    hljs.highlightBlock block
-    return
+$(document).on 'turbolinks:click', (event) ->
+  if event.target.getAttribute('href').charAt(0) == '#'
+    return event.preventDefault()
   return
 
 
-$(document).on 'page:change', ->
+
+$(document).on 'turbolinks:load', ->
   $body = $('body')
+
+  #-----------------------
+  # Syntax Highlighting
+  #-----------------------
+  $('pre code').each (i, block) ->
+    hljs.highlightBlock block
+    return
+
 
   #------------------------------
   # Scroll to sidebar link
   #------------------------------
   if $('.sidebar--scroll')[0]
     $pathname = window.location.pathname
-    $('.sidebar--scroll').scrollTop $('a[href="' + $pathname + '"]').offset().top - 50
+    if $pathname != '/'
+      $('.sidebar--scroll').scrollTop $('a[href="' + $pathname + '"]').offset().top
 
 
   #------------------------------
@@ -98,20 +104,6 @@ $(document).on 'page:change', ->
     if $('.img-preview')[0]
       if e.keyCode == 27
         closeImgPreview()
-    return
-
-
-
-  #-----------------------------
-  # Page loading indicator
-  #-----------------------------
-  $(document).one 'page:fetch', ->
-    $loader = '<div class="page-loader"><i /></div>'
-    $('.content').prepend $loader
-    return
-
-  $(document).one 'page:receive', ->
-    $('.page-loader').remove()
     return
 
 
