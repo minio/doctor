@@ -80,6 +80,19 @@ a {
   }
 }
 
+blockquote {
+  border-left: 3px solid $blockquote-border-color;
+  margin: 20px 0;
+  padding: 20px 20px;
+  background-color: $blockquote-bg;
+  font-style: italic;
+  color: lighten($text-color, 10%);
+
+  & > p {
+    margin: 0;
+  }
+}
+
 .content {
   *:not(a) {
     & > img:not([class]) {
