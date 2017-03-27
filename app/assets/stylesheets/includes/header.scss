@@ -78,8 +78,10 @@
       line-height: 100%;
     }
 
-    &:hover {
-      background-color: rgba(0,0,0,0.05);
+    @media(min-width: $screen-sm-min) {
+      &:hover {
+        background-color: rgba(0,0,0,0.05);
+      }
     }
   }
 

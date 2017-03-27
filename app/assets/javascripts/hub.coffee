@@ -119,7 +119,7 @@ $(document).on 'turbolinks:load', ->
     return
 
   #Close
-  $body.on 'click', '.sidebar__close', ->
+  $body.on 'click', '.sidebar__close, .sidebar-backdrop', ->
     $body.removeClass 'sidebar-toggled'
     $('.sidebar').removeClass 'sidebar--toggled'
     return
