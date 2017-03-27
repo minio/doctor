@@ -21,6 +21,7 @@
 //= require tooltip/tooltip.min
 //= require rails.validations
 //= require clipboard/clipboard.min.js
+//= require docsearch/docsearch.min.js
 //= require custom
 
 
