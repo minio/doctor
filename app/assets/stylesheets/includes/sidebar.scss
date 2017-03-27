@@ -174,3 +174,29 @@
 .admin-login {
   margin-top: 50px;
 }
+
+
+// Backdrop
+.sidebar__backdrop {
+
+}
+
+@media(min-width: $screen-lg-min) {
+  .sidebar-backdrop {
+    display: none;
+  }
+}
+
+@media(max-width: $screen-md-max) {
+  .sidebar-toggled {
+    .sidebar-backdrop {
+      cursor: pointer;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 8;
+    }
+  }
+}
