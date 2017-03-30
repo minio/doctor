@@ -29,21 +29,24 @@ You may use the `Suggest Edits` feature in Doctor to submit changes to any of th
 ### Docker
 [![Doctor.Docker](https://d207aa93qlcgug.cloudfront.net/1.95.5.qa/img/nav/docker-logo-loggedout.png)](https://hub.docker.com/r/minio/doctor/)
 
-```
-docker pull minio/doctor
-```
-#### Using Docker Compose
+#### Using Docker Compose 
+
+Pre-requisite: Install and set up [docker](https://docs.docker.com/engine/installation/) on your machine.
 
 ```bash
-> git clone https://github.com/minio/doctor.git
-> cd doctor
+# get the docker-compose.yml file from the minio/doctor repo
+wget https://raw.githubusercontent.com/minio/doctor/master/docker-compose.yml
+
 # start the services
-> docker-compose up -d
- # get the container name of the web service
-> docker ps
+docker-compose up -d
+
+# get the container name of the web service
+docker ps
+
 # setup the database in a one-off command
-> docker exec doctor_web_1 bundle exec rake db:setup 
+docker exec doctor_web_1 bundle exec rake db:setup 
 ```
+Open localhost:3000 on your browser to see doctor running from docker container.
 
 ## Features
 * Documents are organized under Categories.
