@@ -15,7 +15,7 @@ $(document).on 'turbolinks:load', ->
   #-----------------------
   # Syntax Highlighting
   #-----------------------
-  $('pre code').each (i, block) ->
+  $('pre[lang]:not([lang="sh"]) code').each (i, block) ->
     hljs.highlightBlock block
     return
 
