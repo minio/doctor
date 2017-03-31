@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get 'sessions/destroy'
 
-  resources :users
+  resources :users, except: :create
   resources :documents, :path => "docs"
   get 'docs/:id/hide', to: 'documents#hide', as: 'hide'
   get 'docs/:id/unhide', to: 'documents#unhide', as: 'unhide'
@@ -27,4 +27,6 @@ Rails.application.routes.draw do
   get  'dashboard', to: 'hub#dashboard', as: 'dashboard'
   
   root 'hub#index', as: 'hub'
+  
+  
 end
