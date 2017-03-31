@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get 'sessions/destroy'
 
-  resources :users, except: :create
+  resources :users, except: %w(new create)
   resources :documents, :path => "docs"
   get 'docs/:id/hide', to: 'documents#hide', as: 'hide'
   get 'docs/:id/unhide', to: 'documents#unhide', as: 'unhide'
