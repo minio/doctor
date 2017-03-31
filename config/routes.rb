@@ -27,6 +27,6 @@ Rails.application.routes.draw do
   get  'dashboard', to: 'hub#dashboard', as: 'dashboard'
   
   root 'hub#index', as: 'hub'
-  
-  
+
+
 end
