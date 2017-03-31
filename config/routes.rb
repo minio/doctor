@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get 'sessions/destroy'
 
-  resources :users
+  resources :users, except: %w(new create)
   resources :documents, :path => "docs"
   get 'docs/:id/hide', to: 'documents#hide', as: 'hide'
   get 'docs/:id/unhide', to: 'documents#unhide', as: 'unhide'
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :categories
   get 'hub/index'
 
-  get 'signup', to: 'users#new', as: 'signup'
+  #get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get  'dashboard', to: 'hub#dashboard', as: 'dashboard'
