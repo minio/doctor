@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
     # Prevent CSRF attacks by raising an exception.
     # For APIs, you may want to use :null_session instead.
     protect_from_forgery with: :exception
-
+    before_filter :redirect_https
     before_filter :load_sidebar
     before_filter :authorize
 
@@ -32,6 +32,12 @@ class ApplicationController < ActionController::Base
     before_action :setup_mixpanel
 
     private
+
+    def redirect_https
+        redirect_to :protocol => "https://" unless (request.ssl? || request.local?)
+        return true
+    end
+    before_filter :redirect_https
 
     def current_user
         # Search token gon variable
