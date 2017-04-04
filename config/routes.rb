@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get 'errors/internal_server_error'
 
-  resources :brands
+  resources :brands, except: %w(index, show)
   get 'sessions/new'
 
   get 'sessions/create'
@@ -21,7 +21,6 @@ Rails.application.routes.draw do
   resources :categories
   get 'hub/index'
 
-  #get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get  'dashboard', to: 'hub#dashboard', as: 'dashboard'
