@@ -13,6 +13,16 @@ $(document).on 'turbolinks:load', ->
   $body = $('body')
 
   #-----------------------
+  # Anchor link seeking
+  #-----------------------
+  if window.location.hash
+    hash = window.location.hash.substring(1)
+    $('html, body').animate {
+      scrollTop: ($('a[name="'+hash+'"]').offset().top) + 15
+    }, 0
+
+
+  #-----------------------
   # Syntax Highlighting
   #-----------------------
   $('pre[lang]:not([lang="sh"]) code').each (i, block) ->
