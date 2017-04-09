@@ -17,9 +17,11 @@ $(document).on 'turbolinks:load', ->
   #-----------------------
   if window.location.hash
     hash = window.location.hash.substring(1)
-    $('html, body').animate {
-      scrollTop: ($('a[name="'+hash+'"]').offset().top) + 15
-    }, 0
+    target = $('a[name="'+hash+'"]')
+    if target[0]
+      $('html, body').animate {
+        scrollTop: (target.offset().top) + 15
+      }, 0
 
 
   #-----------------------
@@ -50,7 +52,7 @@ $(document).on 'turbolinks:load', ->
 
   if $('.search__input')[0]
     if gon.algoliatoken
-      #Doc Search
+#Doc Search
       docsearch
         apiKey: gon.algoliatoken
         indexName: 'minio'
@@ -68,8 +70,8 @@ $(document).on 'turbolinks:load', ->
     e.preventDefault()
     $(this).parent().append '<div class="backdrop backdrop--dropdown" />'
     $(this)
-      .closest('.dropdown')
-      .addClass 'dropdown--open'
+    .closest('.dropdown')
+    .addClass 'dropdown--open'
     return
 
   # Close
@@ -97,10 +99,10 @@ $(document).on 'turbolinks:load', ->
   $body.on 'click', '.content *:not("a") > img:not(".img-preview__img")', ->
     $imgSrc = $(this).attr('src')
     $imgWrap =  '<div class="img-preview">' +
-                  '<div class="img-preview__close img-preview__close--back"></div>' +
-                  '<i class="img-preview__close img-preview__close--icon fa fa-close"></i>' +
-                  '<img class="img-preview__img" src=' + $imgSrc + ' alt="">' +
-                '</div>'
+      '<div class="img-preview__close img-preview__close--back"></div>' +
+      '<i class="img-preview__close img-preview__close--icon fa fa-close"></i>' +
+      '<img class="img-preview__img" src=' + $imgSrc + ' alt="">' +
+      '</div>'
     $body.append $imgWrap
     return
 
