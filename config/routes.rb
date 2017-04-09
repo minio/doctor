@@ -19,7 +19,6 @@ Rails.application.routes.draw do
   get 'docs/:id/unhide', to: 'documents#unhide', as: 'unhide'
   resources :sessions
   resources :categories
-  get 'hub/index'
 
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
