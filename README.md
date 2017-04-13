@@ -44,7 +44,7 @@ docker-compose up -d
 docker ps
 
 # setup the database in a one-off command
-docker exec doctor_web_1 bundle exec rake db:setup 
+docker exec docker_web_1 bundle exec rake db:setup 
 ```
 Open localhost:3000 on your browser to see doctor running from docker container.
 
