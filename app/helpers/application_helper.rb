@@ -20,8 +20,8 @@ module ApplicationHelper
         ''
     end
 
-    def is_active_path(path_name)
-        return 'active' if request.path == path_name
+    def is_active(path_name)
+        return 'active' if request.fullpath == path_name
         ''
     end
 end

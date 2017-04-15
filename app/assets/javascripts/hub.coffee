@@ -41,6 +41,29 @@ $(document).on 'turbolinks:load', ->
       $('.sidebar--scroll').scrollTop $('a[href="' + $pathname + '"]').offset().top
 
 
+  #-----------------------------
+  # Collapse menu
+  #-----------------------------
+  if $('.doclinks--collapse')[0]
+    $('.doclinks__links > .active').closest('.doclinks__category').addClass('active toggled');
+
+    if $pathname != '/'
+      $('.doclinks__category:first-child').addClass('toggled').find('.doclinks__links').slideDown 1
+
+    $('body').on 'click', '.doclinks__header', (e) ->
+      e.preventDefault()
+
+      if $(this).parent().is('.toggled')
+        $('.doclinks__category').removeClass 'toggled'
+        $('.doclinks__links').stop(true, false).slideUp 300
+      else
+        $('.doclinks__category').removeClass 'toggled'
+        $('.doclinks__links').stop(true, false).slideUp 300
+        $(this).parent().addClass 'toggled'
+        $(this).next().stop(true, false).slideDown 300
+      return
+
+
   #------------------------------
   # Search
   #------------------------------
@@ -52,7 +75,7 @@ $(document).on 'turbolinks:load', ->
 
   if $('.search__input')[0]
     if gon.algoliatoken
-#Doc Search
+  #Doc Search
       docsearch
         apiKey: gon.algoliatoken
         indexName: 'minio'
