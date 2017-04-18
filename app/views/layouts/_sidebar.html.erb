@@ -1,19 +1,19 @@
-<aside class="sidebar sidebar--scroll">
+<aside class="sidebar">
     <div class="sidebar__close">
         <%= icon('arrow-circle-o-left ') %>
     </div>
 
     <%= render 'layouts/brand' %>
 
-    <ul class="main-menu">
+    <ul class="doclinks doclinks--collapse">
         <% @categories.each do |category| %>
-            <li>
-                <a href="<%=category_path(category.id) %>"><%= category.title %></a>
+            <li class="doclinks__category" data-category="<%= category.id %>">
+                <a class="doclinks__header" href="<%=category_path(category.id) %>"><%= category.title %></a>
                 <% if category.documents.any? %>
-                    <ul>
+                    <ul class="doclinks__links">
                         <% category.documents.each do |doc| %>
                             <% if doc.state != "hidden" %>
-                                <li><%= link_to doc.name, document_path(doc.slug), :class => is_active_path(document_path(doc.slug)) %></li>
+                                <li class="<%= is_active(document_path(doc.slug)) %>"><%= link_to doc.name, document_path(doc.slug) %></li>
                             <% end %>
                         <% end %>
                     </ul>
@@ -21,6 +21,7 @@
             </li>
         <% end %>
     </ul>
+
 
     <div class="admin-login">
         <% if current_user %>
