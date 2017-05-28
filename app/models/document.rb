@@ -13,14 +13,21 @@
  # See the License for the specific language governing permissions and
  # limitations under the License.
 #
- 
+
 class Document < ActiveRecord::Base
   belongs_to :category
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :slug_candidates, use: :slugged
 
   validates :name, :link, :presence => true
   validates :name, :length => { :minimum => 2 }
-  validates :name, :uniqueness => true
+  validates :name, :uniqueness => { scope: :category_id }
   validates :link, :url => true
+
+  def slug_candidates
+    [
+      :name,
+      [category.title, :name]
+    ]
+  end
 end
