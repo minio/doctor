@@ -21,6 +21,6 @@ class Document < ActiveRecord::Base
 
   validates :name, :link, :presence => true
   validates :name, :length => { :minimum => 2 }
-  validates :name, :uniqueness => true
+  validates_uniqueness_of :name, :scope => :category_id
   validates :link, :url => true
 end
