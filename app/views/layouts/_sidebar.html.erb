@@ -5,8 +5,8 @@
 
     <%= render 'layouts/brand' %>
 
-    <ul class="doclinks doclinks--collapse">
-        <% @categories.each do |category| %>
+    <ul class="doclinks doclinks--collapse doclinks--sortable">
+        <% @categories.each do |category, index| %>
             <li class="doclinks__category" data-category="<%= category.id %>">
                 <a class="doclinks__header" href="<%=category_path(category.id) %>"><%= category.title %></a>
                 <% if category.documents.any? %>
