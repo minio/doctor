@@ -33,22 +33,47 @@ $(document).on 'turbolinks:load', ->
 
 
   #------------------------------
-  # Scroll to sidebar link
+  # Sortable category links
   #------------------------------
-  if $('.sidebar--scroll')[0]
-    $pathname = window.location.pathname
-    if $pathname != '/'
-      $('.sidebar--scroll').scrollTop $('a[href="' + $pathname + '"]').offset().top
+  if $('.doclinks--sortable')[0]
+    restoreSorted = ->
+      sorted = localStorage['sorted']
+      if sorted == undefined
+        return
+      lists = $('.doclinks--sortable')
+      sortedArr = sorted.split(',')
+      i = 0
+      while i < sortedArr.length
+        el = lists.find('#' + sortedArr[i])
+        $('.doclinks--sortable').append el
+        i++
+      return
+
+    $('.doclinks--sortable > li').each (index, elem) ->
+      $(elem).attr 'id', 'item_' + index
+      return
+
+    $('.doclinks--sortable').sortable
+      placeholder: 'doclinks__category--dragging'
+      axis: 'y'
+      update: (event, ui) ->
+        localStorage.setItem 'sorted', $('.doclinks--sortable').sortable('toArray')
+        return
+
+    restoreSorted()
+
 
 
   #-----------------------------
   # Collapse menu
   #-----------------------------
   if $('.doclinks--collapse')[0]
+    $pathname = window.location.pathname
+    if $pathname == '/'
+      $('.doclinks__category:first-child').addClass('toggled').find('.doclinks__links').slideDown 1
+
     $('.doclinks__links > .active').closest('.doclinks__category').addClass('active toggled');
 
-    if $pathname != '/'
-      $('.doclinks__category:first-child').addClass('toggled').find('.doclinks__links').slideDown 1
 
     $('body').on 'click', '.doclinks__header', (e) ->
       e.preventDefault()

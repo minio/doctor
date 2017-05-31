@@ -20,8 +20,9 @@
 //= require jquery-minicolors/jquery.minicolors
 //= require tooltip/tooltip.min
 //= require rails.validations
-//= require clipboard/clipboard.min.js
-//= require docsearch/docsearch.min.js
+//= require clipboard/clipboard.min
+//= require docsearch/docsearch.min
+//= require jquery-ui/jquery-ui.min
 //= require custom
 
 

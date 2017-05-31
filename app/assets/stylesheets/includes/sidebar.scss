@@ -144,11 +144,30 @@
 .doclinks__category {
   border-bottom: 1px solid $border-accent-color;
   position: relative;
+  transition: padding-top 300ms, background-color 500ms;
+  -moz-transition: padding-top 300ms, background-color 500ms;
+  -webkit-transition: padding-top 300ms, background-color 500ms;
 
   &.active {
     .doclinks__links {
       display: block;
     }
+  }
+
+  &.ui-sortable-helper {
+    background-color: rgba($white, 0.5);
+    height: 54px !important;
+    overflow: hidden;
+    border-top: 1px solid $border-accent-color;
+  }
+}
+
+.doclinks__category--dragging {
+  background-color: yellow;
+  height: 0;
+
+  & + .doclinks__category {
+    padding-top: 54px !important;
   }
 }
 
@@ -158,6 +177,10 @@
   }
 
   .doclinks__category {
+    &.active:not(.toggled) {
+      background-color: lighten($sidebar-link-active-bg, 1%);
+    }
+
     &:before,
     &:after {
       content: '';
