@@ -103,6 +103,10 @@ blockquote {
       display: block;
       max-width: 100%;
       height: auto;
+
+      @media(min-width: $screen-sm-min) {
+        width: 50%;
+      }
     }
   }
 
