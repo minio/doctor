@@ -144,6 +144,7 @@
 .doclinks__category {
   border-bottom: 1px solid $border-accent-color;
   position: relative;
+  display: block;
   transition: padding-top 300ms, background-color 500ms;
   -moz-transition: padding-top 300ms, background-color 500ms;
   -webkit-transition: padding-top 300ms, background-color 500ms;
@@ -187,7 +188,7 @@
       width: 9px;
       height: 9px;
       position: absolute;
-      top: 23px;
+      top: 22px;
       right: 20px;
       @include transition(all, 300ms);
       @include opacity(0.3);
