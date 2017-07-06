@@ -36,14 +36,18 @@
   <body>
     
     <main class="main">
+      <!-- Sidebar -->
       <%= render 'layouts/sidebaradmin' %>
 
       <section class="content">
         <%= yield %>
       </section>
 
+      <!-- Footer -->
       <%= render 'layouts/footer' %>
-    </main>
 
+      <!-- Older IE warning message -->
+      <%= render 'layouts/iewarning' %>
+    </main>
   </body>
 </html>

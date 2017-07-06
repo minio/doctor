@@ -35,15 +35,22 @@
     <%= include_gon(:init => true) %>
 
     <main class="main">
+
+      <!-- Sidebar -->
       <%= render 'layouts/sidebar' %>
 
       <section class="content">
+        <!-- Header -->
         <%= render 'layouts/header' %>
 
         <%= yield %>
       </section>
 
+      <!-- Footer -->
       <%= render 'layouts/footer' %>
+
+      <!-- Older IE warning message -->
+      <%= render 'layouts/iewarning' %>
     </main>
   </body>
 </html>
