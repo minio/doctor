@@ -10,7 +10,7 @@
 * You are done!
 
 ## Live Demo
-* [Doctor's website](http://getdoctor.io) is a site hosted on doctor using this very Readme.MD file. Yeah very meta.
+* [Doctor's website](http://doctor.minio.io) is a site hosted on doctor using this very Readme.MD file. Yeah very meta.
 * [Minio Docs](https://docs.minio.io) has a doctor server running that pulls together MD files that reside across a number of github repos :
  Eg:
   * README.md in https://github.com/minio/minio
