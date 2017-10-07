@@ -13,9 +13,10 @@
  # See the License for the specific language governing permissions and
  # limitations under the License.
 #
- 
+
 class Document < ActiveRecord::Base
   belongs_to :category
+  before_save :update_slug
   extend FriendlyId
   friendly_id :name, use: :slugged
 
@@ -23,4 +24,10 @@ class Document < ActiveRecord::Base
   validates :name, :length => { :minimum => 2 }
   validates :name, :uniqueness => true
   validates :link, :url => true
+
+  private
+
+  def update_slug
+    self.slug = name.parameterize
+  end
 end
