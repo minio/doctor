@@ -108,7 +108,7 @@ GEM
     nio4r (2.1.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
-    pg (0.21.0)
+    pg (0.20.0)
     posix-spawn (0.3.13)
     pry (0.11.0)
       coderay (~> 1.1.0)
@@ -218,7 +218,7 @@ DEPENDENCIES
   jquery-rails
   mengpaneel
   nokogiri
-  pg
+  pg (~> 0.20.0)
   pry
   puma
   rails (= 5.0.2)
