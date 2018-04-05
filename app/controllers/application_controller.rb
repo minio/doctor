@@ -22,9 +22,9 @@ class ApplicationController < ActionController::Base
     # Prevent CSRF attacks by raising an exception.
     # For APIs, you may want to use :null_session instead.
     protect_from_forgery with: :exception
-    before_filter :redirect_https
-    before_filter :load_sidebar
-    before_filter :authorize
+    before_action :redirect_https
+    before_action :load_sidebar
+    before_action :authorize
 
     delegate :allow?, to: :current_permission
     helper_method :allow?
@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
         redirect_to :protocol => "https://" unless (request.ssl?  || request.local? || Rails.env.development? || Rails.env.test?)
         return true
     end
-    before_filter :redirect_https
+    before_action :redirect_https
 
     def current_user
         # Search token gon variable
