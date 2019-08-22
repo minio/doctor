@@ -61,7 +61,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
-    crass (1.0.3)
+    crass (1.0.4)
     debug_inspector (0.0.3)
     erubi (1.7.1)
     execjs (2.7.0)
@@ -89,7 +89,7 @@ GEM
     js_regex (2.2.1)
       regexp_parser (>= 0.4.11, <= 0.5.0)
     json (1.8.6)
-    loofah (2.2.2)
+    loofah (2.2.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.0)
